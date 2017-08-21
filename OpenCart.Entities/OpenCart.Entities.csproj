@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17E7C7BF-7B98-4501-BA3B-9A1AE209E988}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JustWatch.OpenCart</RootNamespace>
+    <AssemblyName>JustWatch.OpenCart</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\MetaDescriptionBase.cs" />
+    <Compile Include="Domain\Localizable.cs" />
+    <Compile Include="Interfaces\IEntityWithName.cs" />
+    <Compile Include="Interfaces\IEntityWithTitle.cs" />
+    <Compile Include="Interfaces\IOpenCartDomain.cs" />
+    <Compile Include="Mappings\AttribueGroupMapping.cs" />
+    <Compile Include="Mappings\CategoryMapping.cs" />
+    <Compile Include="Mappings\AttribueMapping.cs" />
+    <Compile Include="Mappings\ExtraTabMapping.cs" />
+    <Compile Include="Mappings\ProductAttributeMapping.cs" />
+    <Compile Include="Mappings\ProductExtraTabMapping.cs" />
+    <Compile Include="Mappings\ProductImageMapping.cs" />
+    <Compile Include="Mappings\StickerMapping.cs" />
+    <Compile Include="Mappings\WeightUnitMapping.cs" />
+    <Compile Include="Mappings\ManufactorerMapping.cs" />
+    <Compile Include="Mappings\ProductCategoryMapping.cs" />
+    <Compile Include="Mappings\ProductLayoutMapping.cs" />
+    <Compile Include="Mappings\ProductMapping.cs" />
+    <Compile Include="Mappings\LengthUnitMapping.cs" />
+    <Compile Include="Mappings\UserMapping.cs" />
+    <Compile Include="OpenCartDomain.cs" />
+    <Compile Include="Domain\Geo\oc_address.cs" />
+    <Compile Include="Domain\Affiliate\oc_affiliate.cs" />
+    <Compile Include="Domain\Affiliate\oc_affiliate_activity.cs" />
+    <Compile Include="Domain\Affiliate\oc_affiliate_login.cs" />
+    <Compile Include="Domain\Affiliate\oc_affiliate_transaction.cs" />
+    <Compile Include="Domain\ApiUser\oc_api.cs" />
+    <Compile Include="Domain\ApiUser\oc_api_ip.cs" />
+    <Compile Include="Domain\ApiUser\oc_api_session.cs" />
+    <Compile Include="Domain\Attribute\Attribute.cs" />
+    <Compile Include="Domain\Attribute\AttributeDescription.cs" />
+    <Compile Include="Domain\Attribute\AttributeGroup.cs" />
+    <Compile Include="Domain\Attribute\AttributeGroupDescription.cs" />
+    <Compile Include="Domain\Banner\oc_banner.cs" />
+    <Compile Include="Domain\Banner\oc_banner_image.cs" />
+    <Compile Include="Domain\Blog\oc_blog.cs" />
+    <Compile Include="Domain\Blog\oc_blog_description.cs" />
+    <Compile Include="Domain\Blog\oc_blog_product.cs" />
+    <Compile Include="Domain\Blog\oc_blog_to_layout.cs" />
+    <Compile Include="Domain\Blog\oc_blog_to_store.cs" />
+    <Compile Include="Domain\Cart.cs" />
+    <Compile Include="Domain\Category\Category.cs" />
+    <Compile Include="Domain\Category\CategoryDescription.cs" />
+    <Compile Include="Domain\Category\oc_category_filter.cs" />
+    <Compile Include="Domain\Category\oc_category_path.cs" />
+    <Compile Include="Domain\Category\oc_category_to_layout.cs" />
+    <Compile Include="Domain\Category\oc_category_to_store.cs" />
+    <Compile Include="Domain\Geo\Country.cs" />
+    <Compile Include="Domain\Coupon\oc_coupon.cs" />
+    <Compile Include="Domain\Coupon\oc_coupon_category.cs" />
+    <Compile Include="Domain\Coupon\oc_coupon_history.cs" />
+    <Compile Include="Domain\Coupon\oc_coupon_product.cs" />
+    <Compile Include="Domain\Currency.cs" />
+    <Compile Include="Domain\Customer\oc_customer.cs" />
+    <Compile Include="Domain\Customer\oc_customer_activity.cs" />
+    <Compile Include="Domain\Customer\oc_customer_group.cs" />
+    <Compile Include="Domain\Customer\oc_customer_group_description.cs" />
+    <Compile Include="Domain\Customer\oc_customer_history.cs" />
+    <Compile Include="Domain\Customer\oc_customer_ip.cs" />
+    <Compile Include="Domain\Customer\oc_customer_login.cs" />
+    <Compile Include="Domain\Customer\oc_customer_online.cs" />
+    <Compile Include="Domain\Customer\oc_customer_reward.cs" />
+    <Compile Include="Domain\Customer\oc_customer_search.cs" />
+    <Compile Include="Domain\Customer\oc_customer_transaction.cs" />
+    <Compile Include="Domain\Customer\oc_customer_wishlist.cs" />
+    <Compile Include="Domain\Customer\oc_custom_field.cs" />
+    <Compile Include="Domain\Customer\oc_custom_field_customer_group.cs" />
+    <Compile Include="Domain\Customer\oc_custom_field_description.cs" />
+    <Compile Include="Domain\Customer\oc_custom_field_value.cs" />
+    <Compile Include="Domain\Customer\oc_custom_field_value_description.cs" />
+    <Compile Include="Domain\DownloadUpload\oc_download.cs" />
+    <Compile Include="Domain\DownloadUpload\oc_download_description.cs" />
+    <Compile Include="Domain\Event.cs" />
+    <Compile Include="Domain\oc_extension.cs" />
+    <Compile Include="Domain\ExtraTabs\ExtraTab.cs" />
+    <Compile Include="Domain\ExtraTabs\ExtraTabDescription.cs" />
+    <Compile Include="Domain\Filter\oc_filter.cs" />
+    <Compile Include="Domain\Filter\oc_filter_description.cs" />
+    <Compile Include="Domain\Filter\oc_filter_group.cs" />
+    <Compile Include="Domain\Filter\oc_filter_group_description.cs" />
+    <Compile Include="Domain\Geo\oc_geo_zone.cs" />
+    <Compile Include="Domain\Information\oc_information.cs" />
+    <Compile Include="Domain\Information\oc_information_description.cs" />
+    <Compile Include="Domain\Information\oc_information_to_layout.cs" />
+    <Compile Include="Domain\Information\oc_information_to_store.cs" />
+    <Compile Include="Domain\Language.cs" />
+    <Compile Include="Domain\Layout\Layout.cs" />
+    <Compile Include="Domain\Layout\oc_layout_module.cs" />
+    <Compile Include="Domain\Layout\oc_layout_route.cs" />
+    <Compile Include="Domain\Product\LengthUnit.cs" />
+    <Compile Include="Domain\Product\LengthUnitDescription.cs" />
+    <Compile Include="Domain\Geo\oc_location.cs" />
+    <Compile Include="Domain\Manufacturer\Manufacturer.cs" />
+    <Compile Include="Domain\Manufacturer\ManufactorerDescription.cs" />
+    <Compile Include="Domain\Manufacturer\oc_manufacturer_to_store.cs" />
+    <Compile Include="Domain\oc_marketing.cs" />
+    <Compile Include="Domain\Menu\oc_menu.cs" />
+    <Compile Include="Domain\Menu\oc_menu_description.cs" />
+    <Compile Include="Domain\Menu\oc_menu_module.cs" />
+    <Compile Include="Domain\oc_modification.cs" />
+    <Compile Include="Domain\Layout\oc_module.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_description.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_to_category.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_to_store.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_value.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_value_description.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_value_to_product.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_option_value_to_product_description.cs" />
+    <Compile Include="Domain\Filter\oc_ocfilter_page.cs" />
+    <Compile Include="Domain\Option\oc_option.cs" />
+    <Compile Include="Domain\Option\oc_option_description.cs" />
+    <Compile Include="Domain\Option\oc_option_value.cs" />
+    <Compile Include="Domain\Option\oc_option_value_description.cs" />
+    <Compile Include="Domain\Order\oc_order.cs" />
+    <Compile Include="Domain\Order\oc_order_custom_field.cs" />
+    <Compile Include="Domain\Order\oc_order_history.cs" />
+    <Compile Include="Domain\Order\oc_order_option.cs" />
+    <Compile Include="Domain\Order\oc_order_product.cs" />
+    <Compile Include="Domain\Order\oc_order_recurring.cs" />
+    <Compile Include="Domain\Order\oc_order_recurring_transaction.cs" />
+    <Compile Include="Domain\Order\oc_order_status.cs" />
+    <Compile Include="Domain\Order\oc_order_total.cs" />
+    <Compile Include="Domain\Order\oc_order_voucher.cs" />
+    <Compile Include="Domain\Product\Product.cs" />
+    <Compile Include="Domain\Product\ProductAttribute.cs" />
+    <Compile Include="Domain\Product\ProductDescription.cs" />
+    <Compile Include="Domain\Product\oc_product_discount.cs" />
+    <Compile Include="Domain\Product\ProductExtraTab.cs" />
+    <Compile Include="Domain\Product\oc_product_filter.cs" />
+    <Compile Include="Domain\Product\ProductImage.cs" />
+    <Compile Include="Domain\Product\oc_product_image_by_option.cs" />
+    <Compile Include="Domain\Product\oc_product_option.cs" />
+    <Compile Include="Domain\Product\oc_product_option_value.cs" />
+    <Compile Include="Domain\Product\oc_product_recurring.cs" />
+    <Compile Include="Domain\Product\oc_product_reward.cs" />
+    <Compile Include="Domain\Product\oc_product_special.cs" />
+    <Compile Include="Domain\Product\Sticker.cs" />
+    <Compile Include="Domain\Product\StickerDescription.cs" />
+    <Compile Include="Domain\Product\ProductCategory.cs" />
+    <Compile Include="Domain\Product\oc_product_to_download.cs" />
+    <Compile Include="Domain\Product\ProductLayout.cs" />
+    <Compile Include="Domain\oc_recurring.cs" />
+    <Compile Include="Domain\oc_recurring_description.cs" />
+    <Compile Include="Domain\Return\oc_return.cs" />
+    <Compile Include="Domain\Return\oc_return_action.cs" />
+    <Compile Include="Domain\Return\oc_return_history.cs" />
+    <Compile Include="Domain\Return\oc_return_reason.cs" />
+    <Compile Include="Domain\Return\oc_return_status.cs" />
+    <Compile Include="Domain\oc_review.cs" />
+    <Compile Include="Domain\oc_setting.cs" />
+    <Compile Include="Domain\StockStatus.cs" />
+    <Compile Include="Domain\Store.cs" />
+    <Compile Include="Domain\Tax\oc_tax_class.cs" />
+    <Compile Include="Domain\Tax\oc_tax_rate.cs" />
+    <Compile Include="Domain\Tax\oc_tax_rate_to_customer_group.cs" />
+    <Compile Include="Domain\Tax\oc_tax_rule.cs" />
+    <Compile Include="Domain\oc_theme.cs" />
+    <Compile Include="Domain\oc_translation.cs" />
+    <Compile Include="Domain\DownloadUpload\oc_upload.cs" />
+    <Compile Include="Domain\UrlAlias.cs" />
+    <Compile Include="Domain\User\User.cs" />
+    <Compile Include="Domain\User\UserGroup.cs" />
+    <Compile Include="Domain\Voucher\oc_voucher.cs" />
+    <Compile Include="Domain\Voucher\oc_voucher_history.cs" />
+    <Compile Include="Domain\Voucher\oc_voucher_theme.cs" />
+    <Compile Include="Domain\Voucher\oc_voucher_theme_description.cs" />
+    <Compile Include="Domain\Product\WeightUnit.cs" />
+    <Compile Include="Domain\Product\WeightUnitDescription.cs" />
+    <Compile Include="Domain\Geo\oc_zone.cs" />
+    <Compile Include="Domain\Geo\oc_zone_to_geo_zone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
