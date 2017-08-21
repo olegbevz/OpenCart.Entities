@@ -22,6 +22,12 @@ Also following OpenCart modules should be added:
 
 # Installation
 
+Package could be installed via Nuget Package Console:
+
+```
+PM> Install-Package OpenCart.Entities
+```
+
 # Examples
 
 In the example below list of products from manufacturer "Casio" is imported from OpenCart database.
