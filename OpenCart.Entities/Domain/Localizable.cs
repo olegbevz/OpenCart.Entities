@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JustWatch.OpenCart
+namespace OpenCart.Entities
 {
     public abstract class Localizable
     {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using JustWatch.OpenCart;
 
 namespace OpenCart.Entities.Examples
 {

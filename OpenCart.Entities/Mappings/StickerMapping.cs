@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace JustWatch.OpenCart.Mappings
+namespace OpenCart.Entities.Mappings
 {
     class StickerMapping : EntityTypeConfiguration<Sticker>
     {

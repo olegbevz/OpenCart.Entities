@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
-namespace JustWatch.OpenCart.Mappings
+namespace OpenCart.Entities.Mappings
 {
     internal class ProductImageMapping : EntityTypeConfiguration<ProductImage>
     {

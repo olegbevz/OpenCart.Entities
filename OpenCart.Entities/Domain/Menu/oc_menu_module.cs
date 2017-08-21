@@ -1,4 +1,4 @@
-namespace JustWatch.OpenCart
+namespace OpenCart.Entities
 {
     using System;
     using System.Collections.Generic;

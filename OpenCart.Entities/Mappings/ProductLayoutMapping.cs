@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace JustWatch.OpenCart
+namespace OpenCart.Entities
 {
     internal class ProductLayoutMapping : EntityTypeConfiguration<ProductLayout>
     {

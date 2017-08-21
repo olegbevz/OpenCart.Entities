@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-namespace JustWatch.OpenCart
+namespace OpenCart.Entities
 {
     public interface IOpenCartDomain : IDisposable
     {

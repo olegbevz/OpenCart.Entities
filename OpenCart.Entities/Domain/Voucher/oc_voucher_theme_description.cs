@@ -1,4 +1,4 @@
-namespace JustWatch.OpenCart
+namespace OpenCart.Entities
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
