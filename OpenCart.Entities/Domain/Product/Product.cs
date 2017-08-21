@@ -18,6 +18,7 @@ namespace OpenCart.Entities
             Stores = new HashSet<Store>();
             Layouts = new HashSet<ProductLayout>();
             RelatedProducts = new HashSet<Product>();
+            ExtraTabs = new HashSet<ProductExtraTab>();
         }
 
         [Key, Column("product_id")]
