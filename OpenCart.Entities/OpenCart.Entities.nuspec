@@ -24,7 +24,7 @@
         <copyright>Copyright 2017</copyright>
     </metadata>
     <files>
-        <file src="OpenCart.Entities\bin\Release\OpenCart.Entities.dll" target="lib\net40\OpenCart.Entities.dll" />
-        <file src="OpenCart.Entities\bin\Release\OpenCart.Entities.pdb" target="lib\net40\OpenCart.Entities.pdb" />
+        <file src="OpenCart.Entities.dll" target="lib\net40\OpenCart.Entities.dll" />
+        <file src="OpenCart.Entities.pdb" target="lib\net40\OpenCart.Entities.pdb" />
     </files>
 </package>
