@@ -1,0 +1,16 @@
+version: 1.0.{build}
+configuration: Release
+platform: Any CPU
+before_build:
+- cmd: nuget restore
+build:
+  project: OpenCart.Entities.sln
+  verbosity: minimal
+artifacts:
+- path: OpenCart.Entities\bin\Release
+  name: OpenCart.Entities
+deploy:
+- provider: NuGet
+  artifact: OpenCart.Entities
+  on:
+    branch: master
