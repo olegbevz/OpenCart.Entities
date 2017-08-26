@@ -11,6 +11,8 @@ artifacts:
   name: OpenCart.Entities
 deploy:
 - provider: NuGet
+  api_key:
+    secure: zwQ10VCjmJiJlS7mG++iAJGNxasgTyA5OL/4t/OEbQbZ1SXpBnNtTReslDG18yYF/fst345v8zouCqdO9MWJi5mvGl41sTXqeAWYTUx1IQk=
   artifact: OpenCart.Entities
   on:
     branch: master
