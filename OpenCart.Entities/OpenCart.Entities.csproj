@@ -44,6 +44,7 @@
     <Compile Include="Domain\MetaDescriptionBase.cs" />
     <Compile Include="Domain\Localizable.cs" />
     <Compile Include="Interfaces\IEntityWithName.cs" />
+    <Compile Include="Interfaces\IEntityWithStatus.cs" />
     <Compile Include="Interfaces\IEntityWithTitle.cs" />
     <Compile Include="Interfaces\IOpenCartDomain.cs" />
     <Compile Include="Mappings\AttribueGroupMapping.cs" />

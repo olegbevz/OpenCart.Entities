@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCart.Entities.Tests", "OpenCart.Entities.Tests\OpenCart.Entities.Tests.csproj", "{BD222CFC-D495-449C-BDF7-186E50956473}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{61816BEE-8065-4793-BAE1-C6AF7DECF244}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61816BEE-8065-4793-BAE1-C6AF7DECF244}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61816BEE-8065-4793-BAE1-C6AF7DECF244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD222CFC-D495-449C-BDF7-186E50956473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD222CFC-D495-449C-BDF7-186E50956473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD222CFC-D495-449C-BDF7-186E50956473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD222CFC-D495-449C-BDF7-186E50956473}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
