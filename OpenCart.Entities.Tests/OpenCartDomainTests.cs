@@ -76,7 +76,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllEntitiesWithNamePropertyShouldImplementEntityWithTitleInterface()
+        public void AllEntitiesWithNamePropertyShouldImplementEntityWithNameInterface()
         {
             var entities = GetOpenCartEntities();
 
@@ -92,7 +92,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllEntitiesWithStatusPropertyShouldImplementEntityWithTitleInterface()
+        public void AllEntitiesWithStatusPropertyShouldImplementEntityWithStatusInterface()
         {
             var entities = GetOpenCartEntities();
 

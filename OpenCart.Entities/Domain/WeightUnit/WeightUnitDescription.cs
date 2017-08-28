@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_weight_class_description")]
-    public class WeightUnitDescription : Localizable
+    public class WeightUnitDescription : Localizable, IEntityWithTitle
     {
         [Key, Column("weight_class_id", Order = 0)]
         public int WeightUnitId { get; set; }
