@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Linq;
 
     [Table("oc_product")]
-    public class Product
+    public class Product : IEntityWithStatus
     {
         public Product()
         {

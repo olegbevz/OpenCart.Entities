@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_event")]
-    public class Event
+    public class Event : IEntityWithStatus
     {
         [Key]
         public int Id { get; set; }

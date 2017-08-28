@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_currency")]
-    public class Currency : IEntityWithTitle
+    public class Currency : IEntityWithTitle, IEntityWithStatus
     {
         [Key, Column("currency_id")]
         public int Id { get; set; }

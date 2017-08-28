@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_stickers")]
-    public class ProductSticker
+    public class ProductSticker : IEntityWithStatus
     {
         [Key]
         [Column("product_sticker_id")]

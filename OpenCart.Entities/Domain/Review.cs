@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_review")]
-    public class Review
+    public class Review : IEntityWithStatus
     {
         [Key]
         public int review_id { get; set; }

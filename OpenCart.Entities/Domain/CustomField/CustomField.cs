@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_custom_field")]
-    public class CustomField
+    public class CustomField : IEntityWithStatus
     {
         [Key]
         public int custom_field_id { get; set; }

@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_language")]
-    public class Language : IEntityWithName
+    public class Language : IEntityWithName, IEntityWithStatus
     {
         [Key, Column("language_id")]
         public int Id { get; set; }

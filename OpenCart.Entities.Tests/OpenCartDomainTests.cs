@@ -38,9 +38,7 @@ namespace OpenCart.Entities.Tests
                 if (tableAttribute != null)
                 {
                     var tableName = tableAttribute.Name;
-                    var expectedEntityName = string.Concat(tableName.Split('_')
-                        .Where(part => part.Length > 0 && part != "oc")
-                        .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
+                    var expectedEntityName = GetEntityNameFromTableName(tableName);
 
                     if (expectedEntityName == "ExtraTabs")
                         expectedEntityName = "ExtraTab";
@@ -174,6 +172,13 @@ namespace OpenCart.Entities.Tests
         private bool TypeImplements(Type type, Type @interface)
         {
             return type.GetInterfaces().Any(x => x == @interface);
+        }
+
+        private string GetEntityNameFromTableName(string tableName)
+        {
+            return string.Concat(tableName.Split('_')
+                .Where(part => part.Length > 0 && part != "oc")
+                .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
         }
     }
 }

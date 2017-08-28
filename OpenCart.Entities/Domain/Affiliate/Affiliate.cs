@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_affiliate")]
-    public class Affiliate
+    public class Affiliate : IEntityWithStatus
     {
         [Key]
         public int affiliate_id { get; set; }

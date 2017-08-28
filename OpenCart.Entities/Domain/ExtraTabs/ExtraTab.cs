@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_extra_tabs")]
-    public class ExtraTab
+    public class ExtraTab : IEntityWithStatus
     {
         [Key, Column("extra_tab_id")]
         public int Id { get; protected set; }

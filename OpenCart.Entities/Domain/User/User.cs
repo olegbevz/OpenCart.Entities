@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_user")]
-    public class User
+    public class User : IEntityWithStatus
     {
         [Key, Column("user_id")]
         public int Id { get; set; }

@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_coupon")]
-    public class Coupon : IEntityWithName
+    public class Coupon : IEntityWithName, IEntityWithStatus
     {
         [Key]
         public int coupon_id { get; set; }
