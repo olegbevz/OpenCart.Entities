@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order_product")]
-    public class OrderProduct
+    public class OrderProduct : IEntityWithName
     {
         [Key]
         public int order_product_id { get; set; }

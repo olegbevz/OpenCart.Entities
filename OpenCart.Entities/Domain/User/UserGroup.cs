@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_user_group")]
-    public class UserGroup
+    public class UserGroup : IEntityWithName
     {
         [Key, Column("user_group_id")]
         public int Id { get; set; }

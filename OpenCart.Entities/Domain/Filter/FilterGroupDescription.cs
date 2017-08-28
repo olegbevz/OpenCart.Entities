@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_filter_group_description")]
-    public class FilterGroupDescription : Localizable
+    public class FilterGroupDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

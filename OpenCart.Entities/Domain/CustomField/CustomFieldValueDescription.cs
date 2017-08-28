@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_custom_field_value_description")]
-    public class CustomFieldValueDescription : Localizable
+    public class CustomFieldValueDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

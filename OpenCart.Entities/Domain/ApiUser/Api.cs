@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_api")]
-    public class Api
+    public class Api : IEntityWithName
     {
         [Key]
         public int api_id { get; set; }

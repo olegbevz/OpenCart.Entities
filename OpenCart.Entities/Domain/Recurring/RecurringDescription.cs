@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_recurring_description")]
-    public class RecurringDescription : Localizable
+    public class RecurringDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

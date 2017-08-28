@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order_custom_field")]
-    public class OrderCustomField
+    public class OrderCustomField : IEntityWithName
     {
         [Key]
         public int order_custom_field_id { get; set; }

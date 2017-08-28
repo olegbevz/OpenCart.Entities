@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_upload")]
-    public class Upload
+    public class Upload : IEntityWithName
     {
         [Key]
         public int upload_id { get; set; }

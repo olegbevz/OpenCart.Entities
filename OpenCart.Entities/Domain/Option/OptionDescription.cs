@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_option_description")]
-    public class OptionDescription : Localizable
+    public class OptionDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_filter_description")]
-    public class FilterDescription : Localizable
+    public class FilterDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

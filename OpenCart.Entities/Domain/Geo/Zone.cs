@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_zone")]
-    public class Zone
+    public class Zone : IEntityWithName
     {
         [Key]
         public int zone_id { get; set; }

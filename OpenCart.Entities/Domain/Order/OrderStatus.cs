@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order_status")]
-    public class OrderStatus : Localizable
+    public class OrderStatus : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_country")]
-    public class Country
+    public class Country : IEntityWithName
     {
         [Key, Column("country_id")]
         public int Id { get; set; }

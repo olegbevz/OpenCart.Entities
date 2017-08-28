@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_layout")]
-    public class Layout
+    public class Layout : IEntityWithName
     {
         [Key, Column("layout_id")]
         public int Id { get; set; }

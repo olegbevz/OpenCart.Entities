@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_voucher_theme_description")]
-    public class VoucherThemeDescription : Localizable
+    public class VoucherThemeDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]

@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_download_description")]
-    public class DownloadDescription : Localizable
+    public class DownloadDescription : Localizable, IEntityWithName
     {
         [Key]
         [Column(Order = 0)]
