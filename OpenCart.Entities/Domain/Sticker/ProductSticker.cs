@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_stickers")]
-    public class Sticker
+    public class ProductSticker
     {
         [Key]
         [Column("product_sticker_id")]
@@ -27,6 +27,6 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Background { get; set; }
 
-        public ICollection<StickerDescription> Descriptions { get; set; }
+        public ICollection<ProductStickerDescription> Descriptions { get; set; }
     }
 }

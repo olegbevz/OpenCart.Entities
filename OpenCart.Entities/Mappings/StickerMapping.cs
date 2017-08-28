@@ -2,7 +2,7 @@
 
 namespace OpenCart.Entities.Mappings
 {
-    class StickerMapping : EntityTypeConfiguration<Sticker>
+    class StickerMapping : EntityTypeConfiguration<ProductSticker>
     {
         public StickerMapping()
         {

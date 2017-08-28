@@ -4,13 +4,13 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_to_category")]
-    public class ProductCategory
+    public class ProductToCategory
     {
-        public ProductCategory()
+        public ProductToCategory()
         {
         }
 
-        public ProductCategory(Category category, bool isMainCategory = false)
+        public ProductToCategory(Category category, bool isMainCategory = false)
         {
             CategoryId = category.Id;
             Category = category;

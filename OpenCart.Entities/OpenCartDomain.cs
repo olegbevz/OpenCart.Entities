@@ -68,7 +68,7 @@ namespace OpenCart.Entities
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Sticker> Stickers { get; set; }
+        public virtual DbSet<ProductSticker> Stickers { get; set; }
         public virtual DbSet<Recurring> Recurrings { get; set; }
         public virtual DbSet<Return> Returns { get; set; }
         public virtual DbSet<ReturnAction> ReturnActions { get; set; }
@@ -90,8 +90,8 @@ namespace OpenCart.Entities
         public virtual DbSet<Zone> Zones { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserGroup> UserGroups { get; set; }
-        public virtual DbSet<WeightUnit> WeightUnits { get; set; }
-        public virtual DbSet<LengthUnit> LengthUnits { get; set; }
+        public virtual DbSet<WeightClass> WeightUnits { get; set; }
+        public virtual DbSet<LengthClass> LengthUnits { get; set; }
 
         public override int SaveChanges()
         {

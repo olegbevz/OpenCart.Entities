@@ -25,6 +25,46 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [Test]
+        public void AllEntitiesShouldHaveTheSameNameAsTable()
+        {
+            var entities = GetOpenCartEntities();
+
+            foreach (var entity in entities)
+            {
+                var tableAttribute = entity.GetCustomAttributes(typeof(TableAttribute), false)
+                    .FirstOrDefault() as TableAttribute;
+
+                if (tableAttribute != null)
+                {
+                    var tableName = tableAttribute.Name;
+                    var expectedEntityName = string.Concat(tableName.Split('_')
+                        .Where(part => part.Length > 0 && part != "oc")
+                        .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
+
+                    if (expectedEntityName == "ExtraTabs")
+                        expectedEntityName = "ExtraTab";
+
+                    if (expectedEntityName == "ExtraTabsDescription")
+                        expectedEntityName = "ExtraTabDescription";
+
+                    if (expectedEntityName == "ProductExtraTabs")
+                        expectedEntityName = "ProductExtraTab";
+
+                    if (expectedEntityName == "ProductStickers")
+                        expectedEntityName = "ProductSticker";
+
+                    if (expectedEntityName == "ProductStickersDescription")
+                        expectedEntityName = "ProductStickerDescription";
+
+                    Assert.AreEqual(
+                        expectedEntityName,
+                        entity.Name,
+                        $"Entity mapped to table '{tableName}' should have name '{expectedEntityName}'");
+                }
+            }
+        }
+
         [TestCase]
         public void AllEntityPropertiesHaveNameInPascalConvention()
         {

@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_stickers_description")]
-    public class StickerDescription : Localizable, IEntityWithTitle
+    public class ProductStickerDescription : Localizable, IEntityWithTitle
     {
         [Key]
         [Column("product_sticker_id", Order = 0)]

@@ -4,15 +4,15 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("oc_length_class")]
-    public class LengthUnit
+    [Table("oc_weight_class")]
+    public class WeightClass
     {
-        [Key, Column("length_class_id")]
+        [Key, Column("weight_class_id")]
         public int Id { get; set; }
 
         [Column("value")]
         public decimal Value { get; set; }
 
-        public virtual ICollection<LengthUnitDescription> Descriptions { get; protected set; }
+        public virtual ICollection<WeightClassDescription> Descriptions { get; protected set; }
     }
 }

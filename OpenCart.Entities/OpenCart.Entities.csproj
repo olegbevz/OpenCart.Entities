@@ -108,7 +108,7 @@
     <Compile Include="Domain\Customer\CustomerTransaction.cs" />
     <Compile Include="Domain\Customer\CustomeWishlist.cs" />
     <Compile Include="Domain\CustomField\CustomField.cs" />
-    <Compile Include="Domain\CustomField\CustomFieldToCustomerGroup.cs" />
+    <Compile Include="Domain\CustomField\CustomFieldCustomerGroup.cs" />
     <Compile Include="Domain\CustomField\CustomFieldDescription.cs" />
     <Compile Include="Domain\CustomField\CustomFieldValue.cs" />
     <Compile Include="Domain\CustomField\CustomFieldValueDescription.cs" />
@@ -131,8 +131,8 @@
     <Compile Include="Domain\Layout\Layout.cs" />
     <Compile Include="Domain\Layout\LayoutModule.cs" />
     <Compile Include="Domain\Layout\LayoutRoute.cs" />
-    <Compile Include="Domain\LengthUnit\LengthUnit.cs" />
-    <Compile Include="Domain\LengthUnit\LengthUnitDescription.cs" />
+    <Compile Include="Domain\LengthClass\LengthClass.cs" />
+    <Compile Include="Domain\LengthClass\LengthClassDescription.cs" />
     <Compile Include="Domain\Location.cs" />
     <Compile Include="Domain\Manufacturer\Manufacturer.cs" />
     <Compile Include="Domain\Manufacturer\ManufactorerDescription.cs" />
@@ -170,11 +170,11 @@
     <Compile Include="Domain\Product\ProductRecurring.cs" />
     <Compile Include="Domain\Product\ProductReward.cs" />
     <Compile Include="Domain\Product\ProductSpecial.cs" />
-    <Compile Include="Domain\Sticker\Sticker.cs" />
-    <Compile Include="Domain\Sticker\StickerDescription.cs" />
-    <Compile Include="Domain\Product\ProductCategory.cs" />
+    <Compile Include="Domain\Sticker\ProductSticker.cs" />
+    <Compile Include="Domain\Sticker\ProductStickerDescription.cs" />
+    <Compile Include="Domain\Product\ProductToCategory.cs" />
     <Compile Include="Domain\Product\ProductToDownload.cs" />
-    <Compile Include="Domain\Product\ProductLayout.cs" />
+    <Compile Include="Domain\Product\ProductToLayout.cs" />
     <Compile Include="Domain\Recurring\Recurring.cs" />
     <Compile Include="Domain\Recurring\RecurringDescription.cs" />
     <Compile Include="Domain\Return\Return.cs" />
@@ -200,8 +200,8 @@
     <Compile Include="Domain\Voucher\VoucherHistory.cs" />
     <Compile Include="Domain\Voucher\VoucherTheme.cs" />
     <Compile Include="Domain\Voucher\VoucherThemeDescription.cs" />
-    <Compile Include="Domain\WeightUnit\WeightUnit.cs" />
-    <Compile Include="Domain\WeightUnit\WeightUnitDescription.cs" />
+    <Compile Include="Domain\WeightClass\WeightClass.cs" />
+    <Compile Include="Domain\WeightClass\WeightClassDescription.cs" />
     <Compile Include="Domain\Geo\Zone.cs" />
     <Compile Include="Domain\Geo\ZoneToGeoZone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

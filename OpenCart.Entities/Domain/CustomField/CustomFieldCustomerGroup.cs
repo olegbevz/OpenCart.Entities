@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_custom_field_customer_group")]
-    public class CustomFieldToCustomerGroup
+    public class CustomFieldCustomerGroup
     {
         [Key]
         [Column(Order = 0)]

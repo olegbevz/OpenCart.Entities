@@ -24,10 +24,5 @@ namespace OpenCart.Entities.Tests
 
             return true;
         }
-
-        private static Exception ArgumentException(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

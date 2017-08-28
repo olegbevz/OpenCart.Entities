@@ -2,7 +2,7 @@
 
 namespace OpenCart.Entities
 {
-    internal class ProductLayoutMapping : EntityTypeConfiguration<ProductLayout>
+    internal class ProductLayoutMapping : EntityTypeConfiguration<ProductToLayout>
     {
         public ProductLayoutMapping()
         {

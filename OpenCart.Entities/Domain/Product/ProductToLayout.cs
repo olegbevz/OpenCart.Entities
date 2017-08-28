@@ -4,13 +4,13 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_to_layout")]
-    public class ProductLayout
+    public class ProductToLayout
     {
-        public ProductLayout()
+        public ProductToLayout()
         {
         }
 
-        public ProductLayout(Store store, Layout layout)
+        public ProductToLayout(Store store, Layout layout)
         {
             StoreId = store.Id;
             LayoutId = layout.Id;

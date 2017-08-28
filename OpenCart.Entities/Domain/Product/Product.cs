@@ -11,12 +11,12 @@ namespace OpenCart.Entities
     {
         public Product()
         {
-            Categories = new HashSet<ProductCategory>();
+            Categories = new HashSet<ProductToCategory>();
             Descriptions = new HashSet<ProductDescription>();
             Images = new HashSet<ProductImage>();
             Attributes = new HashSet<ProductAttribute>();
             Stores = new HashSet<Store>();
-            Layouts = new HashSet<ProductLayout>();
+            Layouts = new HashSet<ProductToLayout>();
             RelatedProducts = new HashSet<Product>();
             ExtraTabs = new HashSet<ProductExtraTab>();
         }
@@ -118,9 +118,9 @@ namespace OpenCart.Entities
 
         public virtual Manufacturer Manufacturer { get; protected set; }
 
-        public virtual WeightUnit WeightUnit { get; protected set; }
+        public virtual WeightClass WeightUnit { get; protected set; }
 
-        public virtual LengthUnit LengthUnit { get; protected set; }
+        public virtual LengthClass LengthUnit { get; protected set; }
 
         public virtual ICollection<ProductDescription> Descriptions { get; protected set; }
         
@@ -128,11 +128,11 @@ namespace OpenCart.Entities
 
         public virtual ICollection<ProductAttribute> Attributes { get; protected set; }
 
-        public virtual ICollection<ProductCategory> Categories { get; protected set; }
+        public virtual ICollection<ProductToCategory> Categories { get; protected set; }
 
         public virtual ICollection<Store> Stores { get; protected set; }
 
-        public virtual ICollection<ProductLayout> Layouts { get; protected set; }
+        public virtual ICollection<ProductToLayout> Layouts { get; protected set; }
 
         public virtual ICollection<Product> RelatedProducts { get; protected set; }
 

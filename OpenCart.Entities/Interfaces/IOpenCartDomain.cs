@@ -16,11 +16,11 @@ namespace OpenCart.Entities
         DbSet<User> Users { get; }
         DbSet<UserGroup> UserGroups { get; }
         DbSet<AttributeGroup> AttributeGroups { get; }
-        DbSet<WeightUnit> WeightUnits { get; }
-        DbSet<LengthUnit> LengthUnits { get; }
+        DbSet<WeightClass> WeightUnits { get; }
+        DbSet<LengthClass> LengthUnits { get; }
         DbSet<Store> Stores { get; }
         DbSet<ExtraTab> ExtraTabs { get; }
-        DbSet<Sticker> Stickers { get; }
+        DbSet<ProductSticker> Stickers { get; }
 
         int SaveChanges();
     }

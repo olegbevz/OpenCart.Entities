@@ -2,7 +2,7 @@
 
 namespace OpenCart.Entities
 {
-    internal class WeightUnitMapping : EntityTypeConfiguration<WeightUnit>
+    internal class WeightUnitMapping : EntityTypeConfiguration<WeightClass>
     {
         public WeightUnitMapping()
         {

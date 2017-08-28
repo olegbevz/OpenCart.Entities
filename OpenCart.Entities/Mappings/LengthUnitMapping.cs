@@ -2,7 +2,7 @@
 
 namespace OpenCart.Entities
 {
-    internal class LengthUnitMapping : EntityTypeConfiguration<LengthUnit>
+    internal class LengthUnitMapping : EntityTypeConfiguration<LengthClass>
     {
         public LengthUnitMapping()
         {

@@ -3,11 +3,11 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("oc_length_class_description")]
-    public class LengthUnitDescription : Localizable, IEntityWithTitle
+    [Table("oc_weight_class_description")]
+    public class WeightClassDescription : Localizable, IEntityWithTitle
     {
-        [Key, Column("length_class_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int LengthUnitId { get; set; }
+        [Key, Column("weight_class_id", Order = 0)]
+        public int WeightUnitId { get; set; }
 
         [Required, StringLength(32), Column("title")]
         public string Title { get; set; }
