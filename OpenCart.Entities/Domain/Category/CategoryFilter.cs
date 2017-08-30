@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class CategoryFilter
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("category_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("filter_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FilterId { get; set; }
     }

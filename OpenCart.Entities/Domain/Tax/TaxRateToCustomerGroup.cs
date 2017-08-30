@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class TaxRateToCustomerGroup
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("tax_rate_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TaxRateId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("custoemr_group_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
     }

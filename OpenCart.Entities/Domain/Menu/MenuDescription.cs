@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class MenuDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("menu_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MenuId { get; set; }
 

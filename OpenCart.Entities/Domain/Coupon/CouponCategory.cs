@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class CouponCategory
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("coupon_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CouponId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("category_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId { get; set; }
     }

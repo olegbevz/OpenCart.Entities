@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class ManufacturerToStore
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("manufacturer_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ManufacturerId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("store_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StoreId { get; set; }
     }

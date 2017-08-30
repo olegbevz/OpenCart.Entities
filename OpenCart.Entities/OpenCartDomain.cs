@@ -37,6 +37,7 @@ namespace OpenCart.Entities
 
         public virtual DbSet<Affiliate> Affiliates { get; set; }
         public virtual DbSet<Api> Apis { get; set; }
+        public virtual DbSet<Attribute> Attributes { get; set; }
         public virtual DbSet<AttributeGroup> AttributeGroups { get; set; }
         public virtual DbSet<Banner> Banners { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }

@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class CustomerGroupDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("customer_group_description", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; protected set; }
 

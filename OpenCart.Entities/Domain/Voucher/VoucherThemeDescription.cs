@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class VoucherThemeDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("voucher_theme_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int VoucherThemeId { get; set; }
 

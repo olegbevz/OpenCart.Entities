@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class CustomFieldValueDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("custom_field_value_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomFieldValueId { get; set; }
 

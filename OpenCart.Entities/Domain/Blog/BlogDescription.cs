@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class BlogDescription : Localizable, IEntityWithTitle
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("blog_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BlogId { get; set; }
 

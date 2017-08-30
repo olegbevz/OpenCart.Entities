@@ -10,17 +10,17 @@ namespace OpenCart.Entities
     public class ProductRecurring
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("product_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("recurring_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RecurringId { get; set; }
 
         [Key]
-        [Column(Order = 2)]
+        [Column("customer_group_id", Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
     }

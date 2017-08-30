@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class ReturnReason : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("return_reason_id", Order = 0)]
         public int Id { get; protected set; }
 
         [Required]

@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class ProductToDownload
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("product_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("download_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DownloadId { get; set; }
     }

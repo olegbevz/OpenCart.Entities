@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class InformationDescription : Localizable, IEntityWithTitle
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("information_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InformationId { get; set; }
 

@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class ReturnStatus : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("return_status_id", Order = 0)]
         public int Id { get; protected set; }
 
         [Required]

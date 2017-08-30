@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class CustomFieldCustomerGroup
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("custom_field_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomFieldId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("CustomerGroupId", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
 

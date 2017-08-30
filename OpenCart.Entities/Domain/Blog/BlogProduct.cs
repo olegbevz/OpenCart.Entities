@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class BlogProduct
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("blog_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BlogId { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("product_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
     }

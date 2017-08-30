@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class OptionDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("option_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OptionId { get; set; }
 
