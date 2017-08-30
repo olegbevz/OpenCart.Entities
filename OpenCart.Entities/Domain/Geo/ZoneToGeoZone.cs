@@ -8,17 +8,17 @@ namespace OpenCart.Entities
     public class ZoneToGeoZone
     {
         [Key]
-		[Column("zone_to_geo_zone_id")]
-        public int zone_to_geo_zone_id { get; set; }
+        [Column("zone_to_geo_zone_id")]
+        public int ZoneToGeoZoneId { get; set; }
 
-		[Column("country_id")]
-        public int country_id { get; set; }
+        [Column("country_id")]
+        public int CountryId { get; set; }
 
-		[Column("zone_id")]
-        public int zone_id { get; set; }
+        [Column("zone_id")]
+        public int ZoneId { get; set; }
 
-		[Column("geo_zone_id")]
-        public int geo_zone_id { get; set; }
+        [Column("geo_zone_id")]
+        public int GeoZoneId { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

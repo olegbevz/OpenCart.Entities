@@ -10,27 +10,27 @@ namespace OpenCart.Entities
     public class Review : IEntityWithStatus
     {
         [Key]
-		[Column("review_id")]
-        public int review_id { get; set; }
+        [Column("review_id")]
+        public int ReviewId { get; set; }
 
-		[Column("product_id")]
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("author")]
-        public string author { get; set; }
+        [Column("author")]
+        public string Author { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("text", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string text { get; set; }
+        public string Text { get; set; }
 
-		[Column("rating")]
-        public int rating { get; set; }
+        [Column("rating")]
+        public int Rating { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }

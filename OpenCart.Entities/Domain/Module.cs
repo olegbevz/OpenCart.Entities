@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class Module : IEntityWithName
     {
         [Key]
-		[Column("module_id")]
-        public int module_id { get; set; }
+        [Column("module_id")]
+        public int ModuleId { get; set; }
 
         [Required]
         [StringLength(64)]
@@ -23,9 +23,9 @@ namespace OpenCart.Entities
         [Column("code")]
         public string Code { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("setting", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string setting { get; set; }
+        public string Setting { get; set; }
     }
 }

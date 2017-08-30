@@ -12,12 +12,12 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int customer_id { get; set; }
+        public int CustomerId { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int product_id { get; set; }
+        public int ProductId { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

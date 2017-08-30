@@ -10,36 +10,36 @@ namespace OpenCart.Entities
     public class CustomerSearch
     {
         [Key]
-		[Column("customer_search_id")]
-        public int customer_search_id { get; set; }
+        [Column("customer_search_id")]
+        public int CustomerSearchId { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Column("language_id")] public int LanguageId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("keyword")]
-        public string keyword { get; set; }
+        [Column("keyword")]
+        public string Keyword { get; set; }
 
-		[Column("category_id")]
-        public int? category_id { get; set; }
+        [Column("category_id")]
+        public int? CategoryId { get; set; }
 
         public bool sub_category { get; set; }
 
         public bool description { get; set; }
 
-		[Column("products")]
-        public int products { get; set; }
+        [Column("products")]
+        public int Products { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

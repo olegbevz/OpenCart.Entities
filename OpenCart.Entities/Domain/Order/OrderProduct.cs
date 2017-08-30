@@ -10,14 +10,14 @@ namespace OpenCart.Entities
     public class OrderProduct : IEntityWithName
     {
         [Key]
-		[Column("order_product_id")]
-        public int order_product_id { get; set; }
+        [Column("order_product_id")]
+        public int OrderProductId { get; set; }
 
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
-		[Column("product_id")]
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -26,19 +26,22 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
-		[Column("model")]
-        public string model { get; set; }
+        [Column("model")]
+        public string Model { get; set; }
 
-		[Column("quantity")]
-        public int quantity { get; set; }
+        [Column("quantity")]
+        public int Quantity { get; set; }
 
-        public decimal price { get; set; }
+        [Column("price")]
+        public decimal Price { get; set; }
 
-        public decimal total { get; set; }
+        [Column("total")]
+        public decimal Total { get; set; }
 
-        public decimal tax { get; set; }
+        [Column("tax")]
+        public decimal Tax { get; set; }
 
-		[Column("reward")]
-        public int reward { get; set; }
+        [Column("reward")]
+        public int Reward { get; set; }
     }
 }

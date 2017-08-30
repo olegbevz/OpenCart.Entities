@@ -10,16 +10,16 @@ namespace OpenCart.Entities
     public class CustomerHistory
     {
         [Key]
-		[Column("customer_history_id")]
-        public int customer_history_id { get; set; }
+        [Column("customer_history_id")]
+        public int CustomerHistoryId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("comment", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string comment { get; set; }
+        public string Comment { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

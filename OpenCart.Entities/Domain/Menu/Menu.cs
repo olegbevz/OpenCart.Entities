@@ -10,21 +10,21 @@ namespace OpenCart.Entities
     public class Menu : IEntityWithStatus
     {
         [Key]
-		[Column("menu_id")]
-        public int menu_id { get; set; }
+        [Column("menu_id")]
+        public int MenuId { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Required]
         [StringLength(6)]
-		[Column("type")]
-        public string type { get; set; }
+        [Column("type")]
+        public string Type { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("link")]
-        public string link { get; set; }
+        [Column("link")]
+        public string Link { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

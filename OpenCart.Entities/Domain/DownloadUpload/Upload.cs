@@ -8,8 +8,8 @@ namespace OpenCart.Entities
     public class Upload : IEntityWithName
     {
         [Key]
-		[Column("upload_id")]
-        public int upload_id { get; set; }
+        [Column("upload_id")]
+        public int UploadId { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -18,8 +18,8 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(255)]
-		[Column("filename")]
-        public string filename { get; set; }
+        [Column("filename")]
+        public string Filename { get; set; }
 
         [Required]
         [StringLength(255)]

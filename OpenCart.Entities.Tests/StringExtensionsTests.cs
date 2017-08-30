@@ -11,6 +11,7 @@ namespace OpenCart.Entities.Tests
         [TestCase("StockStatus", true)]
         [TestCase("stockStatus", false)]
         [TestCase("stockstatus", false)]
+        [TestCase("SKU", true)]
         public void ShouldDeterminePascalConvention(string value, bool inPascal)
         {
             Assert.AreEqual(value.InPascal(), inPascal);

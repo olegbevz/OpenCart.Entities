@@ -64,7 +64,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllEntityPropertiesHaveNameInPascalConvention()
+        public void AllEntityPropertiesShouldHaveNameInPascalConvention()
         {
             var entities = GetOpenCartEntities();
 

@@ -9,11 +9,13 @@ namespace OpenCart.Entities.Examples
         {
             try
             {
-                using (IOpenCartDomain openCartDomain = new OpenCartDomain())
+                using (var openCartDomain = new OpenCartDomain())
                 {
                     var products = openCartDomain.Products.Include("Manufacturer")
                         .Where(product => product.Manufacturer.Name == "Casio")
                         .ToArray();
+
+                    var orders = openCartDomain.Orders.ToArray();
                 }
             }
             catch (Exception ex)

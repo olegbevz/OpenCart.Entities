@@ -10,28 +10,28 @@ namespace OpenCart.Entities
     public class CustomField : IEntityWithStatus
     {
         [Key]
-		[Column("custom_field_id")]
-        public int custom_field_id { get; set; }
+        [Column("custom_field_id")]
+        public int CustomFieldId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("type")]
-        public string type { get; set; }
+        [Column("type")]
+        public string Type { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("value", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string value { get; set; }
+        public string Value { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("validation")]
-        public string validation { get; set; }
+        [Column("validation")]
+        public string Validation { get; set; }
 
         [Required]
         [StringLength(7)]
-		[Column("location")]
-        public string location { get; set; }
+        [Column("location")]
+        public string Location { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }

@@ -12,16 +12,16 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int product_id { get; set; }
+        public int ProductId { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int product_image_id { get; set; }
+        public int ProductImageId { get; set; }
 
         [Key]
         [Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int option_value_id { get; set; }
+        public int OptionValueId { get; set; }
     }
 }

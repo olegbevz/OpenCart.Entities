@@ -8,18 +8,18 @@ namespace OpenCart.Entities
     public class Api : IEntityWithName, IEntityWithStatus
     {
         [Key]
-		[Column("api_id")]
-        public int api_id { get; set; }
+        [Column("api_id")]
+        public int ApiId { get; set; }
 
         [Required]
         [StringLength(64)]
         [Column("name")]
         public string Name { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("key", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string key { get; set; }
+        public string Key { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }

@@ -10,21 +10,22 @@ namespace OpenCart.Entities
     public class AffiliateTransaction
     {
         [Key]
-		[Column("affiliate_transaction_id")]
-        public int affiliate_transaction_id { get; set; }
+        [Column("affiliate_transaction_id")]
+        public int AffiliateTransactionId { get; set; }
 
-		[Column("affiliate_id")]
-        public int affiliate_id { get; set; }
+        [Column("affiliate_id")]
+        public int AffiliateId { get; set; }
 
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
         [Column("description", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string Description { get; set; }
 
-        public decimal amount { get; set; }
+        [Column("amount")]
+        public decimal Amount { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

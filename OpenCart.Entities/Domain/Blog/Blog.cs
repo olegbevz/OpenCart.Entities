@@ -10,12 +10,12 @@ namespace OpenCart.Entities
     public class Blog : IEntityWithStatus
     {
         [Key]
-		[Column("blog_id")]
-        public int blog_id { get; set; }
+        [Column("blog_id")]
+        public int BlogId { get; set; }
 
         [StringLength(255)]
-		[Column("image")]
-        public string image { get; set; }
+        [Column("image")]
+        public string Image { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
@@ -23,8 +23,8 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_available { get; set; }
+        [Column("date_available", TypeName = "date")]
+        public DateTime DateAvailable { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

@@ -17,12 +17,12 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("color", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string Color { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("background", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string Background { get; set; }

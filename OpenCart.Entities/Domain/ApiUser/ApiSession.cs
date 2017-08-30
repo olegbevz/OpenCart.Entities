@@ -8,31 +8,31 @@ namespace OpenCart.Entities
     public class ApiSession
     {
         [Key]
-		[Column("api_session_id")]
-        public int api_session_id { get; set; }
+        [Column("api_session_id")]
+        public int ApiSessionId { get; set; }
 
-		[Column("api_id")]
-        public int api_id { get; set; }
-
-        [Required]
-        [StringLength(32)]
-		[Column("token")]
-        public string token { get; set; }
+        [Column("api_id")]
+        public int ApiId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("session_id")]
-        public string session_id { get; set; }
+        [Column("token")]
+        public string Token { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("session_name")]
-        public string session_name { get; set; }
+        [Column("session_id")]
+        public string SessionId { get; set; }
+
+        [Required]
+        [StringLength(32)]
+        [Column("session_name")]
+        public string SessionName { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

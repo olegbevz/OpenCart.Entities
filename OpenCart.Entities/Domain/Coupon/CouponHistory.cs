@@ -10,19 +10,20 @@ namespace OpenCart.Entities
     public class CouponHistory
     {
         [Key]
-		[Column("coupon_history_id")]
-        public int coupon_history_id { get; set; }
+        [Column("coupon_history_id")]
+        public int CouponHistoryId { get; set; }
 
-		[Column("coupon_id")]
-        public int coupon_id { get; set; }
+        [Column("coupon_id")]
+        public int CouponId { get; set; }
 
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-        public decimal amount { get; set; }
+        [Column("amount")]
+        public decimal Amount { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

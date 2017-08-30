@@ -12,7 +12,7 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int custom_field_id { get; set; }
+        public int CustomFieldId { get; set; }
 
         [Required]
         [StringLength(128)]

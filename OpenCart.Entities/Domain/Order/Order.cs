@@ -10,263 +10,266 @@ namespace OpenCart.Entities
     public class Order
     {
         [Key]
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
-		[Column("invoice_no")]
-        public int invoice_no { get; set; }
+        [Column("invoice_no")]
+        public int InvoiceNo { get; set; }
 
         [Required]
         [StringLength(26)]
-		[Column("invoice_prefix")]
-        public string invoice_prefix { get; set; }
+        [Column("invoice_prefix")]
+        public string InvoicePrefix { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("store_name")]
-        public string store_name { get; set; }
+        [Column("store_name")]
+        public string StoreName { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("store_url")]
-        public string store_url { get; set; }
+        [Column("store_url")]
+        public string StoreUrl { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-		[Column("customer_group_id")]
-        public int customer_group_id { get; set; }
-
-        [Required]
-        [StringLength(32)]
-		[Column("firstname")]
-        public string firstname { get; set; }
+        [Column("customer_group_id")]
+        public int CustomerGroupId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("lastname")]
-        public string lastname { get; set; }
+        [Column("firstname")]
+        public string Firstname { get; set; }
+
+        [Required]
+        [StringLength(32)]
+        [Column("lastname")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(96)]
-		[Column("email")]
-        public string email { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("telephone")]
-        public string telephone { get; set; }
+        [Column("telephone")]
+        public string Telephone { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("fax")]
-        public string fax { get; set; }
+        [Column("fax")]
+        public string Fax { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string custom_field { get; set; }
+        public string CustomField { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("payment_firstname")]
-        public string payment_firstname { get; set; }
+        [Column("payment_firstname")]
+        public string PaymentFirstname { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("payment_lastname")]
-        public string payment_lastname { get; set; }
+        [Column("payment_lastname")]
+        public string PaymentLastname { get; set; }
 
         [Required]
         [StringLength(60)]
-		[Column("payment_company")]
-        public string payment_company { get; set; }
+        [Column("payment_company")]
+        public string PaymentCompany { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_address_1")]
-        public string payment_address_1 { get; set; }
+        [Column("payment_address_1")]
+        public string PaymentAddress1 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_address_2")]
-        public string payment_address_2 { get; set; }
+        [Column("payment_address_2")]
+        public string PaymentAddress2 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_city")]
-        public string payment_city { get; set; }
+        [Column("payment_city")]
+        public string PaymentCity { get; set; }
 
         [Required]
         [StringLength(10)]
-		[Column("payment_postcode")]
-        public string payment_postcode { get; set; }
+        [Column("payment_postcode")]
+        public string PaymentPostcode { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_country")]
-        public string payment_country { get; set; }
+        [Column("payment_country")]
+        public string PaymentCountry { get; set; }
 
-		[Column("payment_country_id")]
-        public int payment_country_id { get; set; }
+        [Column("payment_country_id")]
+        public int PaymentCountryId { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_zone")]
-        public string payment_zone { get; set; }
+        [Column("payment_zone")]
+        public string PaymentZone { get; set; }
 
-		[Column("payment_zone_id")]
-        public int payment_zone_id { get; set; }
+        [Column("payment_zone_id")]
+        public int PaymentZoneId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("payment_address_format", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string payment_address_format { get; set; }
+        public string PaymentAddressFormat { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("payment_custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string payment_custom_field { get; set; }
+        public string PaymentCustomField { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_method")]
-        public string payment_method { get; set; }
+        [Column("payment_method")]
+        public string PaymentMethod { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("payment_code")]
-        public string payment_code { get; set; }
+        [Column("payment_code")]
+        public string PaymentCode { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("shipping_firstname")]
-        public string shipping_firstname { get; set; }
+        [Column("shipping_firstname")]
+        public string ShippingFirstname { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("shipping_lastname")]
-        public string shipping_lastname { get; set; }
+        [Column("shipping_lastname")]
+        public string ShippingLastname { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("shipping_company")]
-        public string shipping_company { get; set; }
+        [Column("shipping_company")]
+        public string ShippingCompany { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_address_1")]
-        public string shipping_address_1 { get; set; }
+        [Column("shipping_address_1")]
+        public string ShippingAddress1 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_address_2")]
-        public string shipping_address_2 { get; set; }
+        [Column("shipping_address_2")]
+        public string ShippingAddress2 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_city")]
-        public string shipping_city { get; set; }
+        [Column("shipping_city")]
+        public string ShippingCity { get; set; }
 
         [Required]
         [StringLength(10)]
-		[Column("shipping_postcode")]
-        public string shipping_postcode { get; set; }
+        [Column("shipping_postcode")]
+        public string ShippingPostcode { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_country")]
-        public string shipping_country { get; set; }
+        [Column("shipping_country")]
+        public string ShippingCountry { get; set; }
 
-		[Column("shipping_country_id")]
-        public int shipping_country_id { get; set; }
+        [Column("shipping_country_id")]
+        public int ShippingCountryId { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_zone")]
-        public string shipping_zone { get; set; }
+        [Column("shipping_zone")]
+        public string ShippingZone { get; set; }
 
-		[Column("shipping_zone_id")]
-        public int shipping_zone_id { get; set; }
+        [Column("shipping_zone_id")]
+        public int ShippingZoneId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("shipping_address_format", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string shipping_address_format { get; set; }
+        public string ShippingAddressFormat { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("shipping_custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string shipping_custom_field { get; set; }
+        public string ShippingCustomField { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_method")]
-        public string shipping_method { get; set; }
+        [Column("shipping_method")]
+        public string ShippingMethod { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("shipping_code")]
-        public string shipping_code { get; set; }
+        [Column("shipping_code")]
+        public string ShippingCode { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("comment", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string comment { get; set; }
+        public string Comment { get; set; }
 
-        public decimal total { get; set; }
+        [Column("total")]
+        public decimal Total { get; set; }
 
-		[Column("order_status_id")]
-        public int order_status_id { get; set; }
+        [Column("order_status_id")]
+        public int OrderStatusId { get; set; }
 
-		[Column("affiliate_id")]
-        public int affiliate_id { get; set; }
+        [Column("affiliate_id")]
+        public int AffiliateId { get; set; }
 
-        public decimal commission { get; set; }
+        [Column("commission")]
+        public decimal Commission { get; set; }
 
-		[Column("marketing_id")]
-        public int marketing_id { get; set; }
+        [Column("marketing_id")]
+        public int MarketingId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("tracking")]
-        public string tracking { get; set; }
+        [Column("tracking")]
+        public string Tracking { get; set; }
 
         [Column("language_id")]
         public int LanguageId { get; set; }
 
-		[Column("currency_id")]
-        public int currency_id { get; set; }
+        [Column("currency_id")]
+        public int CurrencyId { get; set; }
 
         [Required]
         [StringLength(3)]
-		[Column("currency_code")]
-        public string currency_code { get; set; }
+        [Column("currency_code")]
+        public string CurrencyCode { get; set; }
 
-        public decimal currency_value { get; set; }
-
-        [Required]
-        [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("currency_value")]
+        public decimal CurrencyValue { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("forwarded_ip")]
-        public string forwarded_ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
+
+        [Required]
+        [StringLength(40)]
+        [Column("forwarded_ip")]
+        public string ForwardedIp { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("user_agent")]
-        public string user_agent { get; set; }
+        [Column("user_agent")]
+        public string UserAgent { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("accept_language")]
-        public string accept_language { get; set; }
+        [Column("accept_language")]
+        public string AcceptLanguage { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

@@ -7,24 +7,24 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_theme")]
-    public class Theme
+    public class Theme : IEntityWithName
     {
         [Key]
-		[Column("theme_id")]
-        public int theme_id { get; set; }
+        [Column("theme_id")]
+        public int ThemeId { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
-
-        [Required]
-        [StringLength(64)]
-		[Column("theme")]
-        public string theme { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("route")]
-        public string route { get; set; }
+        [Column("theme")]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(64)]
+        [Column("route")]
+        public string Route { get; set; }
 
         [Column("code", TypeName = "text")]
         [Required]

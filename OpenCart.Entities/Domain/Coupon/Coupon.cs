@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class Coupon : IEntityWithName, IEntityWithStatus
     {
         [Key]
-		[Column("coupon_id")]
-        public int coupon_id { get; set; }
+        [Column("coupon_id")]
+        public int CouponId { get; set; }
 
         [Required]
         [StringLength(128)]
@@ -23,32 +23,34 @@ namespace OpenCart.Entities
         [Column("code")]
         public string Code { get; set; }
 
-        [Column(TypeName = "char")]
+        [Column("type", TypeName = "char")]
         [Required]
         [StringLength(1)]
-        public string type { get; set; }
+        public string Type { get; set; }
 
-        public decimal discount { get; set; }
+        [Column("discount")]
+        public decimal Discount { get; set; }
 
         public bool logged { get; set; }
 
         public bool shipping { get; set; }
 
-        public decimal total { get; set; }
+        [Column("total")]
+        public decimal Total { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_start { get; set; }
+        [Column("date_start", TypeName = "date")]
+        public DateTime DateStart { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_end { get; set; }
+        [Column("date_end", TypeName = "date")]
+        public DateTime DateEnd { get; set; }
 
-		[Column("uses_total")]
-        public int uses_total { get; set; }
+        [Column("uses_total")]
+        public int UsesTotal { get; set; }
 
         [Required]
         [StringLength(11)]
-		[Column("uses_customer")]
-        public string uses_customer { get; set; }
+        [Column("uses_customer")]
+        public string UsesCustomer { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }

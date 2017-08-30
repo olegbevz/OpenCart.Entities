@@ -11,11 +11,11 @@ namespace OpenCart.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("menu_module_id")]
-        public int menu_module_id { get; set; }
+        [Column("menu_module_id")]
+        public int MenuModuleId { get; set; }
 
-		[Column("menu_id")]
-        public int menu_id { get; set; }
+        [Column("menu_id")]
+        public int MenuId { get; set; }
 
         [Required]
         [StringLength(64)]

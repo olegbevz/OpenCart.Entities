@@ -10,38 +10,42 @@ namespace OpenCart.Entities
     public class Recurring
     {
         [Key]
-		[Column("recurring_id")]
-        public int recurring_id { get; set; }
+        [Column("recurring_id")]
+        public int RecurringId { get; set; }
 
-        public decimal price { get; set; }
+        [Column("price")]
+        public decimal Price { get; set; }
 
-        [Column(TypeName = "enum")]
+        [Column("frequency", TypeName = "enum")]
         [Required]
         [StringLength(65532)]
-        public string frequency { get; set; }
+        public string Frequency { get; set; }
 
-        [Column(TypeName = "uint")]
-        public long duration { get; set; }
+        [Column("duration", TypeName = "uint")]
+        public long Duration { get; set; }
 
-        [Column(TypeName = "uint")]
-        public long cycle { get; set; }
+        [Column("cycle", TypeName = "uint")]
+        public long Cycle { get; set; }
 
-        public sbyte trial_status { get; set; }
+        [Column("trial_status")]
+        public sbyte TrialStatus { get; set; }
 
-        public decimal trial_price { get; set; }
+        [Column("trial_price")]
+        public decimal TrialPrice { get; set; }
 
-        [Column(TypeName = "enum")]
+        [Column("trial_frequency", TypeName = "enum")]
         [Required]
         [StringLength(65532)]
-        public string trial_frequency { get; set; }
+        public string TrialFrequency { get; set; }
 
-        [Column(TypeName = "uint")]
-        public long trial_duration { get; set; }
+        [Column("trial_duration", TypeName = "uint")]
+        public long TrialDuration { get; set; }
 
-        [Column(TypeName = "uint")]
-        public long trial_cycle { get; set; }
+        [Column("trial_cycle", TypeName = "uint")]
+        public long TrialCycle { get; set; }
 
-        public sbyte status { get; set; }
+        [Column("status")]
+        public sbyte Status { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

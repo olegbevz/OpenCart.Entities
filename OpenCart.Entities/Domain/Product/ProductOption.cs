@@ -10,19 +10,19 @@ namespace OpenCart.Entities
     public class ProductOption
     {
         [Key]
-		[Column("product_option_id")]
-        public int product_option_id { get; set; }
+        [Column("product_option_id")]
+        public int ProductOptionId { get; set; }
 
-		[Column("product_id")]
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
 
-		[Column("option_id")]
-        public int option_id { get; set; }
+        [Column("option_id")]
+        public int OptionId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("value", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string value { get; set; }
+        public string Value { get; set; }
 
         public bool required { get; set; }
     }

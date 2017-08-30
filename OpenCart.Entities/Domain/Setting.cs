@@ -10,11 +10,11 @@ namespace OpenCart.Entities
     public class Setting
     {
         [Key]
-		[Column("setting_id")]
-        public int setting_id { get; set; }
+        [Column("setting_id")]
+        public int SettingId { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Required]
         [StringLength(32)]
@@ -23,13 +23,13 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
-		[Column("key")]
-        public string key { get; set; }
+        [Column("key")]
+        public string Key { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("value", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string value { get; set; }
+        public string Value { get; set; }
 
         public bool serialized { get; set; }
     }

@@ -10,75 +10,75 @@ namespace OpenCart.Entities
     public class Customer : IEntityWithStatus
     {
         [Key]
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-		[Column("customer_group_id")]
-        public int customer_group_id { get; set; }
+        [Column("customer_group_id")]
+        public int CustomerGroupId { get; set; }
 
-		[Column("store_id")]
-        public int store_id { get; set; }
+        [Column("store_id")]
+        public int StoreId { get; set; }
 
         [Column("language_id")]
         public int LanguageId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("firstname")]
-        public string firstname { get; set; }
+        [Column("firstname")]
+        public string Firstname { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("lastname")]
-        public string lastname { get; set; }
+        [Column("lastname")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(96)]
-		[Column("email")]
-        public string email { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("telephone")]
-        public string telephone { get; set; }
+        [Column("telephone")]
+        public string Telephone { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("fax")]
-        public string fax { get; set; }
+        [Column("fax")]
+        public string Fax { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("password")]
-        public string password { get; set; }
+        [Column("password")]
+        public string Password { get; set; }
 
         [Required]
         [StringLength(9)]
-		[Column("salt")]
-        public string salt { get; set; }
+        [Column("salt")]
+        public string Salt { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("cart", TypeName = "text")]
         [StringLength(65535)]
-        public string cart { get; set; }
+        public string Cart { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("wishlist", TypeName = "text")]
         [StringLength(65535)]
-        public string wishlist { get; set; }
+        public string Wishlist { get; set; }
 
         public bool newsletter { get; set; }
 
-		[Column("address_id")]
-        public int address_id { get; set; }
+        [Column("address_id")]
+        public int AddressId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string custom_field { get; set; }
+        public string CustomField { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }
@@ -87,10 +87,10 @@ namespace OpenCart.Entities
 
         public bool safe { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("token", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string token { get; set; }
+        public string Token { get; set; }
 
         [Required]
         [StringLength(40)]

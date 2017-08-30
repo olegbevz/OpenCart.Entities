@@ -9,7 +9,7 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int voucher_theme_id { get; set; }
+        public int VoucherThemeId { get; set; }
 
         [Required]
         [StringLength(32)]

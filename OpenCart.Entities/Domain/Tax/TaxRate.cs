@@ -10,23 +10,24 @@ namespace OpenCart.Entities
     public class TaxRate : IEntityWithName
     {
         [Key]
-		[Column("tax_rate_id")]
-        public int tax_rate_id { get; set; }
+        [Column("tax_rate_id")]
+        public int TaxRateId { get; set; }
 
-		[Column("geo_zone_id")]
-        public int geo_zone_id { get; set; }
+        [Column("geo_zone_id")]
+        public int GeoZoneId { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("name")]
         public string Name { get; set; }
 
-        public decimal rate { get; set; }
+        [Column("rate")]
+        public decimal Rate { get; set; }
 
-        [Column(TypeName = "char")]
+        [Column("type", TypeName = "char")]
         [Required]
         [StringLength(1)]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

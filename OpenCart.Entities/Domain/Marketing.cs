@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class Marketing : IEntityWithName
     {
         [Key]
-		[Column("marketing_id")]
-        public int marketing_id { get; set; }
+        [Column("marketing_id")]
+        public int MarketingId { get; set; }
 
         [Required]
         [StringLength(32)]
@@ -28,8 +28,8 @@ namespace OpenCart.Entities
         [Column("code")]
         public string Code { get; set; }
 
-		[Column("clicks")]
-        public int clicks { get; set; }
+        [Column("clicks")]
+        public int Clicks { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

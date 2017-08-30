@@ -10,14 +10,14 @@ namespace OpenCart.Entities
     public class OrderVoucher
     {
         [Key]
-		[Column("order_voucher_id")]
-        public int order_voucher_id { get; set; }
+        [Column("order_voucher_id")]
+        public int OrderVoucherId { get; set; }
 
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
-		[Column("voucher_id")]
-        public int voucher_id { get; set; }
+        [Column("voucher_id")]
+        public int VoucherId { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -31,32 +31,33 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
-		[Column("from_name")]
-        public string from_name { get; set; }
+        [Column("from_name")]
+        public string FromName { get; set; }
 
         [Required]
         [StringLength(96)]
-		[Column("from_email")]
-        public string from_email { get; set; }
+        [Column("from_email")]
+        public string FromEmail { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("to_name")]
-        public string to_name { get; set; }
+        [Column("to_name")]
+        public string ToName { get; set; }
 
         [Required]
         [StringLength(96)]
-		[Column("to_email")]
-        public string to_email { get; set; }
+        [Column("to_email")]
+        public string ToEmail { get; set; }
 
-		[Column("voucher_theme_id")]
-        public int voucher_theme_id { get; set; }
+        [Column("voucher_theme_id")]
+        public int VoucherThemeId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("message", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string message { get; set; }
+        public string Message { get; set; }
 
-        public decimal amount { get; set; }
+        [Column("amount")]
+        public decimal Amount { get; set; }
     }
 }

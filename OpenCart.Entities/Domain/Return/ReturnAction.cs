@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column(Order = 0)]
-        public int return_action_id { get; set; }
+        public int ReturnActionId { get; set; }
 
         [Required]
         [StringLength(64)]

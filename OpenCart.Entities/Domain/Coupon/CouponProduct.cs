@@ -10,13 +10,13 @@ namespace OpenCart.Entities
     public class CouponProduct
     {
         [Key]
-		[Column("coupon_product_id")]
-        public int coupon_product_id { get; set; }
+        [Column("coupon_product_id")]
+        public int CouponProductId { get; set; }
 
-		[Column("coupon_id")]
-        public int coupon_id { get; set; }
+        [Column("coupon_id")]
+        public int CouponId { get; set; }
 
-		[Column("product_id")]
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
     }
 }

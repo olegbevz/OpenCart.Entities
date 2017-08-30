@@ -9,7 +9,7 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int filter_group_id { get; set; }
+        public int FilterGroupId { get; set; }
 
         [Required]
         [StringLength(64)]

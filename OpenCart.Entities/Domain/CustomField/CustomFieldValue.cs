@@ -10,11 +10,11 @@ namespace OpenCart.Entities
     public class CustomFieldValue
     {
         [Key]
-		[Column("custom_field_value_id")]
-        public int custom_field_value_id { get; set; }
+        [Column("custom_field_value_id")]
+        public int CustomFieldValueId { get; set; }
 
-		[Column("custom_field_id")]
-        public int custom_field_id { get; set; }
+        [Column("custom_field_id")]
+        public int CustomFieldId { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

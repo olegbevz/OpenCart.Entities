@@ -10,46 +10,46 @@ namespace OpenCart.Entities
     public class Location : IEntityWithName
     {
         [Key]
-		[Column("location_id")]
-        public int location_id { get; set; }
+        [Column("location_id")]
+        public int LocationId { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("name")]
         public string Name { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("address", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string address { get; set; }
+        public string Address { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("telephone")]
-        public string telephone { get; set; }
+        [Column("telephone")]
+        public string Telephone { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("fax")]
-        public string fax { get; set; }
+        [Column("fax")]
+        public string Fax { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("geocode")]
-        public string geocode { get; set; }
+        [Column("geocode")]
+        public string Geocode { get; set; }
 
         [StringLength(255)]
-		[Column("image")]
-        public string image { get; set; }
+        [Column("image")]
+        public string Image { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("open", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string open { get; set; }
+        public string Open { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("comment", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string comment { get; set; }
+        public string Comment { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int recurring_id { get; set; }
+        public int RecurringId { get; set; }
 
         [Required]
         [StringLength(255)]

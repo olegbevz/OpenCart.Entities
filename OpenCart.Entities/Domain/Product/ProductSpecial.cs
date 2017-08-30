@@ -10,24 +10,25 @@ namespace OpenCart.Entities
     public class ProductSpecial
     {
         [Key]
-		[Column("product_special_id")]
-        public int product_special_id { get; set; }
+        [Column("product_special_id")]
+        public int ProductSpecialId { get; set; }
 
-		[Column("product_id")]
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
 
-		[Column("customer_group_id")]
-        public int customer_group_id { get; set; }
+        [Column("customer_group_id")]
+        public int CustomerGroupId { get; set; }
 
-		[Column("priority")]
-        public int priority { get; set; }
+        [Column("priority")]
+        public int Priority { get; set; }
 
-        public decimal price { get; set; }
+        [Column("price")]
+        public decimal Price { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_start { get; set; }
+        [Column("date_start", TypeName = "date")]
+        public DateTime DateStart { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_end { get; set; }
+        [Column("date_end", TypeName = "date")]
+        public DateTime DateEnd { get; set; }
     }
 }

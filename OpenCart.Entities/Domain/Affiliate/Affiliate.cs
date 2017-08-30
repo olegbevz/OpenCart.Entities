@@ -10,136 +10,137 @@ namespace OpenCart.Entities
     public class Affiliate : IEntityWithStatus
     {
         [Key]
-		[Column("affiliate_id")]
-        public int affiliate_id { get; set; }
+        [Column("affiliate_id")]
+        public int AffiliateId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("firstname")]
-        public string firstname { get; set; }
+        [Column("firstname")]
+        public string Firstname { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("lastname")]
-        public string lastname { get; set; }
+        [Column("lastname")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(96)]
-		[Column("email")]
-        public string email { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("telephone")]
-        public string telephone { get; set; }
+        [Column("telephone")]
+        public string Telephone { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("fax")]
-        public string fax { get; set; }
+        [Column("fax")]
+        public string Fax { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("password")]
-        public string password { get; set; }
+        [Column("password")]
+        public string Password { get; set; }
 
         [Required]
         [StringLength(9)]
-		[Column("salt")]
-        public string salt { get; set; }
+        [Column("salt")]
+        public string Salt { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("company")]
-        public string company { get; set; }
+        [Column("company")]
+        public string Company { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("website")]
-        public string website { get; set; }
+        [Column("website")]
+        public string Website { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("address_1")]
-        public string address_1 { get; set; }
+        [Column("address_1")]
+        public string Address1 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("address_2")]
-        public string address_2 { get; set; }
+        [Column("address_2")]
+        public string Address2 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("city")]
-        public string city { get; set; }
+        [Column("city")]
+        public string City { get; set; }
 
         [Required]
         [StringLength(10)]
-		[Column("postcode")]
-        public string postcode { get; set; }
+        [Column("postcode")]
+        public string Postcode { get; set; }
 
-		[Column("country_id")]
-        public int country_id { get; set; }
+        [Column("country_id")]
+        public int CountryId { get; set; }
 
-		[Column("zone_id")]
-        public int zone_id { get; set; }
+        [Column("zone_id")]
+        public int ZoneId { get; set; }
 
         [Required]
         [StringLength(64)]
         [Column("code")]
         public string Code { get; set; }
 
-        public decimal commission { get; set; }
+        [Column("commission")]
+        public decimal Commission { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("tax")]
-        public string tax { get; set; }
+        [Column("tax")]
+        public string Tax { get; set; }
 
         [Required]
         [StringLength(6)]
-		[Column("payment")]
-        public string payment { get; set; }
+        [Column("payment")]
+        public string Payment { get; set; }
 
         [Required]
         [StringLength(100)]
-		[Column("cheque")]
-        public string cheque { get; set; }
+        [Column("cheque")]
+        public string Cheque { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("paypal")]
-        public string paypal { get; set; }
+        [Column("paypal")]
+        public string Paypal { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("bank_name")]
-        public string bank_name { get; set; }
+        [Column("bank_name")]
+        public string BankName { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("bank_branch_number")]
-        public string bank_branch_number { get; set; }
+        [Column("bank_branch_number")]
+        public string BankBranchNumber { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("bank_swift_code")]
-        public string bank_swift_code { get; set; }
+        [Column("bank_swift_code")]
+        public string BankSwiftCode { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("bank_account_name")]
-        public string bank_account_name { get; set; }
+        [Column("bank_account_name")]
+        public string BankAccountName { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("bank_account_number")]
-        public string bank_account_number { get; set; }
+        [Column("bank_account_number")]
+        public string BankAccountNumber { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
         [Column("status")]
         public bool Status { get; set; }

@@ -10,13 +10,13 @@ namespace OpenCart.Entities
     public class Extension
     {
         [Key]
-		[Column("extension_id")]
-        public int extension_id { get; set; }
+        [Column("extension_id")]
+        public int ExtensionId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("type")]
-        public string type { get; set; }
+        [Column("type")]
+        public string Type { get; set; }
 
         [Required]
         [StringLength(32)]

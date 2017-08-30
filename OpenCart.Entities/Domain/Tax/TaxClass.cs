@@ -7,16 +7,16 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_tax_class")]
-    public class TaxClass
+    public class TaxClass : IEntityWithTitle
     {
         [Key]
-		[Column("tax_class_id")]
-        public int tax_class_id { get; set; }
+        [Column("tax_class_id")]
+        public int TaxClassId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("title")]
-        public string title { get; set; }
+        [Column("title")]
+        public string Title { get; set; }
 
         [Required]
         [StringLength(255)]

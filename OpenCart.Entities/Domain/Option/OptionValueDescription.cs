@@ -12,10 +12,10 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int option_value_id { get; set; }
+        public int OptionValueId { get; set; }
 
-		[Column("option_id")]
-        public int option_id { get; set; }
+        [Column("option_id")]
+        public int OptionId { get; set; }
 
         [Required]
         [StringLength(128)]

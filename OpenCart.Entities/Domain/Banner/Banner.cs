@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class Banner : IEntityWithName, IEntityWithStatus
     {
         [Key]
-		[Column("banner_id")]
-        public int banner_id { get; set; }
+        [Column("banner_id")]
+        public int BannerId { get; set; }
 
         [Required]
         [StringLength(64)]

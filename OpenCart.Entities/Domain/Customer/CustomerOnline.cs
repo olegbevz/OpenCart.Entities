@@ -11,21 +11,21 @@ namespace OpenCart.Entities
     {
         [Key]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("url", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string url { get; set; }
+        public string Url { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("referer", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string referer { get; set; }
+        public string Referer { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

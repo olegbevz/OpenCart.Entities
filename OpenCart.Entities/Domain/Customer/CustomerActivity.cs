@@ -10,26 +10,26 @@ namespace OpenCart.Entities
     public class CustomerActivity
     {
         [Key]
-		[Column("customer_activity_id")]
-        public int customer_activity_id { get; set; }
+        [Column("customer_activity_id")]
+        public int CustomerActivityId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("key")]
-        public string key { get; set; }
+        [Column("key")]
+        public string Key { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("data", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string data { get; set; }
+        public string Data { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("ip")]
-        public string ip { get; set; }
+        [Column("ip")]
+        public string Ip { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

@@ -7,14 +7,14 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order_total")]
-    public class OrderTotal
+    public class OrderTotal : IEntityWithTitle
     {
         [Key]
-		[Column("order_total_id")]
-        public int order_total_id { get; set; }
+        [Column("order_total_id")]
+        public int OrderTotalId { get; set; }
 
-		[Column("order_id")]
-        public int order_id { get; set; }
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
         [Required]
         [StringLength(32)]
@@ -23,10 +23,11 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(255)]
-		[Column("title")]
-        public string title { get; set; }
+        [Column("title")]
+        public string Title { get; set; }
 
-        public decimal value { get; set; }
+        [Column("value")]
+        public decimal Value { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

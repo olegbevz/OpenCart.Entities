@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class GeoZone : IEntityWithName
     {
         [Key]
-		[Column("geo_zone_id")]
-        public int geo_zone_id { get; set; }
+        [Column("geo_zone_id")]
+        public int GeoZoneId { get; set; }
 
         [Required]
         [StringLength(32)]

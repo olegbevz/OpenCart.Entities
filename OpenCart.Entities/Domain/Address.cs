@@ -7,56 +7,56 @@ namespace OpenCart.Entities
     public class Address
     {
         [Key]
-		[Column("address_id")]
-        public int address_id { get; set; }
+        [Column("address_id")]
+        public int AddressId { get; set; }
 
-		[Column("customer_id")]
-        public int customer_id { get; set; }
-
-        [Required]
-        [StringLength(32)]
-		[Column("firstname")]
-        public string firstname { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(32)]
-		[Column("lastname")]
-        public string lastname { get; set; }
+        [Column("firstname")]
+        public string Firstname { get; set; }
+
+        [Required]
+        [StringLength(32)]
+        [Column("lastname")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(40)]
-		[Column("company")]
-        public string company { get; set; }
+        [Column("company")]
+        public string Company { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("address_1")]
-        public string address_1 { get; set; }
+        [Column("address_1")]
+        public string Address1 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("address_2")]
-        public string address_2 { get; set; }
+        [Column("address_2")]
+        public string Address2 { get; set; }
 
         [Required]
         [StringLength(128)]
-		[Column("city")]
-        public string city { get; set; }
+        [Column("city")]
+        public string City { get; set; }
 
         [Required]
         [StringLength(10)]
-		[Column("postcode")]
-        public string postcode { get; set; }
+        [Column("postcode")]
+        public string Postcode { get; set; }
 
-		[Column("country_id")]
-        public int country_id { get; set; }
+        [Column("country_id")]
+        public int CountryId { get; set; }
 
-		[Column("zone_id")]
-        public int zone_id { get; set; }
+        [Column("zone_id")]
+        public int ZoneId { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column("custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
-        public string custom_field { get; set; }
+        public string CustomField { get; set; }
     }
 }

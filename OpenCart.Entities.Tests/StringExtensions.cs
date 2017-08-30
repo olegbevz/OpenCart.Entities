@@ -16,8 +16,8 @@ namespace OpenCart.Entities.Tests
                 if (char.IsLower(@char) && previousChar == null)
                     return false;
 
-                if (char.IsUpper(@char) && previousChar != null && char.IsUpper(previousChar.Value))
-                    return false;
+                //if (char.IsUpper(@char) && previousChar != null && char.IsUpper(previousChar.Value))
+                //    return false;
 
                 previousChar = @char;
             }

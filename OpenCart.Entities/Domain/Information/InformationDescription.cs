@@ -7,17 +7,17 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_information_description")]
-    public class InformationDescription : Localizable
+    public class InformationDescription : Localizable, IEntityWithTitle
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int information_id { get; set; }
+        public int InformationId { get; set; }
 
         [Required]
         [StringLength(64)]
-		[Column("title")]
-        public string title { get; set; }
+        [Column("title")]
+        public string Title { get; set; }
 
         [Column("description", TypeName = "text")]
         [Required]
@@ -26,22 +26,22 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(255)]
-		[Column("meta_title")]
-        public string meta_title { get; set; }
+        [Column("meta_title")]
+        public string MetaTitle { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("meta_h1")]
-        public string meta_h1 { get; set; }
+        [Column("meta_h1")]
+        public string MetaH1 { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("meta_description")]
-        public string meta_description { get; set; }
+        [Column("meta_description")]
+        public string MetaDescription { get; set; }
 
         [Required]
         [StringLength(255)]
-		[Column("meta_keyword")]
-        public string meta_keyword { get; set; }
+        [Column("meta_keyword")]
+        public string MetaKeyword { get; set; }
     }
 }
