@@ -19,6 +19,7 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int store_id { get; set; }
 
+		[Column("layout_id")]
         public int layout_id { get; set; }
     }
 }

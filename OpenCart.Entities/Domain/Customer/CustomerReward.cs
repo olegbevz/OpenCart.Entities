@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class CustomerReward
     {
         [Key]
+		[Column("customer_reward_id")]
         public int customer_reward_id { get; set; }
 
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
         [Column("description", TypeName = "text")]
@@ -21,6 +24,7 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Description { get; set; }
 
+		[Column("points")]
         public int points { get; set; }
 
         [Column("date_added")]

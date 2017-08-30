@@ -14,6 +14,7 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int filter_id { get; set; }
 
+		[Column("filter_group_id")]
         public int filter_group_id { get; set; }
 
         [Required]

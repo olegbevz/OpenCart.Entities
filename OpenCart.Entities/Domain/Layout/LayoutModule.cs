@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class LayoutModule
     {
         [Key]
+		[Column("layout_module_id")]
         public int layout_module_id { get; set; }
 
+		[Column("layout_id")]
         public int layout_id { get; set; }
 
         [Required]
@@ -21,6 +23,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(14)]
+		[Column("position")]
         public string position { get; set; }
 
         [Column("sort_order")]

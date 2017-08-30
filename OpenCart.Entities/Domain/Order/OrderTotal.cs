@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class OrderTotal
     {
         [Key]
+		[Column("order_total_id")]
         public int order_total_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
         [Required]
@@ -21,6 +23,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(255)]
+		[Column("title")]
         public string title { get; set; }
 
         public decimal value { get; set; }

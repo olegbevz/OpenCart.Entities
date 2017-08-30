@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Voucher : IEntityWithStatus
     {
         [Key]
+		[Column("voucher_id")]
         public int voucher_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
         [Required]
@@ -21,20 +23,25 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("from_name")]
         public string from_name { get; set; }
 
         [Required]
         [StringLength(96)]
+		[Column("from_email")]
         public string from_email { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("to_name")]
         public string to_name { get; set; }
 
         [Required]
         [StringLength(96)]
+		[Column("to_email")]
         public string to_email { get; set; }
 
+		[Column("voucher_theme_id")]
         public int voucher_theme_id { get; set; }
 
         [Column(TypeName = "text")]

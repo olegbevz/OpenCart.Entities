@@ -10,16 +10,20 @@ namespace OpenCart.Entities
     public class Theme
     {
         [Key]
+		[Column("theme_id")]
         public int theme_id { get; set; }
 
+		[Column("store_id")]
         public int store_id { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("theme")]
         public string theme { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("route")]
         public string route { get; set; }
 
         [Column("code", TypeName = "text")]

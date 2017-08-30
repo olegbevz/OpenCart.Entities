@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Information : IEntityWithStatus
     {
         [Key]
+		[Column("information_id")]
         public int information_id { get; set; }
 
+		[Column("bottom")]
         public int bottom { get; set; }
 
         [Column("sort_order")]

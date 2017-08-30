@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Filter
     {
         [Key]
+		[Column("filter_id")]
         public int filter_id { get; set; }
 
+		[Column("filter_group_id")]
         public int filter_group_id { get; set; }
 
         [Column("sort_order")]

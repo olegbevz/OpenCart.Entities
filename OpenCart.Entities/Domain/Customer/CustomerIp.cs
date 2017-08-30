@@ -10,12 +10,15 @@ namespace OpenCart.Entities
     public class CustomerIp
     {
         [Key]
+		[Column("customer_ip_id")]
         public int customer_ip_id { get; set; }
 
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
         [Required]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
 
         [Column("date_added")]

@@ -10,14 +10,19 @@ namespace OpenCart.Entities
     public class OrderOption : IEntityWithName
     {
         [Key]
+		[Column("order_option_id")]
         public int order_option_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
+		[Column("order_product_id")]
         public int order_product_id { get; set; }
 
+		[Column("product_option_id")]
         public int product_option_id { get; set; }
 
+		[Column("product_option_value_id")]
         public int product_option_value_id { get; set; }
 
         [Required]
@@ -32,6 +37,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(32)]
+		[Column("type")]
         public string type { get; set; }
     }
 }

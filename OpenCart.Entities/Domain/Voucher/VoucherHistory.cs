@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class VoucherHistory
     {
         [Key]
+		[Column("voucher_history_id")]
         public int voucher_history_id { get; set; }
 
+		[Column("voucher_id")]
         public int voucher_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
         public decimal amount { get; set; }

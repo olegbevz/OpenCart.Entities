@@ -69,6 +69,7 @@ namespace OpenCart.Entities
         [Column("points")]
         public int Points { get; set; }
 
+		[Column("tax_class_id")]
         public int tax_class_id { get; set; }
 
         [Column("date_available", TypeName = "date")]

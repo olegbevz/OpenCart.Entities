@@ -10,10 +10,12 @@ namespace OpenCart.Entities
     public class TaxClass
     {
         [Key]
+		[Column("tax_class_id")]
         public int tax_class_id { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("title")]
         public string title { get; set; }
 
         [Required]

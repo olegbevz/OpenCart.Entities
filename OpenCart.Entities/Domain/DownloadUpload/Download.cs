@@ -8,14 +8,17 @@ namespace OpenCart.Entities
     public class Download
     {
         [Key]
+		[Column("download_id")]
         public int download_id { get; set; }
 
         [Required]
         [StringLength(160)]
+		[Column("filename")]
         public string filename { get; set; }
 
         [Required]
         [StringLength(128)]
+		[Column("mask")]
         public string mask { get; set; }
 
         [Column("date_added")]

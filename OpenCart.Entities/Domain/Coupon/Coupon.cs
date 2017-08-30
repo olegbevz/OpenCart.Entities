@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Coupon : IEntityWithName, IEntityWithStatus
     {
         [Key]
+		[Column("coupon_id")]
         public int coupon_id { get; set; }
 
         [Required]
@@ -41,10 +42,12 @@ namespace OpenCart.Entities
         [Column(TypeName = "date")]
         public DateTime date_end { get; set; }
 
+		[Column("uses_total")]
         public int uses_total { get; set; }
 
         [Required]
         [StringLength(11)]
+		[Column("uses_customer")]
         public string uses_customer { get; set; }
 
         [Column("status")]

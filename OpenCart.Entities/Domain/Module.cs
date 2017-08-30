@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Module : IEntityWithName
     {
         [Key]
+		[Column("module_id")]
         public int module_id { get; set; }
 
         [Required]

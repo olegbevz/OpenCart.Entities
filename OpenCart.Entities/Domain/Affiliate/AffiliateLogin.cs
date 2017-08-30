@@ -10,16 +10,20 @@ namespace OpenCart.Entities
     public class AffiliateLogin
     {
         [Key]
+		[Column("affiliate_login_id")]
         public int affiliate_login_id { get; set; }
 
         [Required]
         [StringLength(96)]
+		[Column("email")]
         public string email { get; set; }
 
         [Required]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
 
+		[Column("total")]
         public int total { get; set; }
 
         [Column("date_added")]

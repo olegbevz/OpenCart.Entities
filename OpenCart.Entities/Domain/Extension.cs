@@ -10,10 +10,12 @@ namespace OpenCart.Entities
     public class Extension
     {
         [Key]
+		[Column("extension_id")]
         public int extension_id { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("type")]
         public string type { get; set; }
 
         [Required]

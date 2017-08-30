@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class BannerImage
     {
         [Key]
+		[Column("banner_image_id")]
         public int banner_image_id { get; set; }
 
+		[Column("banner_id")]
         public int banner_id { get; set; }
 
         [Column("language_id")]
@@ -19,14 +21,17 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("title")]
         public string title { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("link")]
         public string link { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("image")]
         public string image { get; set; }
 
         [Column("sort_order")]

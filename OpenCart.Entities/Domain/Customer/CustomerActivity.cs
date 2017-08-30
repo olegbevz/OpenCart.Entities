@@ -10,12 +10,15 @@ namespace OpenCart.Entities
     public class CustomerActivity
     {
         [Key]
+		[Column("customer_activity_id")]
         public int customer_activity_id { get; set; }
 
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("key")]
         public string key { get; set; }
 
         [Column(TypeName = "text")]
@@ -25,6 +28,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
 
         [Column("date_added")]

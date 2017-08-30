@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class Customer : IEntityWithStatus
     {
         [Key]
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
+		[Column("customer_group_id")]
         public int customer_group_id { get; set; }
 
+		[Column("store_id")]
         public int store_id { get; set; }
 
         [Column("language_id")]
@@ -21,30 +24,37 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(32)]
+		[Column("firstname")]
         public string firstname { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("lastname")]
         public string lastname { get; set; }
 
         [Required]
         [StringLength(96)]
+		[Column("email")]
         public string email { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("telephone")]
         public string telephone { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("fax")]
         public string fax { get; set; }
 
         [Required]
         [StringLength(40)]
+		[Column("password")]
         public string password { get; set; }
 
         [Required]
         [StringLength(9)]
+		[Column("salt")]
         public string salt { get; set; }
 
         [Column(TypeName = "text")]
@@ -57,6 +67,7 @@ namespace OpenCart.Entities
 
         public bool newsletter { get; set; }
 
+		[Column("address_id")]
         public int address_id { get; set; }
 
         [Column(TypeName = "text")]
@@ -66,6 +77,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
 
         [Column("status")]

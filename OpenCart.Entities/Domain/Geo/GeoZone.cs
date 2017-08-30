@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class GeoZone : IEntityWithName
     {
         [Key]
+		[Column("geo_zone_id")]
         public int geo_zone_id { get; set; }
 
         [Required]

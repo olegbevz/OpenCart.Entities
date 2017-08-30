@@ -16,6 +16,7 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int path_id { get; set; }
 
+		[Column("level")]
         public int level { get; set; }
     }
 }

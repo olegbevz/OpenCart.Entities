@@ -10,14 +10,18 @@ namespace OpenCart.Entities
     public class LayoutRoute
     {
         [Key]
+		[Column("layout_route_id")]
         public int layout_route_id { get; set; }
 
+		[Column("layout_id")]
         public int layout_id { get; set; }
 
+		[Column("store_id")]
         public int store_id { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("route")]
         public string route { get; set; }
     }
 }

@@ -11,8 +11,10 @@ namespace OpenCart.Entities
     {
         [Key]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
 
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
         [Column(TypeName = "text")]

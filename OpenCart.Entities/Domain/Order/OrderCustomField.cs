@@ -10,12 +10,16 @@ namespace OpenCart.Entities
     public class OrderCustomField : IEntityWithName
     {
         [Key]
+		[Column("order_custom_field_id")]
         public int order_custom_field_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
+		[Column("custom_field_id")]
         public int custom_field_id { get; set; }
 
+		[Column("custom_field_value_id")]
         public int custom_field_value_id { get; set; }
 
         [Required]
@@ -30,10 +34,12 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(32)]
+		[Column("type")]
         public string type { get; set; }
 
         [Required]
         [StringLength(16)]
+		[Column("location")]
         public string location { get; set; }
     }
 }

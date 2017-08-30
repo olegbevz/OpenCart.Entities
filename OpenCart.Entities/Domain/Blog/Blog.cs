@@ -10,9 +10,11 @@ namespace OpenCart.Entities
     public class Blog : IEntityWithStatus
     {
         [Key]
+		[Column("blog_id")]
         public int blog_id { get; set; }
 
         [StringLength(255)]
+		[Column("image")]
         public string image { get; set; }
 
         [Column("date_added")]

@@ -10,10 +10,12 @@ namespace OpenCart.Entities
     public class Option
     {
         [Key]
+		[Column("option_id")]
         public int option_id { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("type")]
         public string type { get; set; }
 
         [Column("sort_order")]

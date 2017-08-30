@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Recurring
     {
         [Key]
+		[Column("recurring_id")]
         public int recurring_id { get; set; }
 
         public decimal price { get; set; }

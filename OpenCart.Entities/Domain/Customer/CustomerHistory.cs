@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class CustomerHistory
     {
         [Key]
+		[Column("customer_history_id")]
         public int customer_history_id { get; set; }
 
+		[Column("customer_id")]
         public int customer_id { get; set; }
 
         [Column(TypeName = "text")]

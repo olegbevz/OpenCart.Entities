@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Translation
     {
         [Key]
+		[Column("translation_id")]
         public int translation_id { get; set; }
 
+		[Column("store_id")]
         public int store_id { get; set; }
 
         [Column("language_id")]
@@ -19,10 +21,12 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("route")]
         public string route { get; set; }
 
         [Required]
         [StringLength(64)]
+		[Column("key")]
         public string key { get; set; }
 
         [Column(TypeName = "text")]

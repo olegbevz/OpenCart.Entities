@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class AffiliateTransaction
     {
         [Key]
+		[Column("affiliate_transaction_id")]
         public int affiliate_transaction_id { get; set; }
 
+		[Column("affiliate_id")]
         public int affiliate_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
         [Column("description", TypeName = "text")]

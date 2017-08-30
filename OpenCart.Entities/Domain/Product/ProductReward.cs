@@ -10,12 +10,16 @@ namespace OpenCart.Entities
     public class ProductReward
     {
         [Key]
+		[Column("product_reward_id")]
         public int product_reward_id { get; set; }
 
+		[Column("product_id")]
         public int product_id { get; set; }
 
+		[Column("customer_group_id")]
         public int customer_group_id { get; set; }
 
+		[Column("points")]
         public int points { get; set; }
     }
 }

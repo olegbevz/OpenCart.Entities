@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Zone : IEntityWithName, IEntityWithStatus
     {
         [Key]
+		[Column("zone_id")]
         public int zone_id { get; set; }
 
+		[Column("country_id")]
         public int country_id { get; set; }
 
         [Required]

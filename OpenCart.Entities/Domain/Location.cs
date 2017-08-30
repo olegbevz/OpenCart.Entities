@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Location : IEntityWithName
     {
         [Key]
+		[Column("location_id")]
         public int location_id { get; set; }
 
         [Required]
@@ -24,17 +25,21 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(32)]
+		[Column("telephone")]
         public string telephone { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("fax")]
         public string fax { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("geocode")]
         public string geocode { get; set; }
 
         [StringLength(255)]
+		[Column("image")]
         public string image { get; set; }
 
         [Column(TypeName = "text")]

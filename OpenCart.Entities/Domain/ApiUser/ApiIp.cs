@@ -10,12 +10,15 @@ namespace OpenCart.Entities
     public class ApiIp
     {
         [Key]
+		[Column("api_ip_id")]
         public int api_ip_id { get; set; }
 
+		[Column("api_id")]
         public int api_id { get; set; }
 
         [Required]
         [StringLength(40)]
+		[Column("ip")]
         public string ip { get; set; }
     }
 }

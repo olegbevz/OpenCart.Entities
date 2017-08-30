@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class OrderProduct : IEntityWithName
     {
         [Key]
+		[Column("order_product_id")]
         public int order_product_id { get; set; }
 
+		[Column("order_id")]
         public int order_id { get; set; }
 
+		[Column("product_id")]
         public int product_id { get; set; }
 
         [Required]
@@ -23,8 +26,10 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("model")]
         public string model { get; set; }
 
+		[Column("quantity")]
         public int quantity { get; set; }
 
         public decimal price { get; set; }
@@ -33,6 +38,7 @@ namespace OpenCart.Entities
 
         public decimal tax { get; set; }
 
+		[Column("reward")]
         public int reward { get; set; }
     }
 }

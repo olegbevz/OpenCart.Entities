@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class ProductOption
     {
         [Key]
+		[Column("product_option_id")]
         public int product_option_id { get; set; }
 
+		[Column("product_id")]
         public int product_id { get; set; }
 
+		[Column("option_id")]
         public int option_id { get; set; }
 
         [Column(TypeName = "text")]

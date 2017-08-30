@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Banner : IEntityWithName, IEntityWithStatus
     {
         [Key]
+		[Column("banner_id")]
         public int banner_id { get; set; }
 
         [Required]

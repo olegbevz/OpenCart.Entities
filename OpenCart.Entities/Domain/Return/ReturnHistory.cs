@@ -10,10 +10,13 @@ namespace OpenCart.Entities
     public class ReturnHistory
     {
         [Key]
+		[Column("return_history_id")]
         public int return_history_id { get; set; }
 
+		[Column("return_id")]
         public int return_id { get; set; }
 
+		[Column("return_status_id")]
         public int return_status_id { get; set; }
 
         public bool notify { get; set; }

@@ -10,6 +10,7 @@ namespace OpenCart.Entities
     public class Modification : IEntityWithName, IEntityWithStatus
     {
         [Key]
+		[Column("modification_id")]
         public int modification_id { get; set; }
 
         [Required]
@@ -24,18 +25,22 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("author")]
         public string author { get; set; }
 
         [Required]
         [StringLength(32)]
+		[Column("version")]
         public string version { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("link")]
         public string link { get; set; }
 
         [Required]
         [StringLength(16777215)]
+		[Column("xml")]
         public string xml { get; set; }
 
         [Column("status")]

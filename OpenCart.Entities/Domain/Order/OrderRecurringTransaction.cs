@@ -10,16 +10,20 @@ namespace OpenCart.Entities
     public class OrderRecurringTransaction
     {
         [Key]
+		[Column("order_recurring_transaction_id")]
         public int order_recurring_transaction_id { get; set; }
 
+		[Column("order_recurring_id")]
         public int order_recurring_id { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("reference")]
         public string reference { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("type")]
         public string type { get; set; }
 
         public decimal amount { get; set; }

@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class TaxRate : IEntityWithName
     {
         [Key]
+		[Column("tax_rate_id")]
         public int tax_rate_id { get; set; }
 
+		[Column("geo_zone_id")]
         public int geo_zone_id { get; set; }
 
         [Required]

@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class CustomerGroup
     {
         [Key]
+		[Column("customer_group_id")]
         public int customer_group_id { get; set; }
 
+		[Column("approval")]
         public int approval { get; set; }
 
         [Column("sort_order")]

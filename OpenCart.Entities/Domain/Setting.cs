@@ -10,8 +10,10 @@ namespace OpenCart.Entities
     public class Setting
     {
         [Key]
+		[Column("setting_id")]
         public int setting_id { get; set; }
 
+		[Column("store_id")]
         public int store_id { get; set; }
 
         [Required]
@@ -21,6 +23,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("key")]
         public string key { get; set; }
 
         [Column(TypeName = "text")]

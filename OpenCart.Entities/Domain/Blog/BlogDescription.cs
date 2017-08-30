@@ -16,6 +16,7 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(64)]
+		[Column("title")]
         public string title { get; set; }
 
         [Column("description", TypeName = "text")]
@@ -25,14 +26,17 @@ namespace OpenCart.Entities
 
         [Required]
         [StringLength(255)]
+		[Column("meta_title")]
         public string meta_title { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("meta_description")]
         public string meta_description { get; set; }
 
         [Required]
         [StringLength(255)]
+		[Column("meta_keyword")]
         public string meta_keyword { get; set; }
     }
 }
