@@ -19,7 +19,7 @@ namespace OpenCart.Entities
         public int ParentCategoryId { get; set; }
 
         public Category ParentCategory { get; set; }
-        
+
         [Column("top")]
         public bool Top { get; set; }
 
@@ -28,7 +28,7 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
 

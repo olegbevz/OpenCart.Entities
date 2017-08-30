@@ -15,6 +15,6 @@ namespace OpenCart.Entities
 
         public virtual ICollection<Attribute> Attributes { get; protected set; }
 
-        public virtual ICollection<AttributeGroupDescription> Descriptions {get; protected set;}
+        public virtual ICollection<AttributeGroupDescription> Descriptions { get; protected set; }
     }
 }

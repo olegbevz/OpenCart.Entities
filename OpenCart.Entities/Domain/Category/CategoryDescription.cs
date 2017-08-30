@@ -8,5 +8,5 @@ namespace OpenCart.Entities
     {
         [Key, Column("category_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-    }   
+    }
 }

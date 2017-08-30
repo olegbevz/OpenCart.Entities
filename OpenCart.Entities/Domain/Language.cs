@@ -17,7 +17,7 @@ namespace OpenCart.Entities
 
         [Required, StringLength(255), Column("locale")]
         public string Locale { get; set; }
-        
+
         [Required, StringLength(64), Column("image")]
         public string Image { get; set; }
 
@@ -26,7 +26,7 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
     }

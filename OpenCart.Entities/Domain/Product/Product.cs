@@ -113,7 +113,7 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        [Required(AllowEmptyStrings=true), StringLength(65535), Column("product_stickers", TypeName = "text")]
+        [Required(AllowEmptyStrings = true), StringLength(65535), Column("product_stickers", TypeName = "text")]
         public string Stickers { get; set; }
 
         public virtual Manufacturer Manufacturer { get; protected set; }
@@ -123,7 +123,7 @@ namespace OpenCart.Entities
         public virtual LengthClass LengthUnit { get; protected set; }
 
         public virtual ICollection<ProductDescription> Descriptions { get; protected set; }
-        
+
         public virtual ICollection<ProductImage> Images { get; protected set; }
 
         public virtual ICollection<ProductAttribute> Attributes { get; protected set; }

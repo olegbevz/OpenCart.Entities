@@ -14,7 +14,7 @@ namespace OpenCart.Entities
 
         public int store_id { get; set; }
 
-        [Column("language_id")]public int LanguageId { get; set; }
+        [Column("language_id")] public int LanguageId { get; set; }
 
         public int customer_id { get; set; }
 

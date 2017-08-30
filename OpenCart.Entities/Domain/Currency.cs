@@ -27,7 +27,7 @@ namespace OpenCart.Entities
 
         [Column("value")]
         public float Value { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
 

@@ -41,7 +41,7 @@ namespace OpenCart.Entities
 
         [Required, StringLength(40), Column("ip")]
         public string IP { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
 
