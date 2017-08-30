@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("order_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("invoice_no")]
         public int InvoiceNo { get; set; }

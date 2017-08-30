@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class User : IEntityWithStatus
     {
         [Key, Column("user_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("user_group_id")]
         public int GroupId { get; set; }

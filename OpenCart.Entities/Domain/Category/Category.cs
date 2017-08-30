@@ -10,7 +10,7 @@ namespace OpenCart.Entities
     public class Category : IEntityWithStatus
     {
         [Key, Column("category_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [StringLength(255), Column("image")]
         public string Image { get; set; }

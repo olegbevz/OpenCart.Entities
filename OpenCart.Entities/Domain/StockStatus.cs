@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class StockStatus : Localizable, IEntityWithName
     {
         [Key, Column("stock_status_id", Order = 0)]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(32), Column("name")]
         public string Name { get; set; }

@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("filter_group_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

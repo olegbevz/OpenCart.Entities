@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("filter_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("filter_group_id")]
         public int FilterGroupId { get; set; }

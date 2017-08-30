@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class LengthClass
     {
         [Key, Column("length_class_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("value")]
         public decimal Value { get; set; }

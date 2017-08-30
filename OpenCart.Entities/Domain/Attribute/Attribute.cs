@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class Attribute
     {
         [Key, Column("attribute_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("attribute_group_id")]
         public int GroupId { get; set; }

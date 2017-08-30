@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class Layout : IEntityWithName
     {
         [Key, Column("layout_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(64), Column("name")]
         public string Name { get; set; }

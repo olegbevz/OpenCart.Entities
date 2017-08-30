@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class Store : IEntityWithName
     {
         [Key, Column("store_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(64), Column("name")]
         public string Name { get; set; }

@@ -104,10 +104,10 @@ namespace OpenCart.Entities.Tests
 
             foreach (var entity in entities)
             {
-                if (TypeHasProperty(entity, "Title", typeof(string)))
+                if (entity.HasProperty("Title", typeof(string)))
                 {
                     Assert.IsTrue(
-                        TypeImplements(entity, typeof(IEntityWithTitle)),
+                        entity.Implements<IEntityWithTitle>(),
                         $"Type '{entity.Name}' should implement IEntityWithTitle interface");
                 }
             }
@@ -120,10 +120,10 @@ namespace OpenCart.Entities.Tests
 
             foreach (var entity in entities)
             {
-                if (TypeHasProperty(entity, "Name", typeof(string)))
+                if (entity.HasProperty("Name", typeof(string)))
                 {
                     Assert.IsTrue(
-                        TypeImplements(entity, typeof(IEntityWithName)),
+                        entity.Implements<IEntityWithName>(),
                         $"Type '{entity.Name}' should implement IEntityWithName interface");
                 }
             }
@@ -136,17 +136,17 @@ namespace OpenCart.Entities.Tests
 
             foreach (var entity in entities)
             {
-                if (TypeHasProperty(entity, "Status", typeof(bool)))
+                if (entity.HasProperty("Status", typeof(bool)))
                 {
                     Assert.IsTrue(
-                        TypeImplements(entity, typeof(IEntityWithStatus)),
+                        entity.Implements<IEntityWithStatus>(),
                         $"Type '{entity.Name}' should implement IEntityWithStatus interface");
                 }
             }
         }
 
         [TestCase]
-        public void AllEntitiesShouldHaveKeyPropertyNamedAsId()
+        public void AllKeyPropertiesShouldHaveIdNameAndProtectedSetter()
         {
             var entities = GetOpenCartEntities();
 
@@ -165,6 +165,12 @@ namespace OpenCart.Entities.Tests
                             "Id",
                             property.Name,
                             $"Property name '{property.Name}' of type '{entity.Name}' should be renamed to 'Id'");
+
+                        var getter = property.GetGetMethod(true);
+                        Assert.IsTrue(getter.IsPublic, $"{entity.Name}.{property.Name} getter should be made public");
+
+                        var setter = property.GetSetMethod(true);
+                        Assert.IsFalse(setter.IsPublic, $"{entity.Name}.{property.Name} setter should be made protected");
                     }
                 }
             }
@@ -187,25 +193,11 @@ namespace OpenCart.Entities.Tests
                     type.GetCustomAttributes(typeof(TableAttribute), false).Length > 0);
         }
 
-        private bool TypeHasProperty(Type type, string name, Type propertyType)
-        {
-            return type.GetProperties()
-                .Any(property => property.Name == name 
-                    && property.PropertyType == propertyType);
-        }
-
-        private bool TypeImplements(Type type, Type @interface)
-        {
-            return type.GetInterfaces().Any(x => x == @interface);
-        }
-
         private string GetEntityNameFromTableName(string tableName)
         {
             return string.Concat(tableName.Split('_')
                 .Where(part => part.Length > 0 && part != "oc")
                 .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
         }
-
-
     }
 }

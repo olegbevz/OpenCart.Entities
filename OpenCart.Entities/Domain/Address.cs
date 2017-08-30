@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("address_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("customer_id")]
         public int CustomerId { get; set; }

@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class Cart
     {
         [Key, Column("cart_id", TypeName = "uint")]
-        public long Id { get; set; }
+        public long Id { get; protected set; }
         [Column("api_id")]
         public int ApiId { get; set; }
         [Column("customer_id")]

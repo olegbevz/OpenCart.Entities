@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("order_status_id", Order = 0)]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required]
         [StringLength(32)]

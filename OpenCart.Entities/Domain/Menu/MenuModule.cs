@@ -12,7 +12,7 @@ namespace OpenCart.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("menu_module_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("menu_id")]
         public int MenuId { get; set; }

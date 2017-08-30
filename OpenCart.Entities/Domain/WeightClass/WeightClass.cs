@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class WeightClass
     {
         [Key, Column("weight_class_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("value")]
         public decimal Value { get; set; }

@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class Currency : IEntityWithTitle, IEntityWithStatus
     {
         [Key, Column("currency_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(32), Column("title")]
         public string Title { get; set; }
