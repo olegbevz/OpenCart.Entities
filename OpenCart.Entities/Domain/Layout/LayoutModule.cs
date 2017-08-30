@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("layout_module_id")]
-        public int LayoutModuleId { get; set; }
+        public int Id { get; set; }
 
         [Column("layout_id")]
         public int LayoutId { get; set; }

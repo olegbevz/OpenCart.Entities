@@ -9,7 +9,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("api_session_id")]
-        public int ApiSessionId { get; set; }
+        public int Id { get; set; }
 
         [Column("api_id")]
         public int ApiId { get; set; }

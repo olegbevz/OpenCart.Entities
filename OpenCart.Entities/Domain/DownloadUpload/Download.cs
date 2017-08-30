@@ -9,7 +9,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("download_id")]
-        public int DownloadId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(160)]

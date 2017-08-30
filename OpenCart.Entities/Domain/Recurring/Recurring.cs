@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("recurring_id")]
-        public int RecurringId { get; set; }
+        public int Id { get; set; }
 
         [Column("price")]
         public decimal Price { get; set; }

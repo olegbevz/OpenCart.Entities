@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("tax_rule_id")]
-        public int TaxRuleId { get; set; }
+        public int Id { get; set; }
 
         [Column("tax_class_id")]
         public int TaxClassId { get; set; }

@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("order_recurring_transaction_id")]
-        public int OrderRecurringTransactionId { get; set; }
+        public int Id { get; set; }
 
         [Column("order_recurring_id")]
         public int OrderRecurringId { get; set; }

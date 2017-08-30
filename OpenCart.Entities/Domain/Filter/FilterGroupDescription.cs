@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class FilterGroupDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("filter_group_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FilterGroupId { get; set; }
 

@@ -10,8 +10,8 @@ namespace OpenCart.Entities
     public class OrderStatus : Localizable, IEntityWithName
     {
         [Key]
-        [Column(Order = 0)]
-        public int OrderStatusId { get; set; }
+        [Column("order_status_id", Order = 0)]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(32)]

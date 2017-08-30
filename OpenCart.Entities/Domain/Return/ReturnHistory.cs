@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("return_history_id")]
-        public int ReturnHistoryId { get; set; }
+        public int Id { get; set; }
 
         [Column("return_id")]
         public int ReturnId { get; set; }

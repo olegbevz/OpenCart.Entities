@@ -9,7 +9,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("zone_to_geo_zone_id")]
-        public int ZoneToGeoZoneId { get; set; }
+        public int Id { get; set; }
 
         [Column("country_id")]
         public int CountryId { get; set; }

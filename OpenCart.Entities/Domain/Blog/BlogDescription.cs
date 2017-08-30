@@ -12,7 +12,7 @@ namespace OpenCart.Entities
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int BlogId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(64)]

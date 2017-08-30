@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column(Order = 0)]
-        public int ReturnStatusId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(128)]

@@ -11,7 +11,7 @@ namespace OpenCart.Entities
     {
         [Key]
         [Column("customer_login_id")]
-        public int CustomerLoginId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(96)]

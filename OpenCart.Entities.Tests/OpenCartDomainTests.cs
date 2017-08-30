@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
@@ -32,8 +33,7 @@ namespace OpenCart.Entities.Tests
 
             foreach (var entity in entities)
             {
-                var tableAttribute = entity.GetCustomAttributes(typeof(TableAttribute), false)
-                    .FirstOrDefault() as TableAttribute;
+                var tableAttribute = entity.GetAttribute<TableAttribute>();
 
                 if (tableAttribute != null)
                 {
@@ -145,6 +145,31 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [TestCase]
+        public void AllEntitiesShouldHaveKeyPropertyNamedAsId()
+        {
+            var entities = GetOpenCartEntities();
+
+            foreach (var entity in entities)
+            {
+                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
+
+                foreach (var property in entity.GetProperties())
+                {
+                    var keyAttribue = property.GetAttribute<KeyAttribute>();
+                    var columnAttribute = property.GetAttribute<ColumnAttribute>();
+
+                    if (keyAttribue != null && columnAttribute.Name == $"{tableName}_id")
+                    {
+                        Assert.AreEqual(
+                            "Id",
+                            property.Name,
+                            $"Property name '{property.Name}' of type '{entity.Name}' should be renamed to 'Id'");
+                    }
+                }
+            }
+        }
+
         private Assembly GetOpenCartDomainAssembly()
         {
             return AppDomain.CurrentDomain.GetAssemblies()
@@ -180,5 +205,7 @@ namespace OpenCart.Entities.Tests
                 .Where(part => part.Length > 0 && part != "oc")
                 .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
         }
+
+
     }
 }
