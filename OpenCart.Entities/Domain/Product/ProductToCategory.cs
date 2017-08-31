@@ -19,13 +19,13 @@ namespace OpenCart.Entities
 
         [Key, Column("product_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductId { get; protected set; }
+        public int ProductId { get; set; }
 
         public virtual Product Product { get; set; }
 
         [Key, Column("category_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CategoryId { get; protected set; }
+        public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
 

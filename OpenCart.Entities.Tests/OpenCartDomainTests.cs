@@ -242,6 +242,34 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [TestCase]
+        public void AllForeignKeyPropertiesShouldBeVirtualAndPublic()
+        {
+            foreach (var entity in GetOpenCartEntities())
+            {
+                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
+
+                foreach (var property in entity.GetProperties())
+                {
+                    var columnAttribute = property.GetAttribute<ColumnAttribute>();
+                    if (columnAttribute == null)
+                        continue;
+
+                    if (property.GetAttribute<KeyAttribute>() != null)
+                        continue;
+
+                    if (!columnAttribute.Name.EndsWith("_id"))
+                        continue;
+
+                    var getter = property.GetGetMethod(true);
+                    Assert.IsTrue(getter.IsPublic && !getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public");
+
+                    var setter = property.GetSetMethod(true);
+                    Assert.IsTrue(setter.IsPublic && !setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public");
+                }
+            }
+        }
+
         private Assembly GetOpenCartDomainAssembly()
         {
             return typeof(OpenCartDomain).Assembly;

@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     {
         [Key, Column("attribute_group_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int AttributeGroupId { get; protected set; }
+        public int AttributeGroupId { get; set; }
 
         [Required, StringLength(64), Column("name")]
         public string Name { get; set; }

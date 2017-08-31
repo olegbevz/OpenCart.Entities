@@ -22,7 +22,7 @@ namespace OpenCart.Entities
 
         [Key, Column("extra_tab_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ExtraTabId { get; protected set; }
+        public int ExtraTabId { get; set; }
 
         public virtual ExtraTab ExtraTab { get; set; }
 

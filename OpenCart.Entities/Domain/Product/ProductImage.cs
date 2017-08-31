@@ -20,7 +20,7 @@ namespace OpenCart.Entities
         public int Id { get; protected set; }
 
         [Column("product_id")]
-        public int ProductId { get; protected set; }
+        public int ProductId { get; set; }
 
         [StringLength(255), Column("image")]
         public string Image { get; set; }

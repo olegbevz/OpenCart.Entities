@@ -18,18 +18,18 @@ namespace OpenCart.Entities
 
         [Key, Column("product_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductId { get; protected set; }
+        public int ProductId { get; set; }
 
         public virtual Product Product { get; set; }
 
         [Key, Column("store_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int StoreId { get; protected set; }
+        public int StoreId { get; set; }
 
         public virtual Store Store { get; set; }
 
         [Column("layout_id")]
-        public int LayoutId { get; protected set; }
+        public int LayoutId { get; set; }
 
         public virtual Layout Layout { get; set; }
     }
