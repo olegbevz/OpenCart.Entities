@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     public class RecurringDescription : Localizable, IEntityWithName
     {
         [Key]
-        [Column("recurring_description_id", Order = 0)]
+        [Column("recurring_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RecurringId { get; set; }
 

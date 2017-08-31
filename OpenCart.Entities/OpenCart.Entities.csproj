@@ -48,13 +48,17 @@
     <Compile Include="Interfaces\IEntityWithTitle.cs" />
     <Compile Include="Interfaces\IOpenCartDomain.cs" />
     <Compile Include="Mappings\AttribueGroupMapping.cs" />
+    <Compile Include="Mappings\BlogMapping.cs" />
     <Compile Include="Mappings\CategoryMapping.cs" />
     <Compile Include="Mappings\AttribueMapping.cs" />
+    <Compile Include="Mappings\CouponMapping.cs" />
     <Compile Include="Mappings\ExtraTabMapping.cs" />
+    <Compile Include="Mappings\InformationMapping.cs" />
     <Compile Include="Mappings\ProductAttributeMapping.cs" />
     <Compile Include="Mappings\ProductExtraTabMapping.cs" />
     <Compile Include="Mappings\ProductImageMapping.cs" />
     <Compile Include="Mappings\StickerMapping.cs" />
+    <Compile Include="Mappings\TaxRateMapping.cs" />
     <Compile Include="Mappings\WeightUnitMapping.cs" />
     <Compile Include="Mappings\ManufactorerMapping.cs" />
     <Compile Include="Mappings\ProductCategoryMapping.cs" />
@@ -79,19 +83,14 @@
     <Compile Include="Domain\Banner\BannerImage.cs" />
     <Compile Include="Domain\Blog\Blog.cs" />
     <Compile Include="Domain\Blog\BlogDescription.cs" />
-    <Compile Include="Domain\Blog\BlogProduct.cs" />
     <Compile Include="Domain\Blog\BlogToLayout.cs" />
-    <Compile Include="Domain\Blog\BlogToStore.cs" />
     <Compile Include="Domain\Cart.cs" />
     <Compile Include="Domain\Category\Category.cs" />
     <Compile Include="Domain\Category\CategoryDescription.cs" />
-    <Compile Include="Domain\Category\CategoryFilter.cs" />
     <Compile Include="Domain\Category\CategoryPath.cs" />
     <Compile Include="Domain\Category\CategoryToLayout.cs" />
-    <Compile Include="Domain\Category\CategoryToStore.cs" />
     <Compile Include="Domain\Geo\Country.cs" />
     <Compile Include="Domain\Coupon\Coupon.cs" />
-    <Compile Include="Domain\Coupon\CouponCategory.cs" />
     <Compile Include="Domain\Coupon\CouponHistory.cs" />
     <Compile Include="Domain\Coupon\CouponProduct.cs" />
     <Compile Include="Domain\Currency.cs" />
@@ -126,7 +125,6 @@
     <Compile Include="Domain\Information\Information.cs" />
     <Compile Include="Domain\Information\InformationDescription.cs" />
     <Compile Include="Domain\Information\InformationToLayout.cs" />
-    <Compile Include="Domain\Information\InformationToStore.cs" />
     <Compile Include="Domain\Language.cs" />
     <Compile Include="Domain\Layout\Layout.cs" />
     <Compile Include="Domain\Layout\LayoutModule.cs" />
@@ -136,7 +134,6 @@
     <Compile Include="Domain\Location.cs" />
     <Compile Include="Domain\Manufacturer\Manufacturer.cs" />
     <Compile Include="Domain\Manufacturer\ManufactorerDescription.cs" />
-    <Compile Include="Domain\Manufacturer\ManufacturerToStore.cs" />
     <Compile Include="Domain\Marketing.cs" />
     <Compile Include="Domain\Menu\Menu.cs" />
     <Compile Include="Domain\Menu\MenuDescription.cs" />
@@ -162,7 +159,6 @@
     <Compile Include="Domain\Product\ProductDescription.cs" />
     <Compile Include="Domain\Product\ProductDiscount.cs" />
     <Compile Include="Domain\Product\ProductExtraTab.cs" />
-    <Compile Include="Domain\Product\ProductFilter.cs" />
     <Compile Include="Domain\Product\ProductImage.cs" />
     <Compile Include="Domain\Product\ProductImageByOption.cs" />
     <Compile Include="Domain\Product\ProductOption.cs" />
@@ -173,7 +169,6 @@
     <Compile Include="Domain\Sticker\ProductSticker.cs" />
     <Compile Include="Domain\Sticker\ProductStickerDescription.cs" />
     <Compile Include="Domain\Product\ProductToCategory.cs" />
-    <Compile Include="Domain\Product\ProductToDownload.cs" />
     <Compile Include="Domain\Product\ProductToLayout.cs" />
     <Compile Include="Domain\Recurring\Recurring.cs" />
     <Compile Include="Domain\Recurring\RecurringDescription.cs" />
@@ -188,7 +183,6 @@
     <Compile Include="Domain\Store.cs" />
     <Compile Include="Domain\Tax\TaxClass.cs" />
     <Compile Include="Domain\Tax\TaxRate.cs" />
-    <Compile Include="Domain\Tax\TaxRateToCustomerGroup.cs" />
     <Compile Include="Domain\Tax\TaxRule.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="Domain\Translation.cs" />

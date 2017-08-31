@@ -31,5 +31,8 @@ namespace OpenCart.Entities
 
         [Column("status")]
         public bool Status { get; set; }
+        public ICollection<Product> Products { get; set; }
+
+        public ICollection<Store> Stores { get; set; }
     }
 }

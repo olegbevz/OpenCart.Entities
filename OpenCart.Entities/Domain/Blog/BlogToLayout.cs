@@ -10,9 +10,9 @@ namespace OpenCart.Entities
     public class BlogToLayout
     {
         [Key]
-        [Column("blog_to_layout_id", Order = 0)]
+        [Column("blog_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; protected set; }
+        public int BlogId { get; protected set; }
 
         [Key]
         [Column("store_id", Order = 1)]

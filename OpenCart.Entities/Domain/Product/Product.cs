@@ -139,6 +139,10 @@ namespace OpenCart.Entities
 
         public virtual ICollection<ProductExtraTab> ExtraTabs { get; protected set; }
 
+        public virtual ICollection<Filter> Filters { get; set; }
+
+        public virtual ICollection<Download> Downloads { get; set; }
+
         public ProductDescription GetDescription(Language language)
         {
             return Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);

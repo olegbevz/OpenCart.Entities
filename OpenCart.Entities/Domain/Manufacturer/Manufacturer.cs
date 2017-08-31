@@ -22,5 +22,7 @@ namespace OpenCart.Entities
         public virtual ICollection<Product> Products { get; protected set; }
 
         public virtual ICollection<ManufacturerDescription> Descriptions { get; protected set; }
+
+        public virtual ICollection<Store> Stores { get; set; }
     }
 }

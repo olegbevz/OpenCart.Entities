@@ -43,5 +43,11 @@ namespace OpenCart.Entities
         public virtual ICollection<ProductToCategory> Products { get; protected set; }
 
         public virtual ICollection<CategoryDescription> Descriptions { get; protected set; }
+
+        public virtual ICollection<Filter> Filters { get; set; }
+
+        public virtual ICollection<Coupon> Coupons { get; set; }
+
+        public virtual ICollection<Store> Stores { get; set; }
     }
 }

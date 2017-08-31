@@ -176,6 +176,31 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [TestCase]
+        public void ShouldNotContainsEntitiesWhichImplementsManyToManyRelationship()
+        {
+            var entities = GetOpenCartEntities();
+
+            foreach (var entity in entities)
+            {
+                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
+                var properties = entity.GetProperties();
+
+                if (properties.Length != 2)
+                    continue;
+
+                var keyAttributes = properties
+                    .Select(property => property.GetAttribute<KeyAttribute>())
+                    .Where(attribute => attribute != null)
+                    .ToArray();
+
+                if (keyAttributes.Length != 2)
+                    continue;
+
+                Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+            }
+        }
+
         private Assembly GetOpenCartDomainAssembly()
         {
             return AppDomain.CurrentDomain.GetAssemblies()
