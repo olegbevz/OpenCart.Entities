@@ -247,8 +247,6 @@ namespace OpenCart.Entities.Tests
         {
             foreach (var entity in GetOpenCartEntities())
             {
-                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
-
                 foreach (var property in entity.GetProperties())
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
@@ -266,6 +264,33 @@ namespace OpenCart.Entities.Tests
 
                     var setter = property.GetSetMethod(true);
                     Assert.IsTrue(setter.IsPublic && !setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public");
+                }
+            }
+        }
+
+        [TestCase]
+        public void ShouldHaveNavigationPropertyForEachForeignKey()
+        {
+            foreach (var entity in GetOpenCartEntities())
+            {
+                foreach (var property in entity.GetProperties())
+                {
+                    var columnAttribute = property.GetAttribute<ColumnAttribute>();
+                    if (columnAttribute == null)
+                        continue;
+
+                    if (property.GetAttribute<KeyAttribute>() != null)
+                        continue;
+
+                    if (!columnAttribute.Name.EndsWith("_id"))
+                        continue;
+
+                    var navigationProperty = entity.GetProperties().FirstOrDefault(
+                            x => x.PropertyType.Name == property.Name.Replace("Id", string.Empty));
+
+                    Assert.NotNull(
+                        navigationProperty,
+                        $"Type '{entity.Name}' should have navigation property for foreign key '{property.Name}'.");
                 }
             }
         }

@@ -16,12 +16,12 @@ namespace OpenCart.Entities
         [Required]
         [StringLength(32)]
         [Column("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("lastname")]
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(40)]
@@ -46,7 +46,7 @@ namespace OpenCart.Entities
         [Required]
         [StringLength(10)]
         [Column("postcode")]
-        public string Postcode { get; set; }
+        public string PostCode { get; set; }
 
         [Column("country_id")]
         public int CountryId { get; set; }
@@ -58,5 +58,11 @@ namespace OpenCart.Entities
         [Required]
         [StringLength(65535)]
         public string CustomField { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        public virtual Country Country { get; set; }
+
+        public virtual Zone Zone { get; set; }
     }
 }
