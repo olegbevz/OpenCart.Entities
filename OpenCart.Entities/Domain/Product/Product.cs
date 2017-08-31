@@ -123,21 +123,21 @@ namespace OpenCart.Entities
 
         public virtual LengthClass LengthUnit { get; protected set; }
 
-        public virtual ICollection<ProductDescription> Descriptions { get; protected set; }
+        public virtual ICollection<ProductDescription> Descriptions { get; set; }
 
-        public virtual ICollection<ProductImage> Images { get; protected set; }
+        public virtual ICollection<ProductImage> Images { get; set; }
 
-        public virtual ICollection<ProductAttribute> Attributes { get; protected set; }
+        public virtual ICollection<ProductAttribute> Attributes { get; set; }
 
-        public virtual ICollection<ProductToCategory> Categories { get; protected set; }
+        public virtual ICollection<ProductToCategory> Categories { get; set; }
 
-        public virtual ICollection<Store> Stores { get; protected set; }
+        public virtual ICollection<Store> Stores { get; set; }
 
-        public virtual ICollection<ProductToLayout> Layouts { get; protected set; }
+        public virtual ICollection<ProductToLayout> Layouts { get; set; }
 
-        public virtual ICollection<Product> RelatedProducts { get; protected set; }
+        public virtual ICollection<Product> RelatedProducts { get; set; }
 
-        public virtual ICollection<ProductExtraTab> ExtraTabs { get; protected set; }
+        public virtual ICollection<ProductExtraTab> ExtraTabs { get; set; }
 
         public virtual ICollection<Filter> Filters { get; set; }
 

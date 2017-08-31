@@ -19,9 +19,9 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<Product> Products { get; protected set; }
+        public virtual ICollection<Product> Products { get; set; }
 
-        public virtual ICollection<ManufacturerDescription> Descriptions { get; protected set; }
+        public virtual ICollection<ManufacturerDescription> Descriptions { get; set; }
 
         public virtual ICollection<Store> Stores { get; set; }
     }

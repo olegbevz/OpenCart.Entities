@@ -18,6 +18,6 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<AttributeDescription> Descriptions { get; protected set; }
+        public virtual ICollection<AttributeDescription> Descriptions { get; set; }
     }
 }

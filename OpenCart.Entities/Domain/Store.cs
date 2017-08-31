@@ -19,6 +19,6 @@ namespace OpenCart.Entities
         [Required, StringLength(255), Column("ssl")]
         public string Ssl { get; set; }
 
-        public virtual ICollection<Product> Products { get; protected set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

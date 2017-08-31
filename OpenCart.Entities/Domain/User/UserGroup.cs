@@ -16,6 +16,6 @@ namespace OpenCart.Entities
         [Required, StringLength(65535), Column("permission", TypeName = "text")]
         public string Permissions { get; set; }
 
-        public virtual ICollection<User> Users { get; protected set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

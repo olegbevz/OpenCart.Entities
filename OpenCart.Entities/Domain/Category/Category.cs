@@ -38,11 +38,11 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        public virtual ICollection<Category> Categories { get; protected set; }
+        public virtual ICollection<Category> Categories { get; set; }
 
-        public virtual ICollection<ProductToCategory> Products { get; protected set; }
+        public virtual ICollection<ProductToCategory> Products { get; set; }
 
-        public virtual ICollection<CategoryDescription> Descriptions { get; protected set; }
+        public virtual ICollection<CategoryDescription> Descriptions { get; set; }
 
         public virtual ICollection<Filter> Filters { get; set; }
 
