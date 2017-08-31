@@ -13,7 +13,7 @@ namespace OpenCart.Entities
         [Column("attribute_group_id")]
         public int GroupId { get; set; }
 
-        public virtual AttributeGroup Group { get; protected set; }
+        public virtual AttributeGroup Group { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

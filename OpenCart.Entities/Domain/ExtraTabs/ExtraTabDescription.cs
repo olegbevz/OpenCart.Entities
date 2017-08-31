@@ -24,7 +24,7 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ExtraTabId { get; protected set; }
 
-        public virtual ExtraTab ExtraTab { get; protected set; }
+        public virtual ExtraTab ExtraTab { get; set; }
 
         [Column("title", TypeName = "text"), Required, StringLength(65535)]
         public string Title { get; set; }

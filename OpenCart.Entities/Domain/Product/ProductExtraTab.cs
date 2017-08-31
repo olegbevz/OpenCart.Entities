@@ -22,13 +22,13 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; protected set; }
 
-        public virtual Product Product { get; protected set; }
+        public virtual Product Product { get; set; }
 
         [Key, Column("extra_tab_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ExtraTabId { get; set; }
 
-        public virtual ExtraTab ExtraTab { get; protected set; }
+        public virtual ExtraTab ExtraTab { get; set; }
 
         [Key]
         [Column("language_id", Order = 2)]

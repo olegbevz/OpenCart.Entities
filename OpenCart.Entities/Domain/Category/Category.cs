@@ -18,7 +18,7 @@ namespace OpenCart.Entities
         [Column("parent_id")]
         public int ParentCategoryId { get; set; }
 
-        public Category ParentCategory { get; set; }
+        public virtual Category ParentCategory { get; set; }
 
         [Column("top")]
         public bool Top { get; set; }

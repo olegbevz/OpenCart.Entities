@@ -13,7 +13,7 @@ namespace OpenCart.Entities
         [Column("user_group_id")]
         public int GroupId { get; set; }
 
-        public virtual UserGroup Group { get; protected set; }
+        public virtual UserGroup Group { get; set; }
 
         [Required, StringLength(20), Column("username")]
         public string UserName { get; set; }

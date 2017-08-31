@@ -32,8 +32,8 @@ namespace OpenCart.Entities
         [Required(AllowEmptyStrings = true), StringLength(65535), Column("text", TypeName = "text")]
         public string Value { get; set; }
 
-        public virtual Attribute Attribute { get; protected set; }
+        public virtual Attribute Attribute { get; set; }
 
-        public virtual Product Product { get; protected set; }
+        public virtual Product Product { get; set; }
     }
 }

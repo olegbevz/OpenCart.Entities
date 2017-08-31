@@ -221,6 +221,27 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [TestCase]
+        public void AllNavigationPropertiesShouldBeVirtualAndPublic()
+        {
+            var openCartAssembly = typeof(OpenCartDomain).Assembly;
+
+            foreach (var entity in GetOpenCartEntities())
+            {
+                foreach (var property in entity.GetProperties())
+                {
+                    if (property.PropertyType.Assembly != openCartAssembly)
+                        continue;
+
+                    var getter = property.GetGetMethod(true);
+                    Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public and virtual");
+
+                    var setter = property.GetSetMethod(true);
+                    Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public and virtual");
+                }
+            }
+        }
+
         private Assembly GetOpenCartDomainAssembly()
         {
             return typeof(OpenCartDomain).Assembly;

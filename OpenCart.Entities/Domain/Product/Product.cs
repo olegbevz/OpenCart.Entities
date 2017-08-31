@@ -117,11 +117,11 @@ namespace OpenCart.Entities
         [Required(AllowEmptyStrings = true), StringLength(65535), Column("product_stickers", TypeName = "text")]
         public string Stickers { get; set; }
 
-        public virtual Manufacturer Manufacturer { get; protected set; }
+        public virtual Manufacturer Manufacturer { get; set; }
 
-        public virtual WeightClass WeightUnit { get; protected set; }
+        public virtual WeightClass WeightUnit { get; set; }
 
-        public virtual LengthClass LengthUnit { get; protected set; }
+        public virtual LengthClass LengthUnit { get; set; }
 
         public virtual ICollection<ProductDescription> Descriptions { get; set; }
 

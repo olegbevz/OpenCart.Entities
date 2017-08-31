@@ -9,7 +9,7 @@ namespace OpenCart.Entities
         [Key, Column("product_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
 
-        public virtual Product Product { get; protected set; }
+        public virtual Product Product { get; set; }
 
         [Required(AllowEmptyStrings = true), StringLength(65535), Column("tag", TypeName = "text")]
         public string Tag { get; set; }
