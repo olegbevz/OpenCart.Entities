@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Required]
         [StringLength(255)]
         [Column("reference")]
@@ -23,6 +25,8 @@ namespace OpenCart.Entities
 
         [Column("product_id")]
         public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -34,6 +38,8 @@ namespace OpenCart.Entities
 
         [Column("recurring_id")]
         public int RecurringId { get; set; }
+
+        public virtual Recurring Recurring { get; set; }
 
         [Required]
         [StringLength(255)]

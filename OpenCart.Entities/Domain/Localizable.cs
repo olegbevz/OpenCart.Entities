@@ -9,5 +9,7 @@ namespace OpenCart.Entities
         [Column("language_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
     }
 }

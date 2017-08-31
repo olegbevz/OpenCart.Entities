@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("geo_zone_id")]
         public int GeoZoneId { get; set; }
 
+        public virtual GeoZone GeoZone { get; set; }
+
         [Required]
         [StringLength(32)]
         [Column("name")]

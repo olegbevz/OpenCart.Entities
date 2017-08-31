@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Required]
         [StringLength(10)]
         [Column("code")]
@@ -42,7 +44,9 @@ namespace OpenCart.Entities
         public string ToEmail { get; set; }
 
         [Column("voucher_theme_id")]
-        public int VoucherThemeId { get; set; }
+        public int ThemeId { get; set; }
+
+        public virtual VoucherTheme Theme { get; set; } 
 
         [Column("message", TypeName = "text")]
         [Required]

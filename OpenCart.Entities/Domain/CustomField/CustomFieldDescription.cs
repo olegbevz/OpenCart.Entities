@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomFieldId { get; set; }
 
+        public virtual CustomField CustomField { get; set; }
+
         [Required]
         [StringLength(128)]
         [Column("name")]

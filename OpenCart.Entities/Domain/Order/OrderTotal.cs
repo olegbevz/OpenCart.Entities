@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Required]
         [StringLength(32)]
         [Column("code")]

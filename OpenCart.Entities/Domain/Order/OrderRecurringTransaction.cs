@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("order_recurring_id")]
         public int OrderRecurringId { get; set; }
 
+        public virtual OrderRecurring OrderRecurring { get; set; }
+
         [Required]
         [StringLength(255)]
         [Column("reference")]

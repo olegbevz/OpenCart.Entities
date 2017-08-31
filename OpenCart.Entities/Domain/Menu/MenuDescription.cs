@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MenuId { get; set; }
 
+        public virtual Menu Menu { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("name")]

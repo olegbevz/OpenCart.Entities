@@ -16,12 +16,12 @@ namespace OpenCart.Entities
         [Required]
         [StringLength(32)]
         [Column("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("lastname")]
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(96)]
@@ -149,5 +149,9 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
+        public virtual Country Country { get; set; }
+
+        public virtual Zone Zone { get; set; }
     }
 }

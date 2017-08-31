@@ -14,10 +14,14 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomFieldId { get; set; }
 
+        public virtual CustomField CustomField { get; set; }
+
         [Key]
         [Column("CustomerGroupId", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
+
+        public virtual CustomerGroup CustomerGroup { get; set; }
 
         public bool required { get; set; }
     }

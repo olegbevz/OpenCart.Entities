@@ -123,6 +123,10 @@ namespace OpenCart.Entities
 
         public virtual LengthClass LengthUnit { get; set; }
 
+        public virtual StockStatus StockStatus { get; set; }
+
+        public virtual TaxClass TaxClass { get; set; }
+
         public virtual ICollection<ProductDescription> Descriptions { get; set; }
 
         public virtual ICollection<ProductImage> Images { get; set; }

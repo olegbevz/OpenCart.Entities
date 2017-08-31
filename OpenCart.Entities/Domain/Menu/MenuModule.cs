@@ -17,6 +17,8 @@ namespace OpenCart.Entities
         [Column("menu_id")]
         public int MenuId { get; set; }
 
+        public virtual Menu Menu { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("code")]

@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("tax_class_id")]
         public int TaxClassId { get; set; }
 
+        public virtual TaxClass TaxClass { get; set; }
+
         [Column("tax_rate_id")]
         public int TaxRateId { get; set; }
+
+        public virtual TaxRate TaxRate { get; set; }
 
         [Required]
         [StringLength(10)]

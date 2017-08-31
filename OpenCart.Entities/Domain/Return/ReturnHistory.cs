@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("return_id")]
         public int ReturnId { get; set; }
 
+        public virtual Return Return { get; set; }
+
         [Column("return_status_id")]
         public int ReturnStatusId { get; set; }
+
+        public virtual ReturnStatus ReturnStatus { get; set; }
 
         public bool notify { get; set; }
 

@@ -7,7 +7,9 @@ namespace OpenCart.Entities
     public class WeightClassDescription : Localizable, IEntityWithTitle
     {
         [Key, Column("weight_class_id", Order = 0)]
-        public int WeightUnitId { get; set; }
+        public int WeightClassId { get; set; }
+
+        public virtual WeightClass WeightClass { get; set; }
 
         [Required, StringLength(32), Column("title")]
         public string Title { get; set; }

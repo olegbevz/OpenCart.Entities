@@ -14,10 +14,14 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         [Key]
         [Column("product_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

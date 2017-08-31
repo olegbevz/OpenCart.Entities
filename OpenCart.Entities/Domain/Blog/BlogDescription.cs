@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BlogId { get; set; }
 
+        public virtual Blog Blog { get; set; } 
+
         [Required]
         [StringLength(64)]
         [Column("title")]

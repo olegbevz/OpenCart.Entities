@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_customer")]
-    public class Customer : IEntityWithStatus
+    public class Customer : Localizable, IEntityWithStatus
     {
         [Key]
         [Column("customer_id")]
@@ -16,21 +16,22 @@ namespace OpenCart.Entities
         [Column("customer_group_id")]
         public int CustomerGroupId { get; set; }
 
+        public virtual CustomerGroup CustomerGroup { get; set; }
+
         [Column("store_id")]
         public int StoreId { get; set; }
 
-        [Column("language_id")]
-        public int LanguageId { get; set; }
+        public virtual Store Store { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("lastname")]
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(96)]
@@ -69,6 +70,8 @@ namespace OpenCart.Entities
 
         [Column("address_id")]
         public int AddressId { get; set; }
+
+        public virtual Address Address { get; set; }
 
         [Column("custom_field", TypeName = "text")]
         [Required]

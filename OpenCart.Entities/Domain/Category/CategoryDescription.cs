@@ -8,5 +8,7 @@ namespace OpenCart.Entities
     {
         [Key, Column("category_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
     }
 }

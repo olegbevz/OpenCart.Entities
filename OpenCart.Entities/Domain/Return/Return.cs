@@ -16,21 +16,27 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Column("product_id")]
         public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
 
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         [Required]
         [StringLength(32)]
         [Column("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("lastname")]
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(96)]
@@ -45,7 +51,7 @@ namespace OpenCart.Entities
         [Required]
         [StringLength(255)]
         [Column("product")]
-        public string Product { get; set; }
+        public string ProductName { get; set; }
 
         [Required]
         [StringLength(64)]
@@ -60,11 +66,17 @@ namespace OpenCart.Entities
         [Column("return_reason_id")]
         public int ReturnReasonId { get; set; }
 
+        public virtual ReturnReason ReturnReason { get; set; }
+
         [Column("return_action_id")]
         public int ReturnActionId { get; set; }
 
+        public virtual ReturnAction ReturnAction { get; set; }
+
         [Column("return_status_id")]
         public int ReturnStatusId { get; set; }
+
+        public virtual ReturnStatus ReturnStatus { get; set; }
 
         [Column("comment", TypeName = "text")]
         [StringLength(65535)]

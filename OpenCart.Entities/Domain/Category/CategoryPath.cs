@@ -11,6 +11,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId { get; set; }
 
+        public virtual Category Category { get; set; }
+
         [Key]
         [Column("path_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

@@ -11,6 +11,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FilterGroupId { get; set; }
 
+        public virtual FilterGroup FilterGroup { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("name")]

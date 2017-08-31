@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order")]
-    public class Order
+    public class Order : Localizable
     {
         [Key]
         [Column("order_id")]
@@ -24,6 +24,8 @@ namespace OpenCart.Entities
         [Column("store_id")]
         public int StoreId { get; set; }
 
+        public virtual Store Store { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("store_name")]
@@ -37,18 +39,22 @@ namespace OpenCart.Entities
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         [Column("customer_group_id")]
         public int CustomerGroupId { get; set; }
+
+        public virtual CustomerGroup CustomerGroup { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(32)]
         [Column("lastname")]
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(96)]
@@ -223,8 +229,12 @@ namespace OpenCart.Entities
         [Column("order_status_id")]
         public int OrderStatusId { get; set; }
 
+        public virtual OrderStatus OrderStatus { get; set; }
+
         [Column("affiliate_id")]
         public int AffiliateId { get; set; }
+
+        public virtual Affiliate Affiliate { get; set; }
 
         [Column("commission")]
         public decimal Commission { get; set; }
@@ -232,16 +242,17 @@ namespace OpenCart.Entities
         [Column("marketing_id")]
         public int MarketingId { get; set; }
 
+        public virtual Marketing Marketing { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("tracking")]
         public string Tracking { get; set; }
 
-        [Column("language_id")]
-        public int LanguageId { get; set; }
-
         [Column("currency_id")]
         public int CurrencyId { get; set; }
+
+        public virtual Currency Currency { get; set; }
 
         [Required]
         [StringLength(3)]

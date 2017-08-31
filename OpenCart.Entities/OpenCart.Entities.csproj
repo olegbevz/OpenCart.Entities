@@ -67,7 +67,7 @@
     <Compile Include="Mappings\LengthUnitMapping.cs" />
     <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="OpenCartDomain.cs" />
-    <Compile Include="Domain\Address.cs" />
+    <Compile Include="Domain\Customer\Address.cs" />
     <Compile Include="Domain\Affiliate\Affiliate.cs" />
     <Compile Include="Domain\Affiliate\AffiliateActivity.cs" />
     <Compile Include="Domain\Affiliate\AffiliateLogin.cs" />

@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OptionId { get; set; }
 
+        public virtual Option Option { get; set; }
+
         [Required]
         [StringLength(128)]
         [Column("name")]

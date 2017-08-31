@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_banner_image")]
-    public class BannerImage : IEntityWithTitle
+    public class BannerImage : Localizable, IEntityWithTitle
     {
         [Key]
         [Column("banner_image_id")]
@@ -16,8 +16,7 @@ namespace OpenCart.Entities
         [Column("banner_id")]
         public int BannerId { get; set; }
 
-        [Column("language_id")]
-        public int LanguageId { get; set; }
+        public virtual Banner Banner { get; set; } 
 
         [Required]
         [StringLength(64)]

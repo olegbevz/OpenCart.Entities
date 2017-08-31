@@ -11,6 +11,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RecurringId { get; set; }
 
+        public virtual Recurring Recurring { get; set; }
+
         [Required]
         [StringLength(255)]
         [Column("name")]

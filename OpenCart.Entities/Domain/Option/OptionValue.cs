@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("option_id")]
         public int OptionId { get; set; }
 
+        public virtual Option Option { get; set; }
+
         [Required]
         [StringLength(255)]
         [Column("image")]

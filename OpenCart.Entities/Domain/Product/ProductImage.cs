@@ -22,12 +22,12 @@ namespace OpenCart.Entities
         [Column("product_id")]
         public int ProductId { get; set; }
 
+        public virtual Product Product { get; set; }
+
         [StringLength(255), Column("image")]
         public string Image { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
-
-        public virtual Product Product { get; set; }
     }
 }

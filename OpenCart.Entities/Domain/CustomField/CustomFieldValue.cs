@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("custom_field_id")]
         public int CustomFieldId { get; set; }
 
+        public virtual CustomField CustomField { get; set; }
+
         [Column("sort_order")]
         public int SortOrder { get; set; }
     }

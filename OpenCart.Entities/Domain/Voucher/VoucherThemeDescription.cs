@@ -9,7 +9,9 @@ namespace OpenCart.Entities
         [Key]
         [Column("voucher_theme_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int VoucherThemeId { get; set; }
+        public int ThemeId { get; set; }
+
+        public virtual VoucherTheme Theme { get; set; }
 
         [Required]
         [StringLength(32)]

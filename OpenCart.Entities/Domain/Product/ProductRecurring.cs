@@ -14,14 +14,20 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
 
+        public virtual Product Product { get; set; }
+
         [Key]
         [Column("recurring_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RecurringId { get; set; }
 
+        public virtual Recurring Recurring { get; set; }
+
         [Key]
         [Column("customer_group_id", Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
+
+        public virtual CustomerGroup CustomerGroup { get; set; }
     }
 }

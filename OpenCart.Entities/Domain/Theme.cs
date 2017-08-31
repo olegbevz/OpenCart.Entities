@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("store_id")]
         public int StoreId { get; set; }
 
+        public virtual Store Store { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("theme")]

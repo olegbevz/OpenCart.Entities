@@ -16,7 +16,11 @@ namespace OpenCart.Entities
         [Column("coupon_id")]
         public int CouponId { get; set; }
 
+        public virtual Coupon Coupon { get; set; }
+
         [Column("product_id")]
         public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

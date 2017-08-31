@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InformationId { get; set; }
 
+        public virtual Information Information { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("title")]

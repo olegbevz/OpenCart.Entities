@@ -10,6 +10,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AttributeId { get; set; }
 
+        public virtual Attribute Attribute { get; set; }
+
         [Required, StringLength(64), Column("name")]
         public string Name { get; set; }
     }

@@ -11,9 +11,9 @@ namespace OpenCart.Entities
         public int Id { get; protected set; }
 
         [Column("attribute_group_id")]
-        public int GroupId { get; set; }
+        public int AttributeGroupId { get; set; }
 
-        public virtual AttributeGroup Group { get; set; }
+        public virtual AttributeGroup AttributeGroup { get; set; }
 
         [Column("sort_order")]
         public int SortOrder { get; set; }

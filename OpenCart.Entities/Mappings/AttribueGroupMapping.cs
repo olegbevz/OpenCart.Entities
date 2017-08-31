@@ -6,7 +6,7 @@ namespace OpenCart.Entities
     {
         public AttributeGroupMapping()
         {
-            HasMany(x => x.Attributes).WithRequired(x => x.Group).HasForeignKey(x => x.GroupId);
+            HasMany(x => x.Attributes).WithRequired(x => x.AttributeGroup).HasForeignKey(x => x.AttributeGroupId);
 
             HasMany(x => x.Descriptions);
         }

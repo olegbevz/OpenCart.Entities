@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_extra_tabs")]
-    public class ProductExtraTab
+    public class ProductExtraTab : Localizable
     {
         public ProductExtraTab()
         {
@@ -29,11 +29,6 @@ namespace OpenCart.Entities
         public int ExtraTabId { get; set; }
 
         public virtual ExtraTab ExtraTab { get; set; }
-
-        [Key]
-        [Column("language_id", Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int LanguageId { get; set; }
 
         [Column("text", TypeName = "text")]
         [Required]

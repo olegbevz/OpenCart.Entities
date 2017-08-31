@@ -13,6 +13,8 @@ namespace OpenCart.Entities
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         [Required]
         [StringLength(32)]
         [Column("firstname")]
@@ -51,18 +53,16 @@ namespace OpenCart.Entities
         [Column("country_id")]
         public int CountryId { get; set; }
 
+        public virtual Country Country { get; set; }
+
         [Column("zone_id")]
         public int ZoneId { get; set; }
+
+        public virtual Zone Zone { get; set; }
 
         [Column("custom_field", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string CustomField { get; set; }
-
-        public virtual Customer Customer { get; set; }
-
-        public virtual Country Country { get; set; }
-
-        public virtual Zone Zone { get; set; }
     }
 }

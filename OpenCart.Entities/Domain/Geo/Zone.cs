@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("country_id")]
         public int CountryId { get; set; }
 
+        public virtual Country Country { get; set; }
+
         [Required]
         [StringLength(128)]
         [Column("name")]

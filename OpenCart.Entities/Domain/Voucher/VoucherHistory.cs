@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("voucher_id")]
         public int VoucherId { get; set; }
 
+        public virtual Voucher Voucher { get; set; }
+
         [Column("order_id")]
         public int OrderId { get; set; }
+
+        public virtual Order Order { get; set; }
 
         [Column("amount")]
         public decimal Amount { get; set; }

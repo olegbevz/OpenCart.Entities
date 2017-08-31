@@ -17,6 +17,8 @@ namespace OpenCart.Entities
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         [Column("url", TypeName = "text")]
         [Required]
         [StringLength(65535)]

@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("api_id")]
         public int ApiId { get; set; }
 
+        public virtual Api Api { get; set; }
+
         [Required]
         [StringLength(40)]
         [Column("ip")]

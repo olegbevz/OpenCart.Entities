@@ -8,5 +8,7 @@ namespace OpenCart.Entities
     {
         [Key, Column("manufacturer_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ManufacturerId { get; set; }
+
+        public virtual Manufacturer Manufacturer { get; set; }
     }
 }

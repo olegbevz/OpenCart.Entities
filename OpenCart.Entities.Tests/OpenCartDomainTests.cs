@@ -273,24 +273,37 @@ namespace OpenCart.Entities.Tests
         {
             foreach (var entity in GetOpenCartEntities())
             {
-                foreach (var property in entity.GetProperties())
+                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
+                
+
+                var properties = entity.GetProperties();
+
+                foreach (var property in properties)
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
                     if (columnAttribute == null)
                         continue;
 
-                    if (property.GetAttribute<KeyAttribute>() != null)
-                        continue;
-
                     if (!columnAttribute.Name.EndsWith("_id"))
                         continue;
 
-                    var navigationProperty = entity.GetProperties().FirstOrDefault(
-                            x => x.PropertyType.Name == property.Name.Replace("Id", string.Empty));
+                    if (columnAttribute.Name == "session_id" ||
+                        columnAttribute.Name == "path_id" ||
+                        columnAttribute.Name == "extra_tab_id" ||
+                        columnAttribute.Name == "product_sticker_id")
+                        continue;
 
+                    if (columnAttribute.Name == $"{tableName}_id")
+                        continue;
+
+                    var navigationPropertyName = property.Name.Replace("Id", string.Empty);
+
+                    var navigationProperty = properties.FirstOrDefault(
+                            x => x.Name == navigationPropertyName);
+                    
                     Assert.NotNull(
                         navigationProperty,
-                        $"Type '{entity.Name}' should have navigation property for foreign key '{property.Name}'.");
+                        $"Type '{entity.Name}' should have navigation property '{navigationPropertyName}'.");
                 }
             }
         }

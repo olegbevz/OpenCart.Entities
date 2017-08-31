@@ -10,6 +10,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AttributeGroupId { get; set; }
 
+        public virtual AttributeGroup AttributeGroup { get; set; }
+
         [Required, StringLength(64), Column("name")]
         public string Name { get; set; }
     }

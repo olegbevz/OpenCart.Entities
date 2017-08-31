@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("layout_id")]
         public int LayoutId { get; set; }
 
+        public virtual Layout Layout { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("code")]

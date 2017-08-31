@@ -14,6 +14,8 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DownloadId { get; set; }
 
+        public virtual Download Download { get; set; }
+
         [Required]
         [StringLength(64)]
         [Column("name")]

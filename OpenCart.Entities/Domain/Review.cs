@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("product_id")]
         public int ProductId { get; set; }
 
+        public virtual Product Product { get; set; }
+
         [Column("customer_id")]
         public int CustomerId { get; set; }
+
+        public virtual Customer Customer { get; set; }
 
         [Required]
         [StringLength(64)]

@@ -14,11 +14,17 @@ namespace OpenCart.Entities
         [Column("country_id")]
         public int CountryId { get; set; }
 
+        public virtual Country Country { get; set; }
+
         [Column("zone_id")]
         public int ZoneId { get; set; }
 
+        public virtual Zone Zone { get; set; }
+
         [Column("geo_zone_id")]
         public int GeoZoneId { get; set; }
+
+        public virtual GeoZone GeoZone { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

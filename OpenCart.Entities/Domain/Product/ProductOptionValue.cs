@@ -16,14 +16,22 @@ namespace OpenCart.Entities
         [Column("product_option_id")]
         public int ProductOptionId { get; set; }
 
+        public virtual ProductOption ProductOption { get; set; }
+
         [Column("product_id")]
         public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
 
         [Column("option_id")]
         public int OptionId { get; set; }
 
+        public virtual Option Option { get; set; }
+
         [Column("option_value_id")]
         public int OptionValueId { get; set; }
+
+        public virtual OptionValue OptionValue { get; set; }
 
         [Column("quantity")]
         public int Quantity { get; set; }

@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Column("voucher_id")]
         public int VoucherId { get; set; }
+        
+        public virtual Voucher Voucher { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -51,6 +55,8 @@ namespace OpenCart.Entities
 
         [Column("voucher_theme_id")]
         public int VoucherThemeId { get; set; }
+
+        public virtual VoucherTheme VoucherTheme { get; set; }
 
         [Column("message", TypeName = "text")]
         [Required]

@@ -16,8 +16,12 @@ namespace OpenCart.Entities
         [Column("affiliate_id")]
         public int AffiliateId { get; set; }
 
+        public virtual Affiliate Affiliate { get; set; }
+
         [Column("order_id")]
         public int OrderId { get; set; }
+
+        public virtual Order Order { get; set; }
 
         [Column("description", TypeName = "text")]
         [Required]

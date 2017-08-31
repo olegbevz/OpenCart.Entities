@@ -16,11 +16,17 @@ namespace OpenCart.Entities
         [Column("order_id")]
         public int OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
+
         [Column("custom_field_id")]
         public int CustomFieldId { get; set; }
 
+        public virtual CustomField CustomField { get; set; }
+
         [Column("custom_field_value_id")]
         public int CustomFieldValueId { get; set; }
+
+        public virtual CustomFieldValue CustomFieldValue { get; set; }
 
         [Required]
         [StringLength(255)]

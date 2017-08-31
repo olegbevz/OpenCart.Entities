@@ -16,6 +16,8 @@ namespace OpenCart.Entities
         [Column("affiliate_id")]
         public int AffiliateId { get; set; }
 
+        public virtual Affiliate Affiliate { get;set; }
+
         [Required]
         [StringLength(64)]
         [Column("key")]
