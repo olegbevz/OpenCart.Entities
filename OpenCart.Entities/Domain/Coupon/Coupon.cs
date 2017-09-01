@@ -31,9 +31,11 @@ namespace OpenCart.Entities
         [Column("discount")]
         public decimal Discount { get; set; }
 
-        public bool logged { get; set; }
+        [Column("logged")]
+        public bool Logged { get; set; }
 
-        public bool shipping { get; set; }
+        [Column("shipping")]
+        public bool Shipping { get; set; }
 
         [Column("total")]
         public decimal Total { get; set; }

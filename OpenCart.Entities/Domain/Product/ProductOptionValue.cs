@@ -36,7 +36,8 @@ namespace OpenCart.Entities
         [Column("quantity")]
         public int Quantity { get; set; }
 
-        public bool subtract { get; set; }
+        [Column("subtract")]
+        public bool Subtract { get; set; }
 
         [Column("price")]
         public decimal Price { get; set; }

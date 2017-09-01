@@ -33,9 +33,11 @@ namespace OpenCart.Entities
 
         public virtual Category Category { get; set; }
 
-        public bool sub_category { get; set; }
+        [Column("sub_category")]
+        public bool SubCategory { get; set; }
 
-        public bool description { get; set; }
+        [Column("description")]
+        public bool Description { get; set; }
 
         [Column("products")]
         public int Products { get; set; }

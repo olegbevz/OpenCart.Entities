@@ -56,23 +56,28 @@ namespace OpenCart.Entities
         [Column("recurring_frequency")]
         public string RecurringFrequency { get; set; }
 
-        public short recurring_cycle { get; set; }
+        [Column("recurring_cycle")]
+        public short RecurringCycle { get; set; }
 
-        public short recurring_duration { get; set; }
+        [Column("recurring_duration")]
+        public short RecurringDuration { get; set; }
 
         [Column("recurring_price")]
         public decimal RecurringPrice { get; set; }
 
-        public bool trial { get; set; }
+        [Column("trial")]
+        public bool Trial { get; set; }
 
         [Required]
         [StringLength(25)]
         [Column("trial_frequency")]
         public string TrialFrequency { get; set; }
 
-        public short trial_cycle { get; set; }
+        [Column("trial_cycle")]
+        public short TrialCycle { get; set; }
 
-        public short trial_duration { get; set; }
+        [Column("trial_duration")]
+        public short TrialDuration { get; set; }
 
         [Column("trial_price")]
         public decimal TrialPrice { get; set; }

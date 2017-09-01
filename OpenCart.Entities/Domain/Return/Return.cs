@@ -61,7 +61,8 @@ namespace OpenCart.Entities
         [Column("quantity")]
         public int Quantity { get; set; }
 
-        public bool opened { get; set; }
+        [Column("opened")]
+        public bool Opened { get; set; }
 
         [Column("return_reason_id")]
         public int ReturnReasonId { get; set; }

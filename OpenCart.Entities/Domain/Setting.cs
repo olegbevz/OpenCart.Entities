@@ -33,6 +33,7 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Value { get; set; }
 
-        public bool serialized { get; set; }
+        [Column("serialized")]
+        public bool Serialized { get; set; }
     }
 }

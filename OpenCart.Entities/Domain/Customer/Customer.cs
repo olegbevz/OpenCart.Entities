@@ -66,7 +66,8 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Wishlist { get; set; }
 
-        public bool newsletter { get; set; }
+        [Column("newsletter")]
+        public bool NewsLetter { get; set; }
 
         [Column("address_id")]
         public int AddressId { get; set; }
@@ -86,9 +87,11 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public bool approved { get; set; }
+        [Column("approved")]
+        public bool Approved { get; set; }
 
-        public bool safe { get; set; }
+        [Column("safe")]
+        public bool Safe { get; set; }
 
         [Column("token", TypeName = "text")]
         [Required]

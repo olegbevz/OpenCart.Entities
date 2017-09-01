@@ -28,6 +28,7 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Value { get; set; }
 
-        public bool required { get; set; }
+        [Column("required")]
+        public bool Required { get; set; }
     }
 }

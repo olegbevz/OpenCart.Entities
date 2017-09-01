@@ -11,6 +11,8 @@ namespace OpenCart.Entities.Tests
     [TestFixture]
     public class OpenCartDomainTests
     {
+        private static Assembly openCartAssembly = typeof(OpenCartDomain).Assembly;
+
         [TestCase]
         public void AllEntitiesShouldHaveNameInPascalConvention()
         {
@@ -25,7 +27,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [Test]
-        public void AllEntitiesShouldHaveTheSameNameAsTable()
+        public void ShouldHaveTableAttributeForEachEntity()
         {
             var entities = GetOpenCartEntities();
 
@@ -33,49 +35,59 @@ namespace OpenCart.Entities.Tests
             {
                 var tableAttribute = entity.GetAttribute<TableAttribute>();
 
-                if (tableAttribute != null)
-                {
-                    var tableName = tableAttribute.Name;
-                    var expectedEntityName = GetEntityNameFromTableName(tableName);
+                Assert.NotNull(
+                    tableAttribute,
+                    $"Entity '{entity}' should have TableAttribute");
 
-                    if (expectedEntityName == "ExtraTabs")
-                        expectedEntityName = "ExtraTab";
+                var tableName = tableAttribute.Name;
+                var expectedEntityName = ToPascalConvention(tableName);
 
-                    if (expectedEntityName == "ExtraTabsDescription")
-                        expectedEntityName = "ExtraTabDescription";
+                if (expectedEntityName == "ExtraTabs")
+                    expectedEntityName = "ExtraTab";
 
-                    if (expectedEntityName == "ProductExtraTabs")
-                        expectedEntityName = "ProductExtraTab";
+                if (expectedEntityName == "ExtraTabsDescription")
+                    expectedEntityName = "ExtraTabDescription";
 
-                    if (expectedEntityName == "ProductStickers")
-                        expectedEntityName = "ProductSticker";
+                if (expectedEntityName == "ProductExtraTabs")
+                    expectedEntityName = "ProductExtraTab";
 
-                    if (expectedEntityName == "ProductStickersDescription")
-                        expectedEntityName = "ProductStickerDescription";
+                if (expectedEntityName == "ProductStickers")
+                    expectedEntityName = "ProductSticker";
 
-                    Assert.AreEqual(
-                        expectedEntityName,
-                        entity.Name,
-                        $"Entity mapped to table '{tableName}' should have name '{expectedEntityName}'");
-                }
+                if (expectedEntityName == "ProductStickersDescription")
+                    expectedEntityName = "ProductStickerDescription";
+
+                Assert.AreEqual(
+                    expectedEntityName,
+                    entity.Name,
+                    $"Entity mapped to table '{tableName}' should have name '{expectedEntityName}'");
             }
         }
 
         [TestCase]
-        public void AllEntityPropertiesShouldHaveNameInPascalConvention()
+        public void ShouldHaveColumnAttributeForEachProperty()
         {
             var entities = GetOpenCartEntities();
 
             foreach (var entity in entities)
             {
-                var properties = entity.GetProperties()
-                    .Where(property => property.GetCustomAttributes(typeof(ColumnAttribute), false).Length > 0);
-
-                foreach (var property in properties)
+                foreach (var property in entity.GetProperties())
                 {
+                    if (property.PropertyType.Assembly == openCartAssembly)
+                        continue;
+
+                    if (property.PropertyType.IsGenericType)
+                        continue;
+
+                    var columnAttribute = property.GetAttribute<ColumnAttribute>();
+
+                    Assert.NotNull(
+                        columnAttribute,
+                        $"Property '{entity.Name}.{property.Name}' should be decorated with ColumnAttribute");
+
                     Assert.IsTrue(
                         property.Name.InPascal(),
-                        $"Property name '{property.Name}' of type '{entity.Name}' should be in pascal convention");
+                        $"Property '{entity.Name}.{property.Name}' should be in pascal convention");
                 }
             }
         }
@@ -324,7 +336,7 @@ namespace OpenCart.Entities.Tests
                     type.GetCustomAttributes(typeof(TableAttribute), false).Length > 0);
         }
 
-        private string GetEntityNameFromTableName(string tableName)
+        private string ToPascalConvention(string tableName)
         {
             return string.Concat(tableName.Split('_')
                 .Where(part => part.Length > 0 && part != "oc")

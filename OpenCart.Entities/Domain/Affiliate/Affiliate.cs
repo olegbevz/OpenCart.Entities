@@ -145,7 +145,8 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public bool approved { get; set; }
+        [Column("approved")]
+        public bool Approved { get; set; }
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }

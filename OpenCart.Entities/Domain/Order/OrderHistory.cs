@@ -23,7 +23,8 @@ namespace OpenCart.Entities
 
         public virtual OrderStatus OrderStatus { get; set; }
 
-        public bool notify { get; set; }
+        [Column("notify")]
+        public bool Notify { get; set; }
 
         [Column("comment", TypeName = "text")]
         [Required]

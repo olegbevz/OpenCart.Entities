@@ -23,6 +23,7 @@ namespace OpenCart.Entities
 
         public virtual CustomerGroup CustomerGroup { get; set; }
 
-        public bool required { get; set; }
+        [Column("required")]
+        public bool Required { get; set; }
     }
 }
