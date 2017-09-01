@@ -13,6 +13,7 @@ namespace OpenCart.Entities
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
+        [ForeignKey("Id")]
         public virtual Customer Customer { get; set; }
 
         [Required]

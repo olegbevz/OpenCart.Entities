@@ -16,6 +16,8 @@ namespace OpenCart.Entities.Examples
                         .ToArray();
 
                     var orders = openCartDomain.Orders.ToArray();
+
+                    var customerAddress = openCartDomain.Customers.FirstOrDefault().Address;
                 }
             }
             catch (Exception ex)

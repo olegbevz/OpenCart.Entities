@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_attribute")]
-    public class ProductAttribute : Localizable
+    public class ProductAttribute
     {
         public ProductAttribute(Attribute attribute, Language language, string value)
         {
@@ -24,6 +24,13 @@ namespace OpenCart.Entities
         [Key, Column("attribute_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AttributeId { get; set; }
+
+        [Key]
+        [Column("language_id", Order = 2)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
 
         [Required(AllowEmptyStrings = true), StringLength(65535), Column("text", TypeName = "text")]
         public string Value { get; set; }

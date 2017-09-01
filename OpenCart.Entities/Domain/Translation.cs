@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_translation")]
-    public class Translation : Localizable
+    public class Translation
     {
         [Key]
         [Column("translation_id")]
@@ -17,6 +17,11 @@ namespace OpenCart.Entities
         public int StoreId { get; set; }
 
         public virtual Store Store { get; set; }
+
+        [Column("language_id")]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
 
         [Required]
         [StringLength(64)]

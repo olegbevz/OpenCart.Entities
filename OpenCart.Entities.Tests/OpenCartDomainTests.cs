@@ -13,21 +13,8 @@ namespace OpenCart.Entities.Tests
     {
         private static Assembly openCartAssembly = typeof(OpenCartDomain).Assembly;
 
-        [TestCase]
-        public void AllEntitiesShouldHaveNameInPascalConvention()
-        {
-            var entities = GetOpenCartEntities();
-
-            foreach (var entity in entities)
-            {
-                Assert.IsTrue(
-                    entity.Name.InPascal(), 
-                    $"Type name '{entity.Name}' should be in pascal convention");
-            }
-        }
-
         [Test]
-        public void ShouldHaveTableAttributeForEachEntity()
+        public void ShouldHaveTableAttributes()
         {
             var entities = GetOpenCartEntities();
 
@@ -37,7 +24,11 @@ namespace OpenCart.Entities.Tests
 
                 Assert.NotNull(
                     tableAttribute,
-                    $"Entity '{entity}' should have TableAttribute");
+                    $"Entity '{entity.Name}' should have TableAttribute");
+
+                Assert.IsTrue(
+                    entity.Name.InPascal(),
+                    $"Type name '{entity.Name}' should be in pascal convention");
 
                 var tableName = tableAttribute.Name;
                 var expectedEntityName = ToPascalConvention(tableName);
@@ -65,7 +56,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void ShouldHaveColumnAttributeForEachProperty()
+        public void ShouldHaveColumnAttributes()
         {
             var entities = GetOpenCartEntities();
 
@@ -93,22 +84,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllDomainPropertiesShouldHaveNameInPascalConvention()
-        {
-            var domainType = typeof(OpenCartDomain);
-
-            var properties = domainType.GetProperties();
-
-            foreach (var property in properties)
-            {
-                Assert.IsTrue(
-                    property.Name.InPascal(),
-                    $"Property name '{property.Name}' should be in pascal convention");
-            }
-        }
-
-        [TestCase]
-        public void AllEntitiesWithTitlePropertyShouldImplementEntityWithTitleInterface()
+        public void EntitiesWithTitlePropertyShouldImplementEntityWithTitleInterface()
         {
             var entities = GetOpenCartEntities();
 
@@ -124,7 +100,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllEntitiesWithNamePropertyShouldImplementEntityWithNameInterface()
+        public void EntitiesWithNamePropertyShouldImplementEntityWithNameInterface()
         {
             var entities = GetOpenCartEntities();
 
@@ -140,7 +116,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllEntitiesWithStatusPropertyShouldImplementEntityWithStatusInterface()
+        public void EntitiesWithStatusPropertyShouldImplementEntityWithStatusInterface()
         {
             var entities = GetOpenCartEntities();
 
@@ -156,7 +132,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllKeyPropertiesShouldHaveIdNameAndProtectedSetter()
+        public void ShouldHaveKeyAttributes()
         {
             var entities = GetOpenCartEntities();
 
@@ -166,22 +142,26 @@ namespace OpenCart.Entities.Tests
 
                 foreach (var property in entity.GetProperties())
                 {
-                    var keyAttribue = property.GetAttribute<KeyAttribute>();
+                    if (property.PropertyType.Assembly == openCartAssembly)
+                        continue;
+
+                    if (property.PropertyType.IsGenericType)
+                        continue;
+
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
+                    if (columnAttribute.Name != $"{tableName}_id")
+                        continue;
 
-                    if (keyAttribue != null && columnAttribute.Name == $"{tableName}_id")
-                    {
-                        Assert.AreEqual(
-                            "Id",
-                            property.Name,
-                            $"Property name '{property.Name}' of type '{entity.Name}' should be renamed to 'Id'");
+                    var keyAttribue = property.GetAttribute<KeyAttribute>();
+                    Assert.NotNull(keyAttribue, $"Property name '{entity.Name}.{property.Name}' should be decorated with KeyAttribute");
 
-                        var getter = property.GetGetMethod(true);
-                        Assert.IsTrue(getter.IsPublic, $"{entity.Name}.{property.Name} getter should be made public");
+                    Assert.AreEqual("Id", property.Name, $"Property name '{entity.Name}.{property.Name}' should be 'Id'");
 
-                        var setter = property.GetSetMethod(true);
-                        Assert.IsFalse(setter.IsPublic, $"{entity.Name}.{property.Name} setter should be made protected");
-                    }
+                    var getter = property.GetGetMethod(true);
+                    Assert.IsTrue(getter.IsPublic, $"{entity.Name}.{property.Name} getter should be made public");
+
+                    var setter = property.GetSetMethod(true);
+                    Assert.IsFalse(setter.IsPublic, $"{entity.Name}.{property.Name} setter should be made protected");
                 }
             }
         }
@@ -212,7 +192,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllCollectionPropertiesShouldBeVirtualAndPublic()
+        public void ShouldHaveCollectionProperties()
         {
             foreach (var entity in GetOpenCartEntities())
             {
@@ -224,26 +204,7 @@ namespace OpenCart.Entities.Tests
                     if (property.PropertyType.GetGenericTypeDefinition() != typeof(ICollection<>))
                         continue;
 
-                    var getter = property.GetGetMethod(true);
-                    Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public and virtual");
-
-                    var setter = property.GetSetMethod(true);
-                    Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public and virtual");
-                }
-            }
-        }
-
-        [TestCase]
-        public void AllNavigationPropertiesShouldBeVirtualAndPublic()
-        {
-            var openCartAssembly = typeof(OpenCartDomain).Assembly;
-
-            foreach (var entity in GetOpenCartEntities())
-            {
-                foreach (var property in entity.GetProperties())
-                {
-                    if (property.PropertyType.Assembly != openCartAssembly)
-                        continue;
+                    Assert.IsTrue(property.Name.InPascal(), $"Property '{entity.Name}.{property.Name}' should be in pascal convention");
 
                     var getter = property.GetGetMethod(true);
                     Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public and virtual");
@@ -255,7 +216,7 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void AllForeignKeyPropertiesShouldBeVirtualAndPublic()
+        public void ShouldHaveForeignKeyProperties()
         {
             foreach (var entity in GetOpenCartEntities())
             {
@@ -281,12 +242,11 @@ namespace OpenCart.Entities.Tests
         }
 
         [TestCase]
-        public void ShouldHaveNavigationPropertyForEachForeignKey()
+        public void ShouldHaveNavigationProperties()
         {
             foreach (var entity in GetOpenCartEntities())
             {
-                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
-                
+                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);                
 
                 var properties = entity.GetProperties();
 
@@ -310,12 +270,20 @@ namespace OpenCart.Entities.Tests
 
                     var navigationPropertyName = property.Name.Replace("Id", string.Empty);
 
-                    var navigationProperty = properties.FirstOrDefault(
-                            x => x.Name == navigationPropertyName);
+                    var navigationProperty = properties.FirstOrDefault(x => x.Name == navigationPropertyName);
                     
                     Assert.NotNull(
                         navigationProperty,
                         $"Type '{entity.Name}' should have navigation property '{navigationPropertyName}'.");
+
+                    if (entity == typeof(Order) && navigationProperty.PropertyType == typeof(string))
+                        continue;
+
+                    var getter = navigationProperty.GetGetMethod(true);
+                    Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public and virtual");
+
+                    var setter = navigationProperty.GetSetMethod(true);
+                    Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public and virtual");
                 }
             }
         }
