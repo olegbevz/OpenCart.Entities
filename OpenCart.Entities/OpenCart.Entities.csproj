@@ -92,7 +92,6 @@
     <Compile Include="Domain\Geo\Country.cs" />
     <Compile Include="Domain\Coupon\Coupon.cs" />
     <Compile Include="Domain\Coupon\CouponHistory.cs" />
-    <Compile Include="Domain\Coupon\CouponProduct.cs" />
     <Compile Include="Domain\Currency.cs" />
     <Compile Include="Domain\Customer\Customer.cs" />
     <Compile Include="Domain\Customer\CustomerActivity.cs" />

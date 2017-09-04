@@ -33,5 +33,6 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
     }
 }

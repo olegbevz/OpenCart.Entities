@@ -49,5 +49,7 @@ namespace OpenCart.Entities
         public virtual ICollection<Coupon> Coupons { get; set; }
 
         public virtual ICollection<Store> Stores { get; set; }
+
+        public virtual ICollection<CustomerSearch> Searches { get; set; }
     }
 }

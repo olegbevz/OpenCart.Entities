@@ -147,6 +147,26 @@ namespace OpenCart.Entities
 
         public virtual ICollection<Download> Downloads { get; set; }
 
+        public virtual ICollection<Coupon> Coupons { get; set; }
+
+        public virtual ICollection<OrderProduct> Orders { get; set; }
+
+        public virtual ICollection<OrderRecurring> Recurrings { get; set; }
+
+        public virtual ICollection<ProductDiscount> Discounts { get; set; }
+
+        public virtual ICollection<ProductOption> Options { get; set; }
+
+        public virtual ICollection<ProductOptionValue> OptionValues { get; set; }
+
+        public virtual ICollection<ProductReward> Rewards { get; set; }
+
+        public virtual ICollection<ProductSpecial> Specials { get; set; }
+
+        public virtual ICollection<Return> Returns { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
+
         public ProductDescription GetDescription(Language language)
         {
             return Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);

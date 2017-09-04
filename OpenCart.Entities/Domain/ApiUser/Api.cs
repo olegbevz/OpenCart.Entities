@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace OpenCart.Entities
 {
     using System;
@@ -29,5 +31,9 @@ namespace OpenCart.Entities
 
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
+
+        public virtual ICollection<ApiIp> IpAddresses { get; set; }
+
+        public virtual ICollection<ApiSession> Sessions { get; set; }
     }
 }

@@ -62,5 +62,7 @@ namespace OpenCart.Entities
         [StringLength(1)]
         [Column("weight_prefix")]
         public string WeightPrefix { get; set; }
+
+        public virtual ICollection<OrderOption> OrderOptions { get; set; }
     }
 }

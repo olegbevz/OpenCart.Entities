@@ -5,7 +5,6 @@ namespace OpenCart.Entities
 {
     public interface IOpenCartDomain : IDisposable
     {
-        int SaveChanges();
         DbSet<Affiliate> Affiliates { get; set; }
         DbSet<Api> Apis { get; set; }
         DbSet<Attribute> Attributes { get; set; }
@@ -64,5 +63,7 @@ namespace OpenCart.Entities
         DbSet<UserGroup> UserGroups { get; set; }
         DbSet<WeightClass> WeightUnits { get; set; }
         DbSet<LengthClass> LengthUnits { get; set; }
+
+        int SaveChanges();
     }
 }

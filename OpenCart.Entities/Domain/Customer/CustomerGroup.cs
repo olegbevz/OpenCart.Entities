@@ -18,5 +18,15 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
+
+        public virtual ICollection<Customer> Customers { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public virtual ICollection<ProductDiscount> Discounts { get; set; }
+
+        public virtual ICollection<ProductReward> Rewards { get; set; }
+
+        public virtual ICollection<ProductSpecial> Specials { get; set; }
     }
 }

@@ -17,5 +17,9 @@ namespace OpenCart.Entities
         [StringLength(255)]
         [Column("image")]
         public string Image { get; set; }
+
+        public virtual ICollection<OrderVoucher> Orders { get; set; }
+
+        public virtual ICollection<Voucher> Vouchers { get; set; }
     }
 }

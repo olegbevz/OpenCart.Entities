@@ -111,5 +111,27 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
+        public virtual ICollection<CouponHistory> CouponHistory { get; set; }
+
+        public virtual ICollection<CustomerActivity> Activities { get; set; }
+
+        public virtual ICollection<CustomerHistory> History { get; set; }
+
+        public virtual ICollection<CustomerIp> CustomerIpAddresses { get; set; }
+
+        public virtual ICollection<CustomerOnline> OnlineActions { get; set; }
+
+        public virtual ICollection<CustomerReward> Rewards { get; set; }
+
+        public virtual ICollection<CustomerSearch> Searches { get; set; }
+
+        public virtual ICollection<CustomerTransaction> Transactions { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public virtual ICollection<Return> Returns { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

@@ -91,5 +91,7 @@ namespace OpenCart.Entities
 
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
+
+        public virtual ICollection<ReturnHistory> History { get; set; }
     }
 }

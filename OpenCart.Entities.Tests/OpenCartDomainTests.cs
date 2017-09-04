@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -173,44 +174,107 @@ namespace OpenCart.Entities.Tests
 
             foreach (var entity in entities)
             {
-                var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
                 var properties = entity.GetProperties();
 
-                if (properties.Length != 2)
-                    continue;
+                if (properties.Length == 2)
+                {
+                    var keyAttributes = properties
+                        .Select(property => property.GetAttribute<KeyAttribute>())
+                        .Where(attribute => attribute != null)
+                        .ToArray();
 
-                var keyAttributes = properties
-                    .Select(property => property.GetAttribute<KeyAttribute>())
-                    .Where(attribute => attribute != null)
-                    .ToArray();
+                    if (keyAttributes.Length == 2)
+                        Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+                }
+                    
+                if (properties.Length == 3)
+                {
+                    var keyAttributes = properties.Where(property => property.GetAttribute<KeyAttribute>() != null)
+                        .ToArray();
 
-                if (keyAttributes.Length != 2)
-                    continue;
+                    var foreingKeys = properties.Where(IsForeignKey)
+                        .ToArray();
 
-                Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+                    if (keyAttributes.Length == 1 && foreingKeys.Length == 2)
+                        Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+                }
+
+                if (properties.Length == 4)
+                {
+                    var keyAttributes = properties
+                        .Select(property => property.GetAttribute<KeyAttribute>())
+                        .Where(attribute => attribute != null)
+                        .ToArray();
+
+                    var foreingKeys = properties.Where(IsForeignKey)
+                        .ToArray();
+
+                    if (keyAttributes.Length == 2 && foreingKeys.Length == 2)
+                        Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+                }
+
+                if (properties.Length == 5)
+                {
+                    var keyAttributes = properties.Where(property => property.GetAttribute<KeyAttribute>() != null)
+                        .ToArray();
+
+                    var foreingKeys = properties.Where(IsForeignKey)
+                        .ToArray();
+
+                    var navigationProperties = properties.Where(IsNavigationProperty)
+                        .ToArray();
+
+                    if (keyAttributes.Length == 1 && foreingKeys.Length == 2 && navigationProperties.Length == 2)
+                        Assert.Fail($"Entity '{entity.Name}' should be replaced with many-to-many mapping.");
+                }
             }
         }
 
         [TestCase]
         public void ShouldHaveCollectionProperties()
         {
-            foreach (var entity in GetOpenCartEntities())
+            var entities = GetOpenCartEntities().AsEnumerable();
+
+            foreach (var entity in entities)
             {
-                foreach (var property in entity.GetProperties())
+                foreach (var property in entity.GetProperties().Where(IsForeignKey))
                 {
-                    if (!property.PropertyType.IsGenericType)
+                    var foreignKeyName = property.GetAttribute<ColumnAttribute>().Name;
+                    if (entity == typeof(Category) && foreignKeyName == "parent_id")
+                        foreignKeyName = "category_id";
+                    
+                    if (entity == typeof(Order) && property.Name.EndsWith("CountryId"))
+                        foreignKeyName = "country_id";
+
+                    if (entity == typeof(Order) && property.Name.EndsWith("ZoneId"))
+                        foreignKeyName = "zone_id";
+
+                    var targetTableName = "oc_"  + foreignKeyName.Replace("_id", string.Empty);
+                    var targetEntity = entities.FirstOrDefault(x => x.GetAttribute<TableAttribute>().Name == targetTableName);
+
+                    if (targetEntity == null)
+                        throw new Exception($"There is no target entity related to {entity.Name}.{property.Name}");
+
+                    var collectionProperty = targetEntity.GetProperties().SingleOrDefault(x => x.PropertyType.IsGenericType(typeof(ICollection<>), entity));
+
+                    if (ShouldNotHaveCollectionProperty(entity, targetEntity))
+                    {
+                        if (collectionProperty != null)
+                            throw new Exception($"Entity {targetEntity.Name} should not have property ICollection<{entity.Name}>.");
+
                         continue;
+                    }
+                    
+                    if (collectionProperty == null)
+                        throw new Exception($"Entity {targetEntity.Name} should have property ICollection<{entity.Name}>.");
 
-                    if (property.PropertyType.GetGenericTypeDefinition() != typeof(ICollection<>))
-                        continue;
+                    Assert.IsTrue(collectionProperty.Name.InPascal(), $"Property '{entity.Name}.{collectionProperty.Name}' should be in pascal convention");
 
-                    Assert.IsTrue(property.Name.InPascal(), $"Property '{entity.Name}.{property.Name}' should be in pascal convention");
+                    var getter = collectionProperty.GetGetMethod(true);
+                    Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{collectionProperty.Name} getter should be made public and virtual");
 
-                    var getter = property.GetGetMethod(true);
-                    Assert.IsTrue(getter.IsPublic && getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public and virtual");
-
-                    var setter = property.GetSetMethod(true);
-                    Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public and virtual");
+                    var setter = collectionProperty.GetSetMethod(true);
+                    Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{collectionProperty.Name} setter should be made public and virtual");
                 }
             }
         }
@@ -220,18 +284,8 @@ namespace OpenCart.Entities.Tests
         {
             foreach (var entity in GetOpenCartEntities())
             {
-                foreach (var property in entity.GetProperties())
+                foreach (var property in entity.GetProperties().Where(IsForeignKey))
                 {
-                    var columnAttribute = property.GetAttribute<ColumnAttribute>();
-                    if (columnAttribute == null)
-                        continue;
-
-                    if (property.GetAttribute<KeyAttribute>() != null)
-                        continue;
-
-                    if (!columnAttribute.Name.EndsWith("_id"))
-                        continue;
-
                     var getter = property.GetGetMethod(true);
                     Assert.IsTrue(getter.IsPublic && !getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public");
 
@@ -250,14 +304,9 @@ namespace OpenCart.Entities.Tests
 
                 var properties = entity.GetProperties();
 
-                foreach (var property in properties)
+                foreach (var property in properties.Where(IsForeignKey))
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
-                    if (columnAttribute == null)
-                        continue;
-
-                    if (!columnAttribute.Name.EndsWith("_id"))
-                        continue;
 
                     if (columnAttribute.Name == "session_id" ||
                         columnAttribute.Name == "path_id" ||
@@ -309,6 +358,72 @@ namespace OpenCart.Entities.Tests
             return string.Concat(tableName.Split('_')
                 .Where(part => part.Length > 0 && part != "oc")
                 .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
+        }
+
+        private bool ShouldNotHaveCollectionProperty(Type entity, Type targetEntity)
+        {
+            if (entity == typeof(Address) && targetEntity == typeof(Customer))
+                return true;
+
+            if (entity == typeof(OptionValueDescription) && targetEntity == typeof(Option))
+                return true;
+
+            if (entity == typeof(Cart))
+                return true;
+
+            var dummyEntities = new[]
+            {
+                typeof(Address),
+                typeof(Country),
+                typeof(Zone),
+                typeof(GeoZone),
+                typeof(Order),
+                typeof(Language),
+                typeof(OrderStatus),
+                typeof(Currency),
+                typeof(CustomField),
+                typeof(CustomFieldValue),
+                typeof(Recurring),
+                typeof(Voucher),
+                typeof(StockStatus),
+                typeof(WeightClass),
+                typeof(LengthClass),
+                typeof(Option),
+                typeof(OptionValue),
+                typeof(ReturnReason),
+                typeof(ReturnAction),
+                typeof(ReturnStatus),
+                typeof(TaxClass),
+                typeof(TaxRate)
+            };
+
+            if (dummyEntities.Contains(targetEntity))
+                return true;
+
+            return false;
+        }
+
+        public bool IsForeignKey(PropertyInfo property)
+        {
+            var columnAttribute = property.GetAttribute<ColumnAttribute>();
+            if (columnAttribute == null)
+                return false;
+
+            if (property.GetAttribute<KeyAttribute>() != null)
+                return false;
+
+            if (property.DeclaringType == typeof(ApiSession) && property.Name == "SessionId")
+                return false;
+
+            if (property.DeclaringType == typeof(Cart) && property.Name == "SessionId")
+                return false;
+
+            return columnAttribute.Name.EndsWith("_id");
+        }
+
+        public bool IsNavigationProperty(PropertyInfo property)
+        {
+            return property.PropertyType.Assembly == openCartAssembly;
         }
     }
 }

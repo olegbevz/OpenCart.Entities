@@ -49,6 +49,13 @@ namespace OpenCart.Entities
                 .Map(x => x.ToTable("oc_product_to_download")
                 .MapLeftKey("product_id")
                 .MapRightKey("download_id"));
+
+            HasMany(x => x.Coupons)
+                .WithMany(x => x.Products)
+                .Map(x => x.ToTable("oc_coupon_product")
+                .MapLeftKey("product_id")
+                .MapRightKey("coupon_id"));
+
         }
     }
 }

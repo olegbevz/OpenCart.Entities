@@ -154,5 +154,11 @@ namespace OpenCart.Entities
         public virtual Country Country { get; set; }
 
         public virtual Zone Zone { get; set; }
+
+        public virtual ICollection<AffiliateActivity> AffiliateActivities { get; set; }
+
+        public virtual ICollection<AffiliateTransaction> AffiliateTransactions { get; set; }
+
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

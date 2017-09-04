@@ -61,5 +61,9 @@ namespace OpenCart.Entities
         public DateTime DateAdded { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
+
+        public virtual ICollection<CouponHistory> History { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
