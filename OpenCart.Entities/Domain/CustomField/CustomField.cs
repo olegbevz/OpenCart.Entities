@@ -38,5 +38,9 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
+
+        public virtual ICollection<CustomFieldDescription> Descriptions { get; set; }
+
+        public virtual ICollection<CustomFieldValue> Values { get; set; }
     }
 }

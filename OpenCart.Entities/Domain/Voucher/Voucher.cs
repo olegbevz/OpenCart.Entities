@@ -61,5 +61,7 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
+        public virtual ICollection<VoucherHistory> History { get; set; }
     }
 }

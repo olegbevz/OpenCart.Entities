@@ -21,6 +21,8 @@ namespace OpenCart.Entities
 
         public virtual ICollection<Product> Products { get; set; }
 
+        public virtual ICollection<ProductToLayout> ProductLayouts { get; set; }
+
         public virtual ICollection<Customer> Customers { get;set; }
 
         public virtual ICollection<CustomerSearch> CustomerSearches { get; set; }
@@ -36,5 +38,11 @@ namespace OpenCart.Entities
         public virtual ICollection<Theme> Themes { get; set; }
 
         public virtual ICollection<Translation> Translations { get; set; }
+
+        public virtual ICollection<BlogToLayout> Blogs { get; set; }
+
+        public virtual ICollection<CategoryToLayout> Categories { get; set; }
+
+        public virtual ICollection<InformationToLayout> Informations { get; set; }
     }
 }

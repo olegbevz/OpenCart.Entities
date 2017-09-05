@@ -292,5 +292,11 @@ namespace OpenCart.Entities
 
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
+
+        public virtual ICollection<OrderTotal> Totals { get; set; }
+
+        public virtual ICollection<OrderHistory> History { get; set; }
+
+        public virtual ICollection<OrderCustomField> CustomFields { get; set; }
     }
 }

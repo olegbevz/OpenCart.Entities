@@ -17,7 +17,7 @@ namespace OpenCart.Entities
         public virtual CustomField CustomField { get; set; }
 
         [Key]
-        [Column("CustomerGroupId", Order = 1)]
+        [Column("customer_group_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerGroupId { get; set; }
 

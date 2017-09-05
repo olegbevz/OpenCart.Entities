@@ -24,9 +24,34 @@ namespace OpenCart.Entities.Tests
             return type.GetInterfaces().Any(x => x == typeof(TInterface));
         }
 
-        public static bool IsGenericType(this Type type, Type genericType, Type innerType)
+        public static bool IsGenericType(this Type type, Type genericType, Type typeParameter)
         {
-            return type.IsGenericType && type.GetGenericTypeDefinition() == genericType && type.GetGenericArguments().FirstOrDefault() == innerType;
+            return IsGenericType(type, genericType) && type.GetGenericArguments().FirstOrDefault() == typeParameter;
+        }
+
+        public static bool IsGenericType(this Type type, Type genericType)
+        {
+            return type.IsGenericType && type.GetGenericTypeDefinition() == genericType;
+        }
+
+        public static bool HasPublicSetter(this PropertyInfo property)
+        {
+            return property.GetSetMethod(true).IsPublic;
+        }
+
+        public static bool HasPublicGetter(this PropertyInfo property)
+        {
+            return property.GetGetMethod(true).IsPublic;
+        }
+
+        public static bool HasVirtualSetter(this PropertyInfo property)
+        {
+            return property.GetSetMethod(true).IsVirtual;
+        }
+
+        public static bool HasVirtualGetter(this PropertyInfo property)
+        {
+            return property.GetGetMethod(true).IsVirtual;
         }
     }
 }

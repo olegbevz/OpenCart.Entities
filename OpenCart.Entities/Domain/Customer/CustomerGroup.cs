@@ -28,5 +28,11 @@ namespace OpenCart.Entities
         public virtual ICollection<ProductReward> Rewards { get; set; }
 
         public virtual ICollection<ProductSpecial> Specials { get; set; }
+
+        public virtual ICollection<CustomerGroupDescription> Descriptions { get; set; }
+
+        public virtual ICollection<CustomFieldCustomerGroup> CustomFields { get; set; }
+
+        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; }
     }
 }

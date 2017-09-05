@@ -28,5 +28,7 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
+        public virtual ICollection<ZoneToGeoZone> Zones { get; set; }
     }
 }

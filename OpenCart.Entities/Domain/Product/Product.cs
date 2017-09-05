@@ -151,7 +151,7 @@ namespace OpenCart.Entities
 
         public virtual ICollection<OrderProduct> Orders { get; set; }
 
-        public virtual ICollection<OrderRecurring> Recurrings { get; set; }
+        public virtual ICollection<OrderRecurring> OrderRecurrings { get; set; }
 
         public virtual ICollection<ProductDiscount> Discounts { get; set; }
 
@@ -166,6 +166,12 @@ namespace OpenCart.Entities
         public virtual ICollection<Return> Returns { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+
+        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; }
+
+        public virtual ICollection<ProductImageByOption> ImagesByOption { get; set; }
+
+        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; }
 
         public ProductDescription GetDescription(Language language)
         {

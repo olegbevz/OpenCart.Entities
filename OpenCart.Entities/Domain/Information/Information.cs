@@ -23,5 +23,9 @@ namespace OpenCart.Entities
         public bool Status { get; set; }
 
         public virtual ICollection<Store> Stores { get; set; }
+
+        public virtual ICollection<InformationToLayout> Layouts { get; set; }
+
+        public virtual ICollection<InformationDescription> Descriptions { get; set; }
     }
 }

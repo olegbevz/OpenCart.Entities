@@ -19,7 +19,7 @@ namespace OpenCart.Entities
 
         [Key, Column("product_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductId { get; protected set; }
+        public int ProductId { get; set; }
 
         [Key, Column("attribute_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

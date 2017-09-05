@@ -35,5 +35,7 @@ namespace OpenCart.Entities
         public bool Status { get; set; }
 
         public virtual ICollection<MenuModule> Modules { get; set; }
+
+        public virtual ICollection<MenuDescription> Descriptions { get; set; }
     }
 }

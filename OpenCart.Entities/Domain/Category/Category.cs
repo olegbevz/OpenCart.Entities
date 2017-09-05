@@ -51,5 +51,9 @@ namespace OpenCart.Entities
         public virtual ICollection<Store> Stores { get; set; }
 
         public virtual ICollection<CustomerSearch> Searches { get; set; }
+
+        public virtual ICollection<CategoryPath> Paths { get; set; }
+
+        public virtual ICollection<CategoryToLayout> Layouts { get; set; }
     }
 }

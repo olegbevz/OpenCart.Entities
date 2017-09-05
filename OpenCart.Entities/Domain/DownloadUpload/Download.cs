@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace OpenCart.Entities
 {
     using System;
@@ -23,5 +25,7 @@ namespace OpenCart.Entities
 
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
+
+        public virtual ICollection<DownloadDescription> Descriptions { get; set; }
     }
 }

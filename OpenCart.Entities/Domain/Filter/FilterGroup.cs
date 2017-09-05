@@ -18,6 +18,6 @@ namespace OpenCart.Entities
 
         public virtual ICollection<Filter> Filters { get; set; }
 
-        public virtual ICollection<FilterDescription> Descriptions { get; set; }
+        public virtual ICollection<FilterGroupDescription> Descriptions { get; set; }
     }
 }

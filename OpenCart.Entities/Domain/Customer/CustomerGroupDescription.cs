@@ -12,7 +12,7 @@ namespace OpenCart.Entities
         [Key]
         [Column("customer_group_id", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CustomerGroupId { get; protected set; }
+        public int CustomerGroupId { get; set; }
 
         public virtual CustomerGroup CustomerGroup { get; set; }
 

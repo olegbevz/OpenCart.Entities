@@ -21,5 +21,7 @@ namespace OpenCart.Entities
         public virtual ICollection<OrderVoucher> Orders { get; set; }
 
         public virtual ICollection<Voucher> Vouchers { get; set; }
+
+        public virtual ICollection<VoucherThemeDescription> Descriptions { get; set; }
     }
 }

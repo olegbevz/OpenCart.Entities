@@ -133,5 +133,7 @@ namespace OpenCart.Entities
         public virtual ICollection<Return> Returns { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+
+        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; }
     }
 }

@@ -22,5 +22,7 @@ namespace OpenCart.Entities
         public int SortOrder { get; set; }
 
         public virtual ICollection<OptionDescription> Descriptions { get; set; }
+
+        public virtual ICollection<OptionValue> Values { get; set; }
     }
 }

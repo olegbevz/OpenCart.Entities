@@ -34,5 +34,9 @@ namespace OpenCart.Entities
         public virtual ICollection<Product> Products { get; set; }
 
         public virtual ICollection<Store> Stores { get; set; }
+
+        public virtual ICollection<BlogDescription> Descriptions { get; set; }
+
+        public virtual ICollection<BlogToLayout> Layouts { get; set; }
     }
 }

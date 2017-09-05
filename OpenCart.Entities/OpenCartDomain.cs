@@ -36,6 +36,7 @@ namespace OpenCart.Entities
         }
 
         public virtual DbSet<Affiliate> Affiliates { get; set; }
+        public virtual DbSet<AffiliateLogin> AffiliateLogins { get; set; }
         public virtual DbSet<Api> Apis { get; set; }
         public virtual DbSet<Attribute> Attributes { get; set; }
         public virtual DbSet<AttributeGroup> AttributeGroups { get; set; }
@@ -48,6 +49,7 @@ namespace OpenCart.Entities
         public virtual DbSet<Currency> Currencies { get; set; }
         public virtual DbSet<CustomField> CustomFields { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerLogin> CustomerLogins { get; set;}
         public virtual DbSet<CustomerGroup> CustomerGroups { get; set; }
         public virtual DbSet<Download> Downloads { get; set; }
         public virtual DbSet<Event> Events { get; set; }

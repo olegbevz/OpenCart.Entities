@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace OpenCart.Entities.Tests
 {
@@ -23,6 +24,13 @@ namespace OpenCart.Entities.Tests
             }
 
             return true;
+        }
+
+        public static string ToPascal(this string value)
+        {
+            return string.Concat(value.Split('_')
+                .Where(part => part.Length > 0 && part != "oc")
+                .Select(x => string.Concat(x[0].ToString().ToUpper(), new string(x.Skip(1).ToArray()))));
         }
     }
 }

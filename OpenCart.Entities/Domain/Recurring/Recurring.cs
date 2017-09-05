@@ -49,5 +49,7 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
+
+        public virtual ICollection<RecurringDescription> Descriptions { get; set; }
     }
 }
