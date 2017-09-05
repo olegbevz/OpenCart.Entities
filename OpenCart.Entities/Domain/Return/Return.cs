@@ -65,16 +65,19 @@ namespace OpenCart.Entities
         public bool Opened { get; set; }
 
         [Column("return_reason_id")]
+        [ForeignKey("ReturnReason")]
         public int ReturnReasonId { get; set; }
 
         public virtual ReturnReason ReturnReason { get; set; }
 
         [Column("return_action_id")]
+        [ForeignKey("ReturnAction")]
         public int ReturnActionId { get; set; }
-
+        
         public virtual ReturnAction ReturnAction { get; set; }
 
         [Column("return_status_id")]
+        [ForeignKey("ReturnStatus")]
         public int ReturnStatusId { get; set; }
 
         public virtual ReturnStatus ReturnStatus { get; set; }

@@ -20,11 +20,11 @@ namespace OpenCart.Entities
         [Column("product_image_id", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductImageId { get; set; }
-
-        public virtual ProductImage ProductImage { get; set; }
+        
+        //public virtual ProductImage ProductImage { get; set; }
 
         [Key]
-        [Column("product_value_id", Order = 2)]
+        [Column("option_value_id", Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OptionValueId { get; set; }
 

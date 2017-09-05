@@ -14,14 +14,14 @@ namespace OpenCart.Entities.Tests
         [TestCase("SKU", true)]
         public void ShouldDeterminePascalConvention(string value, bool inPascal)
         {
-            Assert.AreEqual(value.InPascal(), inPascal);
+            Assert.AreEqual(Notations.InPascal(value), inPascal);
         }
 
         [TestCase("")]
         [TestCase(null)]
         public void ShouldThrowException(string value)
         {
-            Assert.Throws<ArgumentNullException>(() => value.InPascal());
+            Assert.Throws<ArgumentNullException>(() => Notations.InPascal(value));
         }
     }
 }

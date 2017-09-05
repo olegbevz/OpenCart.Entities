@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace OpenCart.Entities.Tests
 {
-    static class StringExtensions
+    static class Notations
     {
-        public static bool InPascal(this string value)
+        public static bool InPascal(string value)
         {
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
@@ -26,7 +26,7 @@ namespace OpenCart.Entities.Tests
             return true;
         }
 
-        public static string ToPascal(this string value)
+        public static string ToPascal(string value)
         {
             return string.Concat(value.Split('_')
                 .Where(part => part.Length > 0 && part != "oc")

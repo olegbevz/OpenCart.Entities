@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_return_action")]
-    public class ReturnAction : Localizable, IEntityWithName
+    public class ReturnAction : IEntityWithName
     {
         [Key]
         [Column("return_action_id", Order = 0)]
@@ -17,5 +17,11 @@ namespace OpenCart.Entities
         [StringLength(64)]
         [Column("name")]
         public string Name { get; set; }
+
+        [Column("language_id", Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
     }
 }

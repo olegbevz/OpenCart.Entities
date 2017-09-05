@@ -24,12 +24,12 @@ namespace OpenCart.Entities.Tests
             return type.GetInterfaces().Any(x => x == typeof(TInterface));
         }
 
-        public static bool IsGenericType(this Type type, Type genericType, Type typeParameter)
+        public static bool IsGeneric(this Type type, Type genericType, Type typeParameter)
         {
-            return IsGenericType(type, genericType) && type.GetGenericArguments().FirstOrDefault() == typeParameter;
+            return IsGeneric(type, genericType) && type.GetGenericArguments().FirstOrDefault() == typeParameter;
         }
 
-        public static bool IsGenericType(this Type type, Type genericType)
+        public static bool IsGeneric(this Type type, Type genericType)
         {
             return type.IsGenericType && type.GetGenericTypeDefinition() == genericType;
         }

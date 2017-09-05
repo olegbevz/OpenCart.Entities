@@ -8,7 +8,7 @@ namespace OpenCart.Entities
     public class Event : IEntityWithStatus
     {
         [Key]
-        [Column("Id")]
+        [Column("event_id")]
         public int Id { get; protected set; }
 
         [Required, StringLength(32), Column("code")]

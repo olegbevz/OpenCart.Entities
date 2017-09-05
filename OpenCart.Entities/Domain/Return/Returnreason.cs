@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_return_reason")]
-    public class ReturnReason : Localizable, IEntityWithName
+    public class ReturnReason : IEntityWithName
     {
         [Key]
         [Column("return_reason_id", Order = 0)]
@@ -17,5 +17,10 @@ namespace OpenCart.Entities
         [StringLength(128)]
         [Column("name")]
         public string Name { get; set; }
+
+        [Column("language_id")]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
     }
 }

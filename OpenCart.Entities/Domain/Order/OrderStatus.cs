@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_order_status")]
-    public class OrderStatus : Localizable, IEntityWithName
+    public class OrderStatus : IEntityWithName
     {
         [Key]
         [Column("order_status_id", Order = 0)]
@@ -17,5 +17,10 @@ namespace OpenCart.Entities
         [StringLength(32)]
         [Column("name")]
         public string Name { get; set; }
+        
+        [Column("language_id", Order = 1)]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
     }
 }

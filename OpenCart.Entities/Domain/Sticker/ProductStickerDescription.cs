@@ -11,12 +11,14 @@ namespace OpenCart.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StickerId { get; set; }
 
-        [Column("text", TypeName = "text")]
+        public virtual ProductSticker Sticker { get; set; }
+
+        [Column("title", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string Title { get; set; }
 
-        [Column("title", TypeName = "text")]
+        [Column("text", TypeName = "text")]
         [Required]
         [StringLength(65535)]
         public string Text { get; set; }

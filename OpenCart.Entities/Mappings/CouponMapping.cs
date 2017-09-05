@@ -14,7 +14,7 @@ namespace OpenCart.Entities.Mappings
              .WithMany(x => x.Coupons)
              .Map(x => x.ToTable("oc_coupon_category")
              .MapLeftKey("category_id")
-             .MapRightKey("filter_id"));
+             .MapRightKey("coupon_id"));
         }
     }
 }
