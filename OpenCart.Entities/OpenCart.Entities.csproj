@@ -112,7 +112,7 @@
     <Compile Include="Domain\CustomField\CustomFieldValueDescription.cs" />
     <Compile Include="Domain\DownloadUpload\Download.cs" />
     <Compile Include="Domain\DownloadUpload\DownloadDescription.cs" />
-    <Compile Include="Domain\Event.cs" />
+    <Compile Include="Domain\System\Event.cs" />
     <Compile Include="Domain\Extension.cs" />
     <Compile Include="Domain\ExtraTabs\ExtraTab.cs" />
     <Compile Include="Domain\ExtraTabs\ExtraTabDescription.cs" />
@@ -137,8 +137,8 @@
     <Compile Include="Domain\Menu\Menu.cs" />
     <Compile Include="Domain\Menu\MenuDescription.cs" />
     <Compile Include="Domain\Menu\MenuModule.cs" />
-    <Compile Include="Domain\Modification.cs" />
-    <Compile Include="Domain\Module.cs" />
+    <Compile Include="Domain\System\Modification.cs" />
+    <Compile Include="Domain\System\Module.cs" />
     <Compile Include="Domain\Option\Option.cs" />
     <Compile Include="Domain\Option\OptionDescription.cs" />
     <Compile Include="Domain\Option\OptionValue.cs" />
@@ -176,8 +176,8 @@
     <Compile Include="Domain\Return\ReturnHistory.cs" />
     <Compile Include="Domain\Return\ReturnReason.cs" />
     <Compile Include="Domain\Return\ReturnStatus.cs" />
-    <Compile Include="Domain\Review.cs" />
-    <Compile Include="Domain\Setting.cs" />
+    <Compile Include="Domain\Review\Review.cs" />
+    <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\StockStatus.cs" />
     <Compile Include="Domain\Store.cs" />
     <Compile Include="Domain\Tax\TaxClass.cs" />

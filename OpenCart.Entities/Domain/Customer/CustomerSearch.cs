@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_customer_search")]
-    public class CustomerSearch : Localizable
+    public class CustomerSearch
     {
         [Key]
         [Column("customer_search_id")]
@@ -22,6 +22,12 @@ namespace OpenCart.Entities
         public int CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }
+
+        [Column("language_id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
 
         [Required]
         [StringLength(255)]
