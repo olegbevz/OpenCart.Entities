@@ -191,6 +191,10 @@ namespace OpenCart.Entities.Tests
                 foreach (var property in entity.GetProperties().Where(EntityExtensions.IsForeignKeyProperty))
                 {
                     var foreignKeyName = property.GetAttribute<ColumnAttribute>().Name;
+
+                    if (entity == typeof(CategoryPath) && foreignKeyName == "path_id")
+                        continue;
+                    
                     if (entity == typeof(Category) && foreignKeyName == "parent_id")
                         foreignKeyName = "category_id";
                     
@@ -201,10 +205,7 @@ namespace OpenCart.Entities.Tests
                         foreignKeyName = "zone_id";
 
                     if (foreignKeyName == "extra_tab_id")
-                        foreignKeyName = "extra_tabs_id";
-
-                    if (entity == typeof(CategoryPath) && foreignKeyName == "path_id")
-                        continue;
+                        foreignKeyName = "extra_tabs_id";                    
 
                     if (foreignKeyName == "product_sticker_id")
                         foreignKeyName = "product_stickers_id";

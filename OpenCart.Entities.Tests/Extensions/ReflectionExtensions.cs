@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -52,6 +54,11 @@ namespace OpenCart.Entities.Tests
         public static bool HasVirtualGetter(this PropertyInfo property)
         {
             return property.GetGetMethod(true).IsVirtual;
+        }
+
+        public static IEnumerable<PropertyInfo> GetOwnProperties(this Type type)
+        {
+            return type.GetProperties().Where(property => property.DeclaringType == type);
         }
     }
 }
