@@ -4,7 +4,6 @@ namespace OpenCart.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     [Table("oc_product")]
     public class Product : IEntityWithStatus
@@ -160,30 +159,5 @@ namespace OpenCart.Entities
         public virtual ICollection<ProductImageByOption> ImagesByOption { get; set; } = new HashSet<ProductImageByOption>();
 
         public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; } = new HashSet<ProductRecurring>();
-
-        public ProductDescription GetDescription(Language language)
-        {
-            return Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);
-        }
-
-        public void SetDescription(Language language, ProductDescription description)
-        {
-            var existionDescription = Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);
-            if (existionDescription != null)
-            {
-                existionDescription.MetaTitle = description.MetaTitle;
-                existionDescription.Name = description.Name;
-                existionDescription.Tag = description.Tag;
-                existionDescription.MetaH1 = description.MetaH1;
-                existionDescription.MetaKeyword = description.MetaKeyword;
-                existionDescription.MetaDescription = description.MetaDescription;
-                existionDescription.Description = description.Description;
-            }
-            else
-            {
-                description.LanguageId = language.Id;
-                Descriptions.Add(description);
-            }
-        }
     }
 }
