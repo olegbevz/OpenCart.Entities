@@ -19,20 +19,20 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; } = new HashSet<Customer>();
 
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
 
-        public virtual ICollection<ProductDiscount> Discounts { get; set; }
+        public virtual ICollection<ProductDiscount> Discounts { get; set; } = new HashSet<ProductDiscount>();
 
-        public virtual ICollection<ProductReward> Rewards { get; set; }
+        public virtual ICollection<ProductReward> Rewards { get; set; } = new HashSet<ProductReward>();
 
-        public virtual ICollection<ProductSpecial> Specials { get; set; }
+        public virtual ICollection<ProductSpecial> Specials { get; set; } = new HashSet<ProductSpecial>();
 
-        public virtual ICollection<CustomerGroupDescription> Descriptions { get; set; }
+        public virtual ICollection<CustomerGroupDescription> Descriptions { get; set; } = new HashSet<CustomerGroupDescription>();
 
-        public virtual ICollection<CustomFieldCustomerGroup> CustomFields { get; set; }
+        public virtual ICollection<CustomFieldCustomerGroup> CustomFields { get; set; } = new HashSet<CustomFieldCustomerGroup>();
 
-        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; }
+        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; } = new HashSet<ProductRecurring>();
     }
 }

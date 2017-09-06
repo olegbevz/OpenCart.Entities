@@ -37,6 +37,6 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        public virtual ICollection<CustomerGroup> CustomerGroups { get; set; }
+        public virtual ICollection<CustomerGroup> CustomerGroups { get; set; } = new HashSet<CustomerGroup>();
     }
 }

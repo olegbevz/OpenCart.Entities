@@ -22,10 +22,10 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public virtual ICollection<Store> Stores { get; set; }
+        public virtual ICollection<Store> Stores { get; set; } = new HashSet<Store>();
 
-        public virtual ICollection<InformationToLayout> Layouts { get; set; }
+        public virtual ICollection<InformationToLayout> Layouts { get; set; } = new HashSet<InformationToLayout>();
 
-        public virtual ICollection<InformationDescription> Descriptions { get; set; }
+        public virtual ICollection<InformationDescription> Descriptions { get; set; } = new HashSet<InformationDescription>();
     }
 }

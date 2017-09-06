@@ -13,8 +13,8 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<Attribute> Attributes { get; set; }
+        public virtual ICollection<Attribute> Attributes { get; set; } = new HashSet<Attribute>();
 
-        public virtual ICollection<AttributeGroupDescription> Descriptions { get; set; }
+         public virtual ICollection<AttributeGroupDescription> Descriptions { get; set; } = new HashSet<AttributeGroupDescription>();
     }
 }

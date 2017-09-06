@@ -60,10 +60,10 @@ namespace OpenCart.Entities
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
 
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; } = new HashSet<Category>();
 
-        public virtual ICollection<CouponHistory> History { get; set; }
+        public virtual ICollection<CouponHistory> History { get; set; } = new HashSet<CouponHistory>();
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
     }
 }

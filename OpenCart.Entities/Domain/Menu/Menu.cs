@@ -34,8 +34,8 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public virtual ICollection<MenuModule> Modules { get; set; }
+        public virtual ICollection<MenuModule> Modules { get; set; } = new HashSet<MenuModule>();
 
-        public virtual ICollection<MenuDescription> Descriptions { get; set; }
+        public virtual ICollection<MenuDescription> Descriptions { get; set; } = new HashSet<MenuDescription>();
     }
 }

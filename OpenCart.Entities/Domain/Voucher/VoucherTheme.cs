@@ -18,10 +18,10 @@ namespace OpenCart.Entities
         [Column("image")]
         public string Image { get; set; }
 
-        public virtual ICollection<OrderVoucher> Orders { get; set; }
+        public virtual ICollection<OrderVoucher> Orders { get; set; } = new HashSet<OrderVoucher>();
 
-        public virtual ICollection<Voucher> Vouchers { get; set; }
+        public virtual ICollection<Voucher> Vouchers { get; set; } = new HashSet<Voucher>();
 
-        public virtual ICollection<VoucherThemeDescription> Descriptions { get; set; }
+        public virtual ICollection<VoucherThemeDescription> Descriptions { get; set; } = new HashSet<VoucherThemeDescription>();
     }
 }

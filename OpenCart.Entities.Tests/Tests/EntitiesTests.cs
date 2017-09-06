@@ -54,6 +54,17 @@ namespace OpenCart.Entities.Tests
             }
         }
 
+        [Test]
+        public void ShouldHaveDefaultConstructor()
+        {
+            foreach (var entity in EntityExtensions.GetEntities())
+            {
+                var constructors = entity.GetConstructors();
+                var defaultConstructor = constructors.FirstOrDefault(x => x.IsPublic && x.GetParameters().Length == 0);
+                Assert.IsNotNull(defaultConstructor, $"Entity {entity.Name} should public contain default constructor");
+            }
+        }
+
         [TestCase]
         public void ShouldHaveColumnProperties()
         {
@@ -233,6 +244,10 @@ namespace OpenCart.Entities.Tests
 
                     var setter = collectionProperty.GetSetMethod(true);
                     Assert.IsTrue(setter.IsPublic && setter.IsVirtual, $"{entity.Name}.{collectionProperty.Name} setter should be made public and virtual");
+
+                    var targetEntityInstance = Activator.CreateInstance(targetEntity);
+                    var collectionPropertyValue = collectionProperty.GetGetMethod().Invoke(targetEntityInstance, new object[0]);
+                    Assert.IsNotNull(collectionPropertyValue, $"Property '{targetEntity.Name}.{collectionProperty.Name}' should be initialized in constructor");
                 }
             }
         }

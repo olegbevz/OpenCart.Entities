@@ -48,6 +48,6 @@ namespace OpenCart.Entities
         [Column("reward")]
         public int Reward { get; set; }
 
-        public virtual ICollection<OrderOption> Options { get; set; }
+        public virtual ICollection<OrderOption> Options { get; set; } = new HashSet<OrderOption>();
     }
 }

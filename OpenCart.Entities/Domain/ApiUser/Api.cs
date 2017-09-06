@@ -32,8 +32,8 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        public virtual ICollection<ApiIp> IpAddresses { get; set; }
+        public virtual ICollection<ApiIp> IpAddresses { get; set; } = new HashSet<ApiIp>();
 
-        public virtual ICollection<ApiSession> Sessions { get; set; }
+        public virtual ICollection<ApiSession> Sessions { get; set; } = new HashSet<ApiSession>();
     }
 }

@@ -21,6 +21,6 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public virtual ICollection<BannerImage> Images { get; set; }
+        public virtual ICollection<BannerImage> Images { get; set; } = new HashSet<BannerImage>();
     }
 }

@@ -31,9 +31,9 @@ namespace OpenCart.Entities
         [Column("required")]
         public bool Required { get; set; }
 
-        public virtual ICollection<OrderOption> OrderOptions { get; set; }
+        public virtual ICollection<OrderOption> OrderOptions { get; set; } = new HashSet<OrderOption>();
 
-        public virtual ICollection<ProductOptionValue> OptionValues { get; set;}
+        public virtual ICollection<ProductOptionValue> OptionValues { get; set; } = new HashSet<ProductOptionValue>();
 
     }
 }

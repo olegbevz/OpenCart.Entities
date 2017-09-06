@@ -9,18 +9,6 @@ namespace OpenCart.Entities
     [Table("oc_product")]
     public class Product : IEntityWithStatus
     {
-        public Product()
-        {
-            Categories = new HashSet<ProductToCategory>();
-            Descriptions = new HashSet<ProductDescription>();
-            Images = new HashSet<ProductImage>();
-            Attributes = new HashSet<ProductAttribute>();
-            Stores = new HashSet<Store>();
-            Layouts = new HashSet<ProductToLayout>();
-            RelatedProducts = new HashSet<Product>();
-            ExtraTabs = new HashSet<ProductExtraTab>();
-        }
-
         [Key, Column("product_id")]
         public int Id { get; protected set; }
 
@@ -127,51 +115,51 @@ namespace OpenCart.Entities
 
         public virtual TaxClass TaxClass { get; set; }
 
-        public virtual ICollection<ProductDescription> Descriptions { get; set; }
+        public virtual ICollection<ProductDescription> Descriptions { get; set; } = new HashSet<ProductDescription>();
 
-        public virtual ICollection<ProductImage> Images { get; set; }
+        public virtual ICollection<ProductImage> Images { get; set; } = new HashSet<ProductImage>();
 
-        public virtual ICollection<ProductAttribute> Attributes { get; set; }
+        public virtual ICollection<ProductAttribute> Attributes { get; set; } = new HashSet<ProductAttribute>();
 
-        public virtual ICollection<ProductToCategory> Categories { get; set; }
+        public virtual ICollection<ProductToCategory> Categories { get; set; } = new HashSet<ProductToCategory>();
 
-        public virtual ICollection<Store> Stores { get; set; }
+        public virtual ICollection<Store> Stores { get; set; } = new HashSet<Store>();
 
-        public virtual ICollection<ProductToLayout> Layouts { get; set; }
+        public virtual ICollection<ProductToLayout> Layouts { get; set; } = new HashSet<ProductToLayout>();
 
-        public virtual ICollection<Product> RelatedProducts { get; set; }
+        public virtual ICollection<Product> RelatedProducts { get; set; } = new HashSet<Product>();
 
-        public virtual ICollection<ProductExtraTab> ExtraTabs { get; set; }
+        public virtual ICollection<ProductExtraTab> ExtraTabs { get; set; } = new HashSet<ProductExtraTab>();
 
-        public virtual ICollection<Filter> Filters { get; set; }
+        public virtual ICollection<Filter> Filters { get; set; } = new HashSet<Filter>();
 
-        public virtual ICollection<Download> Downloads { get; set; }
+        public virtual ICollection<Download> Downloads { get; set; } = new HashSet<Download>();
 
-        public virtual ICollection<Coupon> Coupons { get; set; }
+        public virtual ICollection<Coupon> Coupons { get; set; } = new HashSet<Coupon>();
 
-        public virtual ICollection<OrderProduct> Orders { get; set; }
+        public virtual ICollection<OrderProduct> Orders { get; set; } = new HashSet<OrderProduct>();
 
-        public virtual ICollection<OrderRecurring> OrderRecurrings { get; set; }
+        public virtual ICollection<OrderRecurring> OrderRecurrings { get; set; } = new HashSet<OrderRecurring>();
 
-        public virtual ICollection<ProductDiscount> Discounts { get; set; }
+        public virtual ICollection<ProductDiscount> Discounts { get; set; } = new HashSet<ProductDiscount>();
 
-        public virtual ICollection<ProductOption> Options { get; set; }
+        public virtual ICollection<ProductOption> Options { get; set; } = new HashSet<ProductOption>();
 
-        public virtual ICollection<ProductOptionValue> OptionValues { get; set; }
+        public virtual ICollection<ProductOptionValue> OptionValues { get; set; } = new HashSet<ProductOptionValue>();
 
-        public virtual ICollection<ProductReward> Rewards { get; set; }
+        public virtual ICollection<ProductReward> Rewards { get; set; } = new HashSet<ProductReward>();
 
-        public virtual ICollection<ProductSpecial> Specials { get; set; }
+        public virtual ICollection<ProductSpecial> Specials { get; set; } = new HashSet<ProductSpecial>();
 
-        public virtual ICollection<Return> Returns { get; set; }
+        public virtual ICollection<Return> Returns { get; set; } = new HashSet<Return>();
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; } = new HashSet<Review>();
 
-        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; }
+        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; } = new HashSet<CustomerWishlist>();
 
-        public virtual ICollection<ProductImageByOption> ImagesByOption { get; set; }
+        public virtual ICollection<ProductImageByOption> ImagesByOption { get; set; } = new HashSet<ProductImageByOption>();
 
-        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; }
+        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; } = new HashSet<ProductRecurring>();
 
         public ProductDescription GetDescription(Language language)
         {

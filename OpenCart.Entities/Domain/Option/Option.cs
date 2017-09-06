@@ -21,8 +21,8 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<OptionDescription> Descriptions { get; set; }
+        public virtual ICollection<OptionDescription> Descriptions { get; set; } = new HashSet<OptionDescription>();
 
-        public virtual ICollection<OptionValue> Values { get; set; }
+        public virtual ICollection<OptionValue> Values { get; set; } = new HashSet<OptionValue>();
     }
 }

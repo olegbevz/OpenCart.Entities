@@ -38,22 +38,22 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; } = new HashSet<Category>();
 
-        public virtual ICollection<ProductToCategory> Products { get; set; }
+        public virtual ICollection<ProductToCategory> Products { get; set; } = new HashSet<ProductToCategory>();
 
-        public virtual ICollection<CategoryDescription> Descriptions { get; set; }
+        public virtual ICollection<CategoryDescription> Descriptions { get; set; } = new HashSet<CategoryDescription>();
 
-        public virtual ICollection<Filter> Filters { get; set; }
+        public virtual ICollection<Filter> Filters { get; set; } = new HashSet<Filter>();
 
-        public virtual ICollection<Coupon> Coupons { get; set; }
+        public virtual ICollection<Coupon> Coupons { get; set; } = new HashSet<Coupon>();
 
-        public virtual ICollection<Store> Stores { get; set; }
+        public virtual ICollection<Store> Stores { get; set; } = new HashSet<Store>();
 
-        public virtual ICollection<CustomerSearch> Searches { get; set; }
+        public virtual ICollection<CustomerSearch> Searches { get; set; } = new HashSet<CustomerSearch>();
 
-        public virtual ICollection<CategoryPath> Paths { get; set; }
+        public virtual ICollection<CategoryPath> Paths { get; set; } = new HashSet<CategoryPath>();
 
-        public virtual ICollection<CategoryToLayout> Layouts { get; set; }
+        public virtual ICollection<CategoryToLayout> Layouts { get; set; } = new HashSet<CategoryToLayout>();
     }
 }

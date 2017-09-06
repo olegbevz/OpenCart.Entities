@@ -88,6 +88,6 @@ namespace OpenCart.Entities
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
 
-        public virtual ICollection<OrderRecurringTransaction> Transactions { get; set; }
+        public virtual ICollection<OrderRecurringTransaction> Transactions { get; set; } = new HashSet<OrderRecurringTransaction>();
     }
 }

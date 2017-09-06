@@ -26,6 +26,6 @@ namespace OpenCart.Entities
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
 
-        public virtual ICollection<DownloadDescription> Descriptions { get; set; }
+        public virtual ICollection<DownloadDescription> Descriptions { get; set; } = new HashSet<DownloadDescription>();
     }
 }

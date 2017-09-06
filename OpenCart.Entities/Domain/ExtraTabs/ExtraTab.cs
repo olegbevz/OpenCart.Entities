@@ -16,6 +16,6 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public virtual ICollection<ExtraTabDescription> Descriptions { get; set; }
+        public virtual ICollection<ExtraTabDescription> Descriptions { get; set; } = new HashSet<ExtraTabDescription>();
     }
 }

@@ -13,6 +13,6 @@ namespace OpenCart.Entities
         [Column("value")]
         public decimal Value { get; set; }
 
-        public virtual ICollection<WeightClassDescription> Descriptions { get; set; }
+        public virtual ICollection<WeightClassDescription> Descriptions { get; set; } = new HashSet<WeightClassDescription>();
     }
 }

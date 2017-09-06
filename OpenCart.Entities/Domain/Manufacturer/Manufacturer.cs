@@ -19,10 +19,10 @@ namespace OpenCart.Entities
         [Column("sort_order")]
         public int SortOrder { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
-        public virtual ICollection<ManufacturerDescription> Descriptions { get; set; }
+        public virtual ICollection<ManufacturerDescription> Descriptions { get; set; } = new HashSet<ManufacturerDescription>();
 
-        public virtual ICollection<Store> Stores { get; set; }
+        public virtual ICollection<Store> Stores { get; set; } = new HashSet<Store>();
     }
 }

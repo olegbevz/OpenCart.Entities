@@ -27,6 +27,6 @@ namespace OpenCart.Entities
         [StringLength(65535)]
         public string Background { get; set; }
 
-        public virtual ICollection<ProductStickerDescription> Descriptions { get; set; }
+        public virtual ICollection<ProductStickerDescription> Descriptions { get; set; } = new HashSet<ProductStickerDescription>();
     }
 }

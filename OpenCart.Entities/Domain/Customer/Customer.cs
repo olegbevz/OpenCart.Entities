@@ -112,28 +112,28 @@ namespace OpenCart.Entities
         [Column("date_added")]
         public DateTime DateAdded { get; set; }
 
-        public virtual ICollection<CouponHistory> CouponHistory { get; set; }
+        public virtual ICollection<CouponHistory> CouponHistory { get; set; } = new HashSet<CouponHistory>();
 
-        public virtual ICollection<CustomerActivity> Activities { get; set; }
+        public virtual ICollection<CustomerActivity> Activities { get; set; } = new HashSet<CustomerActivity>();
 
-        public virtual ICollection<CustomerHistory> History { get; set; }
+        public virtual ICollection<CustomerHistory> History { get; set; } = new HashSet<CustomerHistory>();
 
-        public virtual ICollection<CustomerIp> CustomerIpAddresses { get; set; }
+        public virtual ICollection<CustomerIp> CustomerIpAddresses { get; set; } = new HashSet<CustomerIp>();
 
-        public virtual ICollection<CustomerOnline> OnlineActions { get; set; }
+        public virtual ICollection<CustomerOnline> OnlineActions { get; set; } = new HashSet<CustomerOnline>();
 
-        public virtual ICollection<CustomerReward> Rewards { get; set; }
+        public virtual ICollection<CustomerReward> Rewards { get; set; } = new HashSet<CustomerReward>();
 
-        public virtual ICollection<CustomerSearch> Searches { get; set; }
+        public virtual ICollection<CustomerSearch> Searches { get; set; } = new HashSet<CustomerSearch>();
 
-        public virtual ICollection<CustomerTransaction> Transactions { get; set; }
+        public virtual ICollection<CustomerTransaction> Transactions { get; set; } = new HashSet<CustomerTransaction>();
 
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
 
-        public virtual ICollection<Return> Returns { get; set; }
+        public virtual ICollection<Return> Returns { get; set; } = new HashSet<Return>();
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; } = new HashSet<Review>();
 
-        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; }
+        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; } = new HashSet<CustomerWishlist>();
     }
 }

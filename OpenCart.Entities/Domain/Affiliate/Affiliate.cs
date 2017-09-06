@@ -155,10 +155,10 @@ namespace OpenCart.Entities
 
         public virtual Zone Zone { get; set; }
 
-        public virtual ICollection<AffiliateActivity> AffiliateActivities { get; set; }
+        public virtual ICollection<AffiliateActivity> AffiliateActivities { get; set; } = new HashSet<AffiliateActivity>();
 
-        public virtual ICollection<AffiliateTransaction> AffiliateTransactions { get; set; }
+        public virtual ICollection<AffiliateTransaction> AffiliateTransactions { get; set; } = new HashSet<AffiliateTransaction>();
 
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<Order> Order { get; set; } = new HashSet<Order>();
     }
 }
