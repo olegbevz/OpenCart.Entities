@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity;
-using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using OpenCart.Entities.Tests;
@@ -18,9 +16,9 @@ namespace OpenCart.Entities.Examples
             {
                 using (var openCartDomain = new OpenCartDomain())
                 {
-                    //var products = openCartDomain.Products.Include("Manufacturer")
-                    //    .Where(product => product.Manufacturer.Name == "Casio")
-                    //    .ToArray();
+                    var products = openCartDomain.Products.Include("Manufacturer")
+                        .Where(product => product.Manufacturer.Name == "Casio")
+                        .ToArray();
 
                     TryToAccessAllEntities(openCartDomain);
                 }
