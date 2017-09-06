@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
 
 namespace OpenCart.Entities.Tests.Extensions
 {
-    public static class EntityExtensions
+    public static class EntityUtilities
     {
         public static bool IsEntity(Type type)
         {
@@ -69,6 +70,11 @@ namespace OpenCart.Entities.Tests.Extensions
         {
             return typeof(OpenCartDomain).Assembly.GetTypes()
                 .Where(IsEntity);
+        }
+
+        public static bool IsMapping(Type type)
+        {
+            return type.BaseType != null && type.BaseType.IsGeneric(typeof(EntityTypeConfiguration<>));
         }
     }
 }

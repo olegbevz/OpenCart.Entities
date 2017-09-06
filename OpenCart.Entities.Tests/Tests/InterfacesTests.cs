@@ -13,7 +13,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithTitlePropertyShouldImplementEntityWithTitleInterface()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 if (entity.HasProperty("Title", typeof(string)))
                 {
@@ -27,7 +27,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithNamePropertyShouldImplementEntityWithNameInterface()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 if (entity.HasProperty("Name", typeof(string)))
                 {
@@ -41,7 +41,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithStatusPropertyShouldImplementEntityWithStatusInterface()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 if (entity.HasProperty("Status", typeof(bool)))
                 {
@@ -55,7 +55,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithLanguagePropertiesShouldImplementLocalizableInterface()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 if (entity.HasProperty("LanguageId", typeof(int)) &&
                     entity.HasProperty("Language", typeof(Language)))

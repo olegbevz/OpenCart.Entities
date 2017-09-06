@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace OpenCart.Entities.Extensions
+namespace OpenCart.Entities
 {
     public static class EntityExtensions
     {

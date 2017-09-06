@@ -35,7 +35,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EachEntityShouldBeAccessibleFromDomain()
         {
-            var entities = EntityExtensions.GetEntities().ToList();
+            var entities = EntityUtilities.GetEntities().ToList();
 
             foreach (var domainProperty in typeof(OpenCartDomain).GetOwnProperties())
             {
@@ -46,11 +46,11 @@ namespace OpenCart.Entities.Tests.Tests
                 if (entityType == null)
                     throw new Exception($"Could not get entity type from domain property '{domainProperty.Name}'");
 
-                foreach (var childEntity in EntityExtensions.GetEntityChildren(entityType))
+                foreach (var childEntity in EntityUtilities.GetEntityChildren(entityType))
                 {
                     entities.Remove(childEntity);
 
-                    foreach (var grandChildEntity in EntityExtensions.GetEntityChildren(childEntity))
+                    foreach (var grandChildEntity in EntityUtilities.GetEntityChildren(childEntity))
                     {
                         entities.Remove(grandChildEntity);
                     }

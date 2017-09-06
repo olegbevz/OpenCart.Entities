@@ -15,7 +15,7 @@ namespace OpenCart.Entities.Tests
         [Test]
         public void ShouldHaveEntities()
         {
-            var entities = EntityExtensions.GetEntities();
+            var entities = EntityUtilities.GetEntities();
 
             foreach (var entity in entities)
             {
@@ -57,7 +57,7 @@ namespace OpenCart.Entities.Tests
         [Test]
         public void ShouldHaveDefaultConstructor()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 var constructors = entity.GetConstructors();
                 var defaultConstructor = constructors.FirstOrDefault(x => x.IsPublic && x.GetParameters().Length == 0);
@@ -68,11 +68,11 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldHaveColumnProperties()
         {
-            var entities = EntityExtensions.GetEntities();
+            var entities = EntityUtilities.GetEntities();
 
             foreach (var entity in entities)
             {
-                foreach (var property in entity.GetProperties().Where(EntityExtensions.IsColumnProperty))
+                foreach (var property in entity.GetProperties().Where(EntityUtilities.IsColumnProperty))
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
 
@@ -100,13 +100,13 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldHavePrimaryKeyProperties()
         {
-            var entities = EntityExtensions.GetEntities();
+            var entities = EntityUtilities.GetEntities();
 
             foreach (var entity in entities)
             {
                 var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
 
-                foreach (var property in entity.GetProperties().Where(EntityExtensions.IsPrimaryKeyProperty))
+                foreach (var property in entity.GetProperties().Where(EntityUtilities.IsPrimaryKeyProperty))
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
 
@@ -134,9 +134,9 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldHaveForeignKeyProperties()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
-                foreach (var property in entity.GetProperties().Where(EntityExtensions.IsForeignKeyProperty))
+                foreach (var property in entity.GetProperties().Where(EntityUtilities.IsForeignKeyProperty))
                 {
                     var getter = property.GetGetMethod(true);
                     Assert.IsTrue(getter.IsPublic, $"{entity.Name}.{property.Name} getter should be made public");
@@ -150,13 +150,13 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldHaveNavigationProperties()
         {
-            foreach (var entity in EntityExtensions.GetEntities())
+            foreach (var entity in EntityUtilities.GetEntities())
             {
                 var tableName = entity.GetAttribute<TableAttribute>().Name.Replace("oc_", string.Empty);
 
                 var properties = entity.GetProperties();
 
-                foreach (var property in properties.Where(EntityExtensions.IsForeignKeyProperty))
+                foreach (var property in properties.Where(EntityUtilities.IsForeignKeyProperty))
                 {
                     var columnAttribute = property.GetAttribute<ColumnAttribute>();
 
@@ -195,11 +195,11 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldHaveCollectionProperties()
         {
-            var entities = EntityExtensions.GetEntities();
+            var entities = EntityUtilities.GetEntities();
 
             foreach (var entity in entities)
             {
-                foreach (var property in entity.GetProperties().Where(EntityExtensions.IsForeignKeyProperty))
+                foreach (var property in entity.GetProperties().Where(EntityUtilities.IsForeignKeyProperty))
                 {
                     var foreignKeyName = property.GetAttribute<ColumnAttribute>().Name;
 
@@ -233,7 +233,7 @@ namespace OpenCart.Entities.Tests
                     if (ShouldNotHaveCollectionProperty(entity, targetEntity))
                         continue;
 
-                    var collectionProperty = targetEntity.GetProperties().SingleOrDefault(x => EntityExtensions.IsCollectionProperty(x, entity));
+                    var collectionProperty = targetEntity.GetProperties().SingleOrDefault(x => EntityUtilities.IsCollectionProperty(x, entity));
                     if (collectionProperty == null)
                         throw new Exception($"Entity {targetEntity.Name} should have property ICollection<{entity.Name}>.");
 
@@ -255,14 +255,14 @@ namespace OpenCart.Entities.Tests
         [TestCase]
         public void ShouldNotContainsEntitiesWhichImplementsManyToManyRelationship()
         {
-            var entities = EntityExtensions.GetEntities();
+            var entities = EntityUtilities.GetEntities();
 
             foreach (var entity in entities)
             {
                 var properties = entity.GetProperties();
-                var keyAttributes = properties.Where(EntityExtensions.IsPrimaryKeyProperty).ToArray();
-                var foreingKeys = properties.Where(EntityExtensions.IsForeignKeyProperty).ToArray();
-                var navigationProperties = properties.Where(EntityExtensions.IsNavigationProperty).ToArray();
+                var keyAttributes = properties.Where(EntityUtilities.IsPrimaryKeyProperty).ToArray();
+                var foreingKeys = properties.Where(EntityUtilities.IsForeignKeyProperty).ToArray();
+                var navigationProperties = properties.Where(EntityUtilities.IsNavigationProperty).ToArray();
 
                 if (properties.Length == 2)
                 {
