@@ -4,10 +4,10 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_language")]
-    public class Language : IEntityWithName
+    public class Language : IEntityWithName, IEntityWithStatus
     {
         [Key, Column("language_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(32), Column("name")]
         public string Name { get; set; }
@@ -17,7 +17,7 @@ namespace OpenCart.Entities
 
         [Required, StringLength(255), Column("locale")]
         public string Locale { get; set; }
-        
+
         [Required, StringLength(64), Column("image")]
         public string Image { get; set; }
 
@@ -26,7 +26,7 @@ namespace OpenCart.Entities
 
         [Column("sort_order")]
         public int SortOrder { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
     }

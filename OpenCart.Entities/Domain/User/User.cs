@@ -5,15 +5,15 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_user")]
-    public class User
+    public class User : IEntityWithStatus
     {
         [Key, Column("user_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Column("user_group_id")]
         public int GroupId { get; set; }
 
-        public virtual UserGroup Group { get; protected set; }
+        public virtual UserGroup Group { get; set; }
 
         [Required, StringLength(20), Column("username")]
         public string UserName { get; set; }
@@ -41,7 +41,7 @@ namespace OpenCart.Entities
 
         [Required, StringLength(40), Column("ip")]
         public string IP { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
 

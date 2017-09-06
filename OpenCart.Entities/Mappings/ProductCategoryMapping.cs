@@ -2,7 +2,7 @@
 
 namespace OpenCart.Entities
 {
-    internal class ProductCategoryMapping : EntityTypeConfiguration<ProductCategory>
+    internal class ProductCategoryMapping : EntityTypeConfiguration<ProductToCategory>
     {
         public ProductCategoryMapping()
         {

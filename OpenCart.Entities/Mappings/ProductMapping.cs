@@ -37,6 +37,25 @@ namespace OpenCart.Entities
                 .WithRequired(x => x.Product)
                 .HasForeignKey(x => x.ProductId)
                 .WillCascadeOnDelete(true);
+
+            HasMany(x => x.Filters)
+                .WithMany()
+                .Map(x => x.ToTable("oc_product_filter")
+                .MapLeftKey("product_id")
+                .MapRightKey("filter_id"));
+
+            HasMany(x => x.Downloads)
+                .WithMany()
+                .Map(x => x.ToTable("oc_product_to_download")
+                .MapLeftKey("product_id")
+                .MapRightKey("download_id"));
+
+            HasMany(x => x.Coupons)
+                .WithMany(x => x.Products)
+                .Map(x => x.ToTable("oc_coupon_product")
+                .MapLeftKey("product_id")
+                .MapRightKey("coupon_id"));
+
         }
     }
 }

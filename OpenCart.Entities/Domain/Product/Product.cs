@@ -4,23 +4,10 @@ namespace OpenCart.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     [Table("oc_product")]
-    public class Product
+    public class Product : IEntityWithStatus
     {
-        public Product()
-        {
-            Categories = new HashSet<ProductCategory>();
-            Descriptions = new HashSet<ProductDescription>();
-            Images = new HashSet<ProductImage>();
-            Attributes = new HashSet<ProductAttribute>();
-            Stores = new HashSet<Store>();
-            Layouts = new HashSet<ProductLayout>();
-            RelatedProducts = new HashSet<Product>();
-            ExtraTabs = new HashSet<ProductExtraTab>();
-        }
-
         [Key, Column("product_id")]
         public int Id { get; protected set; }
 
@@ -69,7 +56,8 @@ namespace OpenCart.Entities
         [Column("points")]
         public int Points { get; set; }
 
-        public int tax_class_id { get; set; }
+        [Column("tax_class_id")]
+        public int TaxClassId { get; set; }
 
         [Column("date_available", TypeName = "date")]
         public DateTime DateAvailable { get; set; }
@@ -113,54 +101,63 @@ namespace OpenCart.Entities
         [Column("date_modified")]
         public DateTime DateModified { get; set; }
 
-        [Required(AllowEmptyStrings=true), StringLength(65535), Column("product_stickers", TypeName = "text")]
+        [Required(AllowEmptyStrings = true), StringLength(65535), Column("product_stickers", TypeName = "text")]
         public string Stickers { get; set; }
 
-        public virtual Manufacturer Manufacturer { get; protected set; }
+        public virtual Manufacturer Manufacturer { get; set; }
 
-        public virtual WeightUnit WeightUnit { get; protected set; }
+        public virtual WeightClass WeightUnit { get; set; }
 
-        public virtual LengthUnit LengthUnit { get; protected set; }
+        public virtual LengthClass LengthUnit { get; set; }
 
-        public virtual ICollection<ProductDescription> Descriptions { get; protected set; }
-        
-        public virtual ICollection<ProductImage> Images { get; protected set; }
+        public virtual StockStatus StockStatus { get; set; }
 
-        public virtual ICollection<ProductAttribute> Attributes { get; protected set; }
+        public virtual TaxClass TaxClass { get; set; }
 
-        public virtual ICollection<ProductCategory> Categories { get; protected set; }
+        public virtual ICollection<ProductDescription> Descriptions { get; set; } = new HashSet<ProductDescription>();
 
-        public virtual ICollection<Store> Stores { get; protected set; }
+        public virtual ICollection<ProductImage> Images { get; set; } = new HashSet<ProductImage>();
 
-        public virtual ICollection<ProductLayout> Layouts { get; protected set; }
+        public virtual ICollection<ProductAttribute> Attributes { get; set; } = new HashSet<ProductAttribute>();
 
-        public virtual ICollection<Product> RelatedProducts { get; protected set; }
+        public virtual ICollection<ProductToCategory> Categories { get; set; } = new HashSet<ProductToCategory>();
 
-        public virtual ICollection<ProductExtraTab> ExtraTabs { get; protected set; }
+        public virtual ICollection<Store> Stores { get; set; } = new HashSet<Store>();
 
-        public ProductDescription GetDescription(Language language)
-        {
-            return Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);
-        }
+        public virtual ICollection<ProductToLayout> Layouts { get; set; } = new HashSet<ProductToLayout>();
 
-        public void SetDescription(Language language, ProductDescription description)
-        {
-            var existionDescription = Descriptions.FirstOrDefault(x => x.LanguageId == language.Id);
-            if (existionDescription != null)
-            {
-                existionDescription.MetaTitle = description.MetaTitle;
-                existionDescription.Name = description.Name;
-                existionDescription.Tag = description.Tag;
-                existionDescription.MetaH1 = description.MetaH1;
-                existionDescription.MetaKeyword = description.MetaKeyword;
-                existionDescription.MetaDescription = description.MetaDescription;
-                existionDescription.Description = description.Description;
-            }
-            else
-            {
-                description.LanguageId = language.Id;
-                Descriptions.Add(description);
-            }
-        }
+        public virtual ICollection<Product> RelatedProducts { get; set; } = new HashSet<Product>();
+
+        public virtual ICollection<ProductExtraTab> ExtraTabs { get; set; } = new HashSet<ProductExtraTab>();
+
+        public virtual ICollection<Filter> Filters { get; set; } = new HashSet<Filter>();
+
+        public virtual ICollection<Download> Downloads { get; set; } = new HashSet<Download>();
+
+        public virtual ICollection<Coupon> Coupons { get; set; } = new HashSet<Coupon>();
+
+        public virtual ICollection<OrderProduct> Orders { get; set; } = new HashSet<OrderProduct>();
+
+        public virtual ICollection<OrderRecurring> OrderRecurrings { get; set; } = new HashSet<OrderRecurring>();
+
+        public virtual ICollection<ProductDiscount> Discounts { get; set; } = new HashSet<ProductDiscount>();
+
+        public virtual ICollection<ProductOption> Options { get; set; } = new HashSet<ProductOption>();
+
+        public virtual ICollection<ProductOptionValue> OptionValues { get; set; } = new HashSet<ProductOptionValue>();
+
+        public virtual ICollection<ProductReward> Rewards { get; set; } = new HashSet<ProductReward>();
+
+        public virtual ICollection<ProductSpecial> Specials { get; set; } = new HashSet<ProductSpecial>();
+
+        public virtual ICollection<Return> Returns { get; set; } = new HashSet<Return>();
+
+        public virtual ICollection<Review> Reviews { get; set; } = new HashSet<Review>();
+
+        public virtual ICollection<CustomerWishlist> CustomerWishlists { get; set; } = new HashSet<CustomerWishlist>();
+
+        public virtual ICollection<ProductImageByOption> ImagesByOption { get; set; } = new HashSet<ProductImageByOption>();
+
+        public virtual ICollection<ProductRecurring> ProductRecurrings { get; set; } = new HashSet<ProductRecurring>();
     }
 }

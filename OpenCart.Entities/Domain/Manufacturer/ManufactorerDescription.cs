@@ -6,7 +6,9 @@ namespace OpenCart.Entities
     [Table("oc_manufacturer_description")]
     public class ManufacturerDescription : MetaDescriptionBase
     {
-        [Key, Column("manufacturer_id", Order=0), DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, Column("manufacturer_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ManufacturerId { get; set; }
+
+        public virtual Manufacturer Manufacturer { get; set; }
     }
 }

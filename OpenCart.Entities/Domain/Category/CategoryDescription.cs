@@ -7,6 +7,8 @@ namespace OpenCart.Entities
     public class CategoryDescription : MetaDescriptionBase
     {
         [Key, Column("category_id", Order = 0), DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
-    }   
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
+    }
 }

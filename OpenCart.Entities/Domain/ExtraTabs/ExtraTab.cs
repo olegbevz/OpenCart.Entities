@@ -5,7 +5,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_extra_tabs")]
-    public class ExtraTab
+    public class ExtraTab : IEntityWithStatus
     {
         [Key, Column("extra_tab_id")]
         public int Id { get; protected set; }
@@ -16,6 +16,6 @@ namespace OpenCart.Entities
         [Column("status")]
         public bool Status { get; set; }
 
-        public virtual ICollection<ExtraTabDescription> Descriptions { get; set; } 
+        public virtual ICollection<ExtraTabDescription> Descriptions { get; set; } = new HashSet<ExtraTabDescription>();
     }
 }

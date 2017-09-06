@@ -10,6 +10,12 @@ namespace OpenCart.Entities
 
             HasMany(x => x.Products).WithRequired(x => x.Manufacturer)
                 .HasForeignKey(x => x.ManufacturerId);
+
+            HasMany(x => x.Stores)
+            .WithMany()
+            .Map(x => x.ToTable("oc_manufacturer_to_store")
+            .MapLeftKey("manufacturer_id")
+            .MapRightKey("store_id"));
         }
     }
 }

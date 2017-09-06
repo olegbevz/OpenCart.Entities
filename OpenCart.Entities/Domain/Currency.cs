@@ -5,10 +5,10 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_currency")]
-    public class Currency
+    public class Currency : IEntityWithTitle, IEntityWithStatus
     {
         [Key, Column("currency_id")]
-        public int Id { get; set; }
+        public int Id { get; protected set; }
 
         [Required, StringLength(32), Column("title")]
         public string Title { get; set; }
@@ -27,7 +27,7 @@ namespace OpenCart.Entities
 
         [Column("value")]
         public float Value { get; set; }
-        
+
         [Column("status")]
         public bool Status { get; set; }
 

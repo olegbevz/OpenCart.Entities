@@ -64,6 +64,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenCart.Entities.Tests\OpenCart.Entities.Tests.csproj">
+      <Project>{bd222cfc-d495-449c-bdf7-186e50956473}</Project>
+      <Name>OpenCart.Entities.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenCart.Entities\OpenCart.Entities.csproj">
       <Project>{17e7c7bf-7b98-4501-ba3b-9a1ae209e988}</Project>
       <Name>OpenCart.Entities</Name>
