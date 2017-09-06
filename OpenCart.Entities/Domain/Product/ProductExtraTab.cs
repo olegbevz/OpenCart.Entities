@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_extra_tabs")]
-    public class ProductExtraTab
+    public class ProductExtraTab : ILocalizable
     {
         public ProductExtraTab()
         {

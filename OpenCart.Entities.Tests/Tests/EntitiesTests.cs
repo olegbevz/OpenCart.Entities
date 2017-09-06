@@ -139,10 +139,10 @@ namespace OpenCart.Entities.Tests
                 foreach (var property in entity.GetProperties().Where(EntityExtensions.IsForeignKeyProperty))
                 {
                     var getter = property.GetGetMethod(true);
-                    Assert.IsTrue(getter.IsPublic && !getter.IsVirtual, $"{entity.Name}.{property.Name} getter should be made public");
+                    Assert.IsTrue(getter.IsPublic, $"{entity.Name}.{property.Name} getter should be made public");
 
                     var setter = property.GetSetMethod(true);
-                    Assert.IsTrue(setter.IsPublic && !setter.IsVirtual, $"{entity.Name}.{property.Name} setter should be made public");
+                    Assert.IsTrue(setter.IsPublic, $"{entity.Name}.{property.Name} setter should be made public");
                 }
             }
         }

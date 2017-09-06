@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_return_action")]
-    public class ReturnAction : IEntityWithName
+    public class ReturnAction : IEntityWithName, ILocalizable
     {
         [Key]
         [Column("return_action_id", Order = 0)]

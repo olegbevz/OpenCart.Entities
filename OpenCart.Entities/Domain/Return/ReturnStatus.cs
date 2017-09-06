@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_return_status")]
-    public class ReturnStatus : IEntityWithName
+    public class ReturnStatus : IEntityWithName, ILocalizable
     {
         [Key]
         [Column("return_status_id", Order = 0)]

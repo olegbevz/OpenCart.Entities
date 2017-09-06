@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_stock_status")]
-    public class StockStatus : IEntityWithName
+    public class StockStatus : IEntityWithName, ILocalizable
     {
         [Key, Column("stock_status_id", Order = 0)]
         public int Id { get; protected set; }

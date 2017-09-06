@@ -4,7 +4,7 @@ namespace OpenCart.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("oc_product_attribute")]
-    public class ProductAttribute
+    public class ProductAttribute : ILocalizable
     {
         public ProductAttribute(Attribute attribute, Language language, string value)
         {

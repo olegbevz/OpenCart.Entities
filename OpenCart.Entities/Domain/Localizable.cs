@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OpenCart.Entities
 {
-    public abstract class Localizable
+    public abstract class Localizable : ILocalizable
     {
         [Key]
         [Column("language_id", Order = 1)]

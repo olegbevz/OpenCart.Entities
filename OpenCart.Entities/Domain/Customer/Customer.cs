@@ -7,7 +7,7 @@ namespace OpenCart.Entities
     using System.Data.Entity.Spatial;
 
     [Table("oc_customer")]
-    public class Customer : IEntityWithStatus
+    public class Customer : IEntityWithStatus, ILocalizable
     {
         [Key]
         [Column("customer_id")]

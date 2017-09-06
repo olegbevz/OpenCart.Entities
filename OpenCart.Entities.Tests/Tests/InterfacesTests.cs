@@ -13,9 +13,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithTitlePropertyShouldImplementEntityWithTitleInterface()
         {
-            var entities = EntityExtensions.GetEntities();
-
-            foreach (var entity in entities)
+            foreach (var entity in EntityExtensions.GetEntities())
             {
                 if (entity.HasProperty("Title", typeof(string)))
                 {
@@ -29,9 +27,7 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithNamePropertyShouldImplementEntityWithNameInterface()
         {
-            var entities = EntityExtensions.GetEntities();
-
-            foreach (var entity in entities)
+            foreach (var entity in EntityExtensions.GetEntities())
             {
                 if (entity.HasProperty("Name", typeof(string)))
                 {
@@ -45,15 +41,28 @@ namespace OpenCart.Entities.Tests.Tests
         [TestCase]
         public void EntitiesWithStatusPropertyShouldImplementEntityWithStatusInterface()
         {
-            var entities = EntityExtensions.GetEntities();
-
-            foreach (var entity in entities)
+            foreach (var entity in EntityExtensions.GetEntities())
             {
                 if (entity.HasProperty("Status", typeof(bool)))
                 {
                     Assert.IsTrue(
                         entity.Implements<IEntityWithStatus>(),
                         $"Type '{entity.Name}' should implement IEntityWithStatus interface");
+                }
+            }
+        }
+
+        [TestCase]
+        public void EntitiesWithLanguagePropertiesShouldImplementLocalizableInterface()
+        {
+            foreach (var entity in EntityExtensions.GetEntities())
+            {
+                if (entity.HasProperty("LanguageId", typeof(int)) &&
+                    entity.HasProperty("Language", typeof(Language)))
+                {
+                    Assert.IsTrue(
+                        entity.Implements<ILocalizable>(),
+                        $"Type '{entity.Name}' should implement ILocalizable interface");
                 }
             }
         }
