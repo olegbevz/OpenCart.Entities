@@ -1,5 +1,5 @@
 # OpenCart.Entities
-Project represents EntityFramework 6.0 entity model for OpenCart database version 2.3.0.2
+Project represents EntityFramework model for OpenCart database (2.3.0.2)
 
 Project can used for integration purposes:
 - automatic export of products from some store to OpenCart database
@@ -12,7 +12,9 @@ Project is now in development phase and may be not stable. Any help would be app
 
 # Requirements
 
-Project is now compatible with OpenCart database version 2.3.0.2.
+Project is now compatible with:
+* EntityFramework 6.0
+* OpenCart database version 2.3.0.2.
 Also following OpenCart modules should be added: 
 * blogs, 
 * extra tabs,
