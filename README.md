@@ -15,10 +15,11 @@ Project is now in development phase and may be not stable. Any help would be app
 Project is now compatible with:
 * EntityFramework 6.0
 * OpenCart database version 2.3.0.2.
+
 Also following OpenCart modules should be added: 
-* blogs, 
-* extra tabs,
-* oct filter,
+* blogs 
+* extra tabs
+* oct filter
 * product reviews
 * product stickers
 
