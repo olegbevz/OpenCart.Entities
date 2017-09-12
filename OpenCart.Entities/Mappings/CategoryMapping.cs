@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace OpenCart.Entities
+namespace OpenCart.Entities.Mappings
 {
     internal class CategoryMapping : EntityTypeConfiguration<Category>
     {

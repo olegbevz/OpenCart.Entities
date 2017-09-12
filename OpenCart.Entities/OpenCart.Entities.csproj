@@ -53,10 +53,8 @@
     <Compile Include="Mappings\CategoryMapping.cs" />
     <Compile Include="Mappings\CouponMapping.cs" />
     <Compile Include="Mappings\InformationMapping.cs" />
-    <Compile Include="Mappings\ProductImageMapping.cs" />
     <Compile Include="Mappings\TaxRateMapping.cs" />
     <Compile Include="Mappings\ManufactorerMapping.cs" />
-    <Compile Include="Mappings\ProductCategoryMapping.cs" />
     <Compile Include="Mappings\ProductMapping.cs" />
     <Compile Include="OpenCartDomain.cs" />
     <Compile Include="Domain\Customer\Address.cs" />
